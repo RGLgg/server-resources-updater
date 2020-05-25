@@ -1,4 +1,4 @@
-// Whitelist generated at Mon, 25 May 2020 04:31:49 +0200
+// Whitelist generated at Mon, 25 May 2020 05:21:24 +0200
 // Whitelist: RGL.gg 6v6 (Season 3) (ID: 10719)
 
 // Share or view this whitelist:
