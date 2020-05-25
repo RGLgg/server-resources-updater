@@ -14,23 +14,23 @@ Clicking on the `Clone and download` button will not work, instead ensure your s
 
 # Pre-Bundled Plugins & Dependencies 
 * [Updater](https://git.empiresmod.com/sourcemod/Updater) 
-    * Automatically updates SourceMod plugins and files
-    * Included dependency 
+    * Automatically updates SourceMod plugins and files.
+    * Included dependency
         * [SteamWorks Extension](https://forums.alliedmods.net/showthread.php?t=229556)
     * Originally created by GoD-Tony. Edited by Neoony.
 * [TF2 Competitive Fixes](https://github.com/ldesgoui/tf2-comp-fixes)
-    * Various technical or gameplay changes catered towards competitive play
+    * Various technical or gameplay changes catered towards competitive play.
     * Included dependency 
         * [DHooks2](https://github.com/peace-maker/DHooks2)
     * By twiikuu
 * [SrcTV+](https://github.com/dalegaard/srctvplus)
-    * SrcTV+ makes SrcTV send everything. For TF2.
+    * SrcTV+ makes the server send all events to SrcTV.
     * By GipsArm - [TFTV Thread](https://www.teamfortress.tv/46380/srctv)
-* [TF2 Halftime](https://github.com/dalegaard/srctvplus)
-    * Emulates ESEA halves for TF2 competitive play
+* [TF2 Halftime](https://github.com/stephanieLGBT/tf2-halftime)
+    * Emulates ESEA style halftimes for 5CP (halftime at 3 points or timelimit) and King of the Hill (halftime at 2 points) modes.
     * By stephanieLGBT
 * [Updated Pause](https://github.com/l-Aad-l/updated-pause-plugin)
-    * Updated version of F2's original [pause](https://github.com/F2/F2s-sourcemod-plugins/tree/master/pause) to prevent building of Medic ÜberCharge during a pause 
+    * Updated version of F2's original [pause](https://github.com/F2/F2s-sourcemod-plugins/tree/master/pause) to prevent building of Medic ÜberCharge during a pause .
     * Originally created by F2. Edited by Aad.
 * [RGL.gg QoL Tweaks](https://github.com/RGLgg/server-resources-updater/blob/master/addons/sourcemod/scripting/rglqol.sp)
     * Adds QoL tweaks for easier competitive server management
