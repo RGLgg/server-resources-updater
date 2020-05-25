@@ -1,0 +1,186 @@
+name: Release Build
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        SM_VERSION: ["1.10"]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set environment variables
+        run: |
+          git fetch --unshallow
+          VERSION=$(git rev-list --count HEAD)
+          SHORT=$(git describe --always --long --dirty)
+          SOURCEMOD_PATH=$GITHUB_WORKSPACE/addons/sourcemod
+          CONFIG_PATH=$GITHUB_WORKSPACE/cfg
+          echo ::set-env name=GIT_COMMIT::$VERSION
+          echo ::set-env name=PLUGIN_VERSION::${{ matrix.SM_VERSION }}.$VERSION
+          echo ::set-env name=PLUGIN_VERSION_SHORT::${{ matrix.SM_VERSION }}.$VERSION.$SHORT
+          echo ::set-env name=WORKSPACE::$GITHUB_WORKSPACE
+          echo ::set-env name=CONFIG_PATH::$CONFIG_PATH
+          echo ::set-env name=SOURCEMOD_PATH::$SOURCEMOD_PATH
+          echo ::set-env name=SCRIPTS_PATH::$SOURCEMOD_PATH/scripting
+          echo ::set-env name=PLUGINS_PATH::$SOURCEMOD_PATH/plugins
+
+      # Updated Updater: https://git.empiresmod.com/sourcemod/Updater
+      - name: Get latest version of Updater & SteamWorks Windows+Linux
+        run: |
+          wget -q -O tmp.zip https://git.empiresmod.com/sourcemod/Updater/-/jobs/artifacts/master/download?job=build && unzip -o tmp.zip 'addons/*' -d ../../  && rm tmp.zip
+          wget -q -O tmp.zip http://users.alliedmods.net/~kyles/builds/SteamWorks/SteamWorks-git132-windows.zip && unzip -o tmp.zip 'addons/*' -d ../../  && rm tmp.zip
+          wget -q -O tmp.tar.gz http://users.alliedmods.net/~kyles/builds/SteamWorks/SteamWorks-git132-linux.tar.gz && tar -xvzf tmp.tar.gz --strip-components=2 && rm tmp.tar.gz
+        working-directory: ${{ env.SOURCEMOD_PATH }}/
+
+      # TF2 Comp Fixes: https://github.com/ldesgoui/tf2-comp-fixes
+      - name: Get latest version of TF2 Comp Fixes and its DHooks2 dependency
+        run: |
+          wget -q -O tmp.zip https://github.com/ldesgoui/tf2-comp-fixes/releases/latest/download/tf2-comp-fixes.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip && rm updatefile.txt
+          wget -q -O tmp.zip https://github.com/peace-maker/DHooks2/releases/latest/download/dhooks-2.2.0-detours10-sm110.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
+        working-directory: ${{ env.SOURCEMOD_PATH }}/
+
+      # SrcTV+: https://github.com/dalegaard/srctvplus
+      - name: Get latest version of SrcTV+
+        run: |
+          wget -q -O addons/srctvplus.dll https://github.com/dalegaard/srctvplus//releases/latest/download/srctvplus.dll
+          wget -q -O addons/srctvplus.so https://github.com/dalegaard/srctvplus//releases/latest/download/srctvplus.so
+          wget -q -O addons/srctvplus.vdf https://github.com/dalegaard/srctvplus//releases/latest/download/srctvplus.vdf
+        working-directory: ${{ env.WORKSPACE }}/
+      
+      # TF2 Halftime: https://github.com/stephanieLGBT/tf2-halftime
+      - name: Get latest version of TF2 Halftime
+        run: |
+          wget -q -O scripting/include/morecolors.inc https://raw.githubusercontent.com/stephanieLGBT/tf2-halftime/master/scripting/include/morecolors.inc
+          wget -q -O scripting/tf2Halftime.sp https://raw.githubusercontent.com/stephanieLGBT/tf2-halftime/master/scripting/tf2Halftime.sp
+        working-directory: ${{ env.SOURCEMOD_PATH }}/
+
+      # Updated Pause Plugin: https://github.com/l-Aad-l/updated-pause-plugin
+      - name: Get latest version of Updated Pause Plugin
+        run: |
+          wget -q -O tmp.zip https://github.com/l-Aad-l/updated-pause-plugin/releases/latest/download/updated-pause-plugin.zip && unzip -o tmp.zip 'addons/*' -d ../../  && rm tmp.zip
+        working-directory: ${{ env.SOURCEMOD_PATH }}/
+
+      # Color Literals: https://github.com/JoinedSenses/SourceMod-IncludeLibrary/blob/master/include/color_literals.inc
+      - name: Get latest version of Color Literals
+        run: |
+          wget -q -O scripting/include/color_literals.inc https://raw.githubusercontent.com/JoinedSenses/SourceMod-IncludeLibrary/master/include/color_literals.inc
+        working-directory: ${{ env.SOURCEMOD_PATH }}/
+
+      - name: Get latest whitelists for each format
+        run: |
+          wget -q -O rgl_whitelist_6s.txt https://whitelist.tf/rgl_6v6.txt
+          wget -q -O rgl_whitelist_HL.txt https://whitelist.tf/rgl_9v9.txt
+          wget -q -O rgl_whitelist_mm.txt https://whitelist.tf/rgl_nr6s.txt
+          wget -q -O rgl_whitelist_7s.txt https://whitelist.tf/rgl_7v7.txt
+        working-directory: ${{ env.CONFIG_PATH }}/
+          
+      - name: Setup SourcePawn Compiler ${{ matrix.SM_VERSION }}
+        id: setup-sp
+        uses: rumblefrog/setup-sp@master
+        with:
+          version: ${{ matrix.SM_VERSION }}
+
+      - name: Compile RGL Suite Plugins against SM ${{ steps.setup-sp.outputs.version }}
+        run: |
+          for plugin in "rglqol" "rglupdater" "tf2Halftime"
+          do
+            echo -e "\nCompiling $plugin.sp..."
+            spcomp -E -w234 -O2 -v2 -i $SCRIPTS_PATH/include $plugin.sp
+          done
+        working-directory: ${{ env.SCRIPTS_PATH }}/
+
+      - name: Move compiled plugins
+        run: |
+          rm -rf $PLUGINS_PATH/disabled/
+          mkdir -p $PLUGINS_PATH/disabled/
+          rsync -av --include='*/' --include="*.smx" --exclude="*" --prune-empty-dirs --remove-source-files $SCRIPTS_PATH/ $PLUGINS_PATH/
+
+      - name: Disable optional plugins
+        run: |
+          mv tf2Halftime.smx disabled
+        working-directory: ${{ env.PLUGINS_PATH }}/
+
+      - name: Rebuild updatefile.txt 
+        run: |
+          FILES=$(find ./cfg ./addons -type f \
+          | sed "s|^\.||" \
+          | sed 's/ / \\ /' \
+          | sed 's/^/"/;s/$/"/' \
+          | sed '/regex/G' \
+          ) \
+          ;
+
+          find . -name "updatefile-template.txt" -type f -exec cp {} ./updatefile.txt \;
+
+          for FILE in $FILES
+          do
+              if [[ "$FILE" != *"_custom.cfg"* ]];
+              then
+                if [[ $FILE == *"scripting"* ]]; 
+                then
+                  echo $'        "Source"        ' $FILE
+                else
+                  echo $'        "Plugin"        ' $FILE
+                fi
+              fi
+          done >> updatefile.txt
+
+          echo $'    }' >> updatefile.txt
+          echo $'}' >> updatefile.txt
+        working-directory: ${{ env.WORKSPACE }}/
+
+      - name: Move folders (addons, cfg) to build
+        run: |
+          mkdir build
+          mv ./{addons,cfg} build/
+
+      - name: Add updatefile.txt, README.md to build package
+        run: |
+          mv $GITHUB_WORKSPACE/{updatefile.txt,README.md} .
+        working-directory: ./build
+ 
+      - name: Update updater branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: updater
+          publish_dir: build/
+
+      - name: Remove updatefile.txt, README.md for release
+        run: |
+          rm updatefile.txt README.md
+        working-directory: ./build
+
+      - name: Zip build folder
+        run: |
+          zip -r release.zip addons
+        working-directory: ./build
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.GIT_COMMIT }}
+          release_name: Release v${{ env.PLUGIN_VERSION }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./build/release.zip
+          asset_name: server-resources-updater.zip
+          asset_content_type: application/zip

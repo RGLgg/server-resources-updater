@@ -1,0 +1,13 @@
+"Updater"
+{
+    "Information"
+    {
+        "Version"
+        {
+            "Latest"    "999" // FAKE VERSION THAT FORCES UPDATEs TO PREVENT MODIFYING NON CUSTOM CFGS. CHECK CURRENT VERSION WITH SM PLUGINS LIST
+        }
+        "Notes"         "Check the RGL.gg GitHub for the latest updates!"
+        "Notes"         "https://github.com/RGLgg/server-resources-updater"
+    }
+    "Files"
+    {

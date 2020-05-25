@@ -1,0 +1,12 @@
+# TF2 general mod gitignore
+sound/sound.cache
+
+# zip + readme that goes in the zip
+*.zip
+README.txt
+
+# batch file i use to copy plugins from my testing environment
+*.bat
+
+# ignore vscode folder
+.vscode

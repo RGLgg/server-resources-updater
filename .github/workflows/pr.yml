@@ -1,0 +1,110 @@
+name: Pull Request Build
+
+on:
+  pull_request:
+    branches: [ beta, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        SM_VERSION: ["1.10"]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set environment variables
+        run: |
+          git fetch --unshallow
+          VERSION=$(git rev-list --count HEAD)
+          SHORT=$(git describe --always --long --dirty)
+          SOURCEMOD_PATH=$GITHUB_WORKSPACE/addons/sourcemod
+          CONFIG_PATH=$GITHUB_WORKSPACE/cfg
+          echo ::set-env name=GIT_COMMIT::$VERSION
+          echo ::set-env name=PLUGIN_VERSION::${{ matrix.SM_VERSION }}.$VERSION.$SHORT
+          echo ::set-env name=WORKSPACE::$GITHUB_WORKSPACE
+          echo ::set-env name=CONFIG_PATH::$CONFIG_PATH
+          echo ::set-env name=SOURCEMOD_PATH::$SOURCEMOD_PATH
+          echo ::set-env name=SCRIPTS_PATH::$SOURCEMOD_PATH/scripting
+          echo ::set-env name=PLUGINS_PATH::$SOURCEMOD_PATH/plugins
+
+      # Include Updater & SteamWorks 
+      - name: Get latest version of updater.inc & SteamWorks.inc 
+        run: |
+          wget -q -O tmp.zip https://git.empiresmod.com/sourcemod/Updater/-/jobs/artifacts/master/download?job=build && unzip -o tmp.zip 'addons/sourcemod/scripting/include/updater.inc' -d ../../  && rm tmp.zip
+          wget -q -O tmp.zip http://users.alliedmods.net/~kyles/builds/SteamWorks/SteamWorks-git132-windows.zip && unzip -o tmp.zip 'addons/sourcemod/scripting/include/SteamWorks.inc' -d ../../  && rm tmp.zip
+        working-directory: ${{ env.SOURCEMOD_PATH }}/
+
+      # Include Color Literals: https://github.com/JoinedSenses/SourceMod-IncludeLibrary/blob/master/include/color_literals.inc
+      - name: Get latest version of color-literals.inc
+        run: |
+          wget -q -O scripting/include/color_literals.inc https://raw.githubusercontent.com/JoinedSenses/SourceMod-IncludeLibrary/master/include/color_literals.inc
+        working-directory: ${{ env.SOURCEMOD_PATH }}/
+          
+      - name: Setup SourcePawn Compiler ${{ matrix.SM_VERSION }}
+        id: setup-sp
+        uses: rumblefrog/setup-sp@master
+        with:
+          version: ${{ matrix.SM_VERSION }}
+
+      - name: Compile RGL Suite Plugins against SM ${{ steps.setup-sp.outputs.version }}
+        run: |
+          for file in *.sp
+          do
+            echo -e "\nCompiling $file..."
+            spcomp -E -w234 -O2 -v2 -i $SCRIPTS_PATH/include $file
+          done
+        working-directory: ${{ env.SCRIPTS_PATH }}/
+
+      - name: Move compiled plugins
+        run: |
+          rm -rf $PLUGINS_PATH/disabled/
+          mkdir -p $PLUGINS_PATH/disabled/
+          rsync -av --include='*/' --include="*.smx" --exclude="*" --prune-empty-dirs --remove-source-files $SCRIPTS_PATH/ $PLUGINS_PATH/
+
+      - name: Rebuild updatefile.txt 
+        run: |
+          FILES=$(find ./cfg ./addons -type f \
+          | sed "s|^\.||" \
+          | sed 's/ / \\ /' \
+          | sed 's/^/"/;s/$/"/' \
+          | sed '/regex/G' \
+          ) \
+          ;
+
+          find . -name "updatefile-template.txt" -type f -exec cp {} ./updatefile.txt \;
+
+          for FILE in $FILES
+          do
+              if [[ "$FILE" != *"_custom.cfg"* ]];
+              then
+                if [[ $FILE == *"scripting"* ]]; 
+                then
+                  echo $'        "Source"        ' $FILE
+                else
+                  echo $'        "Plugin"        ' $FILE
+                fi
+              fi
+          done >> updatefile.txt
+
+          echo $'    }' >> updatefile.txt
+          echo $'}' >> updatefile.txt
+        working-directory: ${{ env.WORKSPACE }}/
+
+      - name: Move folders (addons, cfg) to build
+        run: |
+          mkdir build
+          mv ./{addons,cfg} build/
+
+      - name: Add updatefile.txt, README.md to build package
+        run: |
+          mv $GITHUB_WORKSPACE/{updatefile.txt,README.md} .
+        working-directory: ./build
+
+      - name: Upload plugin artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: Plugin.${{ env.PLUGIN_VERSION }}
+          path: build/
