@@ -169,7 +169,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ env.GIT_COMMIT }}
+          tag_name: v${{ env.GIT_COMMIT }}
           release_name: Release v${{ env.PLUGIN_VERSION }}
           draft: false
           prerelease: false
