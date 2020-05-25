@@ -10,6 +10,7 @@
 Parts of this README are still in the process of being updated.
 
 **Please ensure you read ALL of the [Installation](https://github.com/RGLgg/server-resources-updater/tree/master#installation) section.**
+Clicking on the `Clone and download` button will not work, instead ensure your server has [SourceMod 1.10](http://www.sourcemod.net/downloads.php?branch=stable) and click this badge [![GitHub All Releases](https://img.shields.io/github/downloads/RGLgg/server-resources-updater/total)](https://github.com/RGLgg/server-resources-updater/releases/latest/download/server-resources-updater.zip)
 
 # Pre-Bundled Plugins & Dependencies 
 * [Updater](https://git.empiresmod.com/sourcemod/Updater) 
