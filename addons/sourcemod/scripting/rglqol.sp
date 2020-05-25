@@ -88,8 +88,7 @@ public Action prWelcomeClient(Handle timer, int userid)
     int client = GetClientOfUserId(userid);
     if (client)
     {
-        PrintColoredChat(client, "\x07FFA07A[RGLQoL]\x01 This server is running RGL Updater version \x07FFA07A%s\x01", PLUGIN_VERSION);
-        PrintColoredChat(client, "\x07FFA07A[RGLQoL]\x01 Remember, per RGL rules, players must record POV demos for every match!");
+        PrintColoredChat(client, "\x07FFA07A[RGLQoL]\x01 This server is running RGL QoL version \x07FFA07A%s\x01", PLUGIN_VERSION);
     }
 }
 

@@ -2,7 +2,7 @@
 [![Beta Build](https://github.com/RGLgg/server-resources-updater/workflows/Beta%20Build/badge.svg)](https://github.com/RGLgg/server-resources-updater/actions?query=workflow%3A%22Beta+Build%22)
 [![Release Build](https://github.com/RGLgg/server-resources-updater/workflows/Release%20Build/badge.svg)](https://github.com/RGLgg/server-resources-updater/actions?query=workflow%3A%22Release+Build%22)
 [![Sourcemod Version](https://img.shields.io/badge/SourceMod-v1.10%2B-blue?labelColor=d9860a&color=5596cf)](http://www.sourcemod.net/downloads.php?branch=stable)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/RGLgg/server-resources-updater)](https://github.com/RGLgg/server-resources-updater/releases)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/RGLgg/server-resources-updater)](https://github.com/RGLgg/server-resources-updater/releases/latest)
 [![GitHub All Releases](https://img.shields.io/github/downloads/RGLgg/server-resources-updater/total)](https://github.com/RGLgg/server-resources-updater/releases/latest/download/server-resources-updater.zip)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/RGLgg/server-resources-updater/blob/master/LICENSE)
 
@@ -11,6 +11,7 @@ Parts of this README are still in the process of being updated.
 
 **Please ensure you read ALL of the [Installation](https://github.com/RGLgg/server-resources-updater/tree/master#installation) section.**
 Clicking on the `Clone and download` button will not work, instead ensure your server has [SourceMod 1.10](http://www.sourcemod.net/downloads.php?branch=stable) and click this badge [![GitHub All Releases](https://img.shields.io/github/downloads/RGLgg/server-resources-updater/total)](https://github.com/RGLgg/server-resources-updater/releases/latest/download/server-resources-updater.zip)
+
 
 # Pre-Bundled Plugins & Dependencies 
 * [Updater](https://git.empiresmod.com/sourcemod/Updater) 
@@ -33,11 +34,12 @@ Clicking on the `Clone and download` button will not work, instead ensure your s
     * Updated version of F2's original [pause](https://github.com/F2/F2s-sourcemod-plugins/tree/master/pause) to prevent building of Medic ÜberCharge during a pause 
     * Originally created by F2. Edited by Aad.
 * [RGL.gg QoL Tweaks](https://github.com/RGLgg/server-resources-updater/blob/master/addons/sourcemod/scripting/rglqol.sp)
-    * Adds QoL tweaks for easier competitive server management
+    * Adds QoL tweaks for easier competitive server management and competitive integrity
     * By stephanieLGBT and Aad
 * [RGL.gg Server Resources Updater](https://github.com/RGLgg/server-resources-updater/blob/master/addons/sourcemod/scripting/rglupdater.sp)
     * Automatically updates RGL.gg plugins and files
     * By stephanieLGBT and Aad
+
 
 # Server Resources for RGL.gg
 
@@ -45,7 +47,9 @@ Hi! This github repository contains all of the **required** plugins, configs, ma
 
 In creating the configs, I tried my best to prevent extra and/or useless commands while also minimizing the ability for cheating, exploitation, and unfair play due to preexisting client and/or server settings.
 
-The RGL updater plugin automatically updates itself and the rest of the files downloaded to your server as this repository gets updated. It also contains Quality of Life tweaks for TF2 servers, such as:
+The RGL updater plugin automatically updates itself and the rest of the files downloaded to your server as this repository gets updated. 
+
+It also contains Quality of Life tweaks for TF2 servers, such as:
 
 * Preventing servers from automatically changing level after a match
 
@@ -58,6 +62,7 @@ The RGL updater plugin automatically updates itself and the rest of the files do
 If you find that was missed something in the configs, or if something doesn't work the way it should, and if you have a suggestion, *please submit an issue on GitHub*.
 
 If you have problems with the plugin, or if you have a suggestion, please submit an issue with details. 
+
 
 # Installation
 ## Prerequisites
@@ -82,9 +87,6 @@ After installation, typing `sm version` into the server console will confirm if 
 5. Done!
 
 If you're still having trouble, there's step by step instructions with pictures over in the [wiki](https://github.com/stephanieLGBT/rgl-server-resources/wiki/Installation-Tutorial)!
-
-
-
 
 ## Updating Instructions
 
