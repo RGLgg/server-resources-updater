@@ -60,6 +60,21 @@ public OnRGLBetaChanged(ConVar convar, char[] oldValue, char[] newValue)
     updatePlug = true;
 }
 
+public OnClientPostAdminCheck(client)
+{
+    CreateTimer(15.0, prWelcomeClient, GetClientUserId(client), TIMER_FLAG_NO_MAPCHANGE);
+}
+
+public Action prWelcomeClient(Handle timer, int userid)
+{
+    int client = GetClientOfUserId(userid);
+    if (client)
+    {
+        PrintColoredChat(client, "\x07FFA07A[RGLUpdater]\x01 This server is running RGL Updater version \x07FFA07A%s\x01", PLUGIN_VERSION);
+        PrintColoredChat(client, "\x07FFA07A[RGLUpdater]\x01 Remember, per RGL rules, players must record POV demos for every match!");
+    }
+}
+
 CheckRGLBeta()
 {
     if (!GetConVarBool(FindConVar("rgl_beta")))
