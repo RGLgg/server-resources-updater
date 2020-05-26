@@ -160,7 +160,7 @@ jobs:
 
       - name: Zip build folder
         run: |
-          zip -r release.zip addons
+          zip -r release.zip addons cfg
         working-directory: ./build
 
       - name: Create Release
