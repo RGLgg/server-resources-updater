@@ -275,13 +275,13 @@ The bug report for this issue is [here](https://github.com/ValveSoftware/Source-
 
 ## Special Thanks
 
-thank you to Mastercomms for helping me out with net settings
-
-thank you to Arie from serveme for letting me run some things by him for the configs
+thank you to steph for maintaining and updating the first iteration of the plugin, in addition to creating the configs
 
 thank you to Aad for making the plugin
 
-thank you to steph for maintaining and updating the first iteration of the plugin, in addition to creating the configs
+thank you to Mastercomms for helping me out with net settings
+
+thank you to Arie from serveme for letting me run some things by him for the configs
 
 thank you to JarateKing for adding a .gitattributes file and fixing typos and grammar because I suck with github and english
 
