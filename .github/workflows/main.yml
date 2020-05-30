@@ -39,18 +39,20 @@ jobs:
         working-directory: ${{ env.SOURCEMOD_PATH }}/
 
       # TF2 Comp Fixes: https://github.com/ldesgoui/tf2-comp-fixes
+      # Dhooks2 wget link needs to be updated every time DHooks2 receives an update as their download URL(detour*-sm110) changes on each release
       - name: Get latest version of TF2 Comp Fixes and its DHooks dependency
         run: |
           wget -q -O tmp.zip https://github.com/ldesgoui/tf2-comp-fixes/releases/latest/download/tf2-comp-fixes.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
-          wget -q -O tmp.zip https://github.com/peace-maker/DHooks2/releases/latest/download/dhooks-2.2.0-detours10-sm110.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
+          wget -q -O tmp.zip https://github.com/peace-maker/DHooks2/releases/latest/download/dhooks-2.2.0-detours13-sm110.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
+                             
         working-directory: ${{ env.SOURCEMOD_PATH }}/
 
       # SrcTV+: https://github.com/dalegaard/srctvplus
       - name: Get latest version of SrcTV+
         run: |
-          wget -q -O addons/srctvplus.dll https://github.com/dalegaard/srctvplus//releases/latest/download/srctvplus.dll
-          wget -q -O addons/srctvplus.so https://github.com/dalegaard/srctvplus//releases/latest/download/srctvplus.so
-          wget -q -O addons/srctvplus.vdf https://github.com/dalegaard/srctvplus//releases/latest/download/srctvplus.vdf
+          wget -q -O addons/srctvplus.dll https://github.com/dalegaard/srctvplus/releases/latest/download/srctvplus.dll
+          wget -q -O addons/srctvplus.so https://github.com/dalegaard/srctvplus/releases/latest/download/srctvplus.so
+          wget -q -O addons/srctvplus.vdf https://github.com/dalegaard/srctvplus/releases/latest/download/srctvplus.vdf
         working-directory: ${{ env.WORKSPACE }}/
       
       # TF2 Halftime: https://github.com/stephanieLGBT/tf2-halftime
