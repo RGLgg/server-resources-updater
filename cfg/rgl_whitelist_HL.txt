@@ -1,4 +1,4 @@
-// Whitelist generated at Sun, 31 May 2020 03:54:37 +0200
+// Whitelist generated at Sun, 31 May 2020 04:12:03 +0200
 // Whitelist: RGL.gg Highlander (Season 6) (ID: 10247)
 
 // Share or view this whitelist:
