@@ -84,6 +84,8 @@ After installation, typing `sm version` into the server console will confirm if 
 4. Place everything inside the zip into the root `/tf/` folder. Overwrite any and all files that you get prompted for.
 5. Done!
 
+If you're runnning into errors, completely remove all of the old RGL configs and retry.
+
 If you're still having trouble, there's step by step instructions with pictures over in the [wiki](https://github.com/stephanieLGBT/rgl-server-resources/wiki/Installation-Tutorial)!
 
 ## Updating Instructions
