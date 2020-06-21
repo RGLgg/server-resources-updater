@@ -65,11 +65,11 @@ If you have problems with the plugin, or if you have a suggestion, please submit
 
 # Installation
 ## Prerequisites
-[![Sourcemod Version](https://img.shields.io/badge/SourceMod-v1.10%2B-blue?labelColor=d9860a&color=5596cf)](http://www.sourcemod.net/downloads.php?branch=stable)
+[![Sourcemod Version](https://img.shields.io/badge/SourceMod-v1.10-blue?labelColor=d9860a&color=5596cf)](http://www.sourcemod.net/downloads.php?branch=stable)
 
-With the TF2 Comp Fixes plugin requiring SM 1.10 at minimum due to SM 1.9 now being phased out. The RGL Server Resources Updater will **only support SM 1.10 and onward**. Please make sure you get the right version for your server's operating system!
+With the TF2 Comp Fixes plugin requiring SM 1.10 at minimum due to SM 1.9 now being phased out. The RGL Server Resources Updater will **only support SourceMod 1.10 and higher**. Please make sure you get the right version for your server's operating system! Any previous versions of SourceMod are **unsupported**. 
 
-Any previous versions of SourceMod are **unsupported**. 
+**Note**: This plugin breaks on the SourceMod dev branch, which is currently on 1.11. Use stable branch instead.
 
 This guide [here](https://wiki.alliedmods.net/Upgrading_SourceMod) contains instructions on how to upgrade the files, but please consider doing a fresh install of all your current files to avoid any potential issues. 
 
@@ -77,13 +77,14 @@ After installation, typing `sm version` into the server console will confirm if 
 
 ## Install Instructions
 
-0. [UPDATE YOUR SERVER'S SOURCEMOD VERSION TO 1.10 PLEASE, the plugin WILL NOT RUN on anything older!](https://www.sourcemod.net/downloads.php?branch=stable)
-1. **Remove all old RGL.gg configs from your server.** (THIS IS IMPORTANT, if you do not do this things will break!)
-2. Download the latest zip by clicking on this badge [![GitHub All Releases](https://img.shields.io/github/downloads/RGLgg/server-resources-updater/total)](https://github.com/RGLgg/server-resources-updater/releases/latest/download/server-resources-updater.zip)
+1. [Update SourceMod to at least 1.10](https://www.sourcemod.net/downloads.php?branch=stable). SourceMod 1.11 currently breaks this plugin, however.
+2. Download the latest zip by clicking on this badge [![GitHub All Releases](https://img.shields.io/github/downloads/RGLgg/server-resources-updater/total)](https://github.com/RGLgg/server-resources-updater/releases/latest/download/server-resources-updater.zip).
 
-3. Navigate to your server install folder in an (S)FTP client of your choice
+3. Navigate to your server install folder in an (S)FTP client of your choice.
 4. Place everything inside the zip into the root `/tf/` folder. Overwrite any and all files that you get prompted for.
 5. Done!
+
+If you're runnning into errors, completely remove all of the old RGL configs and retry.
 
 If you're still having trouble, there's step by step instructions with pictures over in the [wiki](https://github.com/stephanieLGBT/rgl-server-resources/wiki/Installation-Tutorial)!
 
