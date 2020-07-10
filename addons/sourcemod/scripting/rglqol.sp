@@ -106,7 +106,6 @@ public Action checkStuff(Handle timer)
     if (StrContains(cfgVal, "rgl") != -1)
     {
         CfgExecuted = true;
-        CreateTimer(15.0, prWelcomeClient, GetClientUserId(client), TIMER_FLAG_NO_MAPCHANGE);
     }
     else
     {
