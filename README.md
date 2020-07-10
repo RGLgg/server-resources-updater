@@ -2,7 +2,6 @@
 [![Beta Build](https://github.com/RGLgg/server-resources-updater/workflows/Beta%20Build/badge.svg)](https://github.com/RGLgg/server-resources-updater/actions?query=workflow%3A%22Beta+Build%22)
 [![Release Build](https://github.com/RGLgg/server-resources-updater/workflows/Release%20Build/badge.svg)](https://github.com/RGLgg/server-resources-updater/actions?query=workflow%3A%22Release+Build%22)
 [![Sourcemod Version](https://img.shields.io/badge/SourceMod-v1.10-blue?labelColor=d9860a&color=5596cf)](http://www.sourcemod.net/downloads.php?branch=stable)
-
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/RGLgg/server-resources-updater)](https://github.com/RGLgg/server-resources-updater/releases/latest)
 [![GitHub All Releases](https://img.shields.io/github/downloads/RGLgg/server-resources-updater/total)](https://github.com/RGLgg/server-resources-updater/releases/latest/download/server-resources-updater.zip)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/RGLgg/server-resources-updater/blob/master/LICENSE)
