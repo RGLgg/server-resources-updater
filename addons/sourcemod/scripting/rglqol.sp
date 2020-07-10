@@ -55,8 +55,7 @@ public OnPluginStart()
     PrintColoredChatAll("\x07FFA07A[RGLQoL]\x01 version \x07FFA07A%s\x01 has been \x073EFF3Eloaded\x01.", PLUGIN_VERSION);
     // hooks round start events
     HookEvent("teamplay_round_start", EventRoundStart);
-    // shoutouts to lange, originally borrowed this from soap_tournament.smx here: https://github.com/Lange/SOAP-TF2DM/blob/master/addons/sourcemod/scripting/soap_tournament.sp#L48
-
+    
     // Win conditions met (maxrounds, timelimit)
     HookEvent("teamplay_game_over", GameOverEvent);
     // Win conditions met (windifference)
@@ -89,7 +88,7 @@ public Action EventRoundStart(Handle event, const char[] name, bool dontBroadcas
 // checks stuff for restarting server
 public Action checkStuff(Handle timer)
 {
-    // we could use tv_enable value here but it wouldn't be accurate if stv hasn't joined yet
+    // using tv_enable value here would be inaccurate if stv hasn't joined yet
     char tvStatusOut[512];
     ServerCommandEx(tvStatusOut, sizeof(tvStatusOut), "tv_status");
     if (StrContains(tvStatusOut, "SourceTV not active") != -1)
@@ -113,7 +112,7 @@ public Action checkStuff(Handle timer)
     {
         CfgExecuted = false;
     }
-    // if the server isnt empty, don't restart! Duh
+    // if the server isnt empty, don't restart!
     if (curplayers > 0)
     {
         LogMessage("[RGLQoL] At least 1 player on server. Not restarting.");
@@ -131,7 +130,7 @@ public Action checkStuff(Handle timer)
         LogMessage("[RGLQoL] STV is currently live! Not restarting.");
         return;
     }
-    // ok. if we got this far, restart the server
+    // restarts the server if it is empty
     else
     {
         LogMessage("[RGLQoL] Server empty. Issuing sv_shutdown.");
@@ -179,7 +178,6 @@ public OnSTVChanged(ConVar convar, char[] oldValue, char[] newValue)
 public OnServerCfgChanged(ConVar convar, char[] oldValue, char[] newValue)
 {
     // if cfg changes, then update tv_maxclients to 5
-    // closes https://github.com/stephanieLGBT/rgl-server-resources/issues/14
     if (GetConVarInt(FindConVar("tv_maxclients")) == 128)
     {
         SetConVarInt(FindConVar("tv_maxclients"), 5);
@@ -223,7 +221,7 @@ public SetDefaultWhitelist()
     }
 }
 
-// pure checking code below provided by nosoop ("top kekkeroni#4449" on discord) thank you i love you
+// pure checking code
 public Action OnPure(int client, const char[] command, int argc)
 {
     if (argc > 0)
