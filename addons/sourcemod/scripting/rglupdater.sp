@@ -62,7 +62,13 @@ public OnRGLBetaChanged(ConVar convar, char[] oldValue, char[] newValue)
 
 public OnClientPostAdminCheck(client)
 {
-    CreateTimer(15.0, prWelcomeClient, GetClientUserId(client), TIMER_FLAG_NO_MAPCHANGE);
+    char cfgVal[128];
+    GetConVarString(FindConVar("servercfgfile"), cfgVal, sizeof(cfgVal));
+    if (StrContains(cfgVal, "rgl") != -1)
+    {
+        CreateTimer(15.0, prWelcomeClient, GetClientUserId(client), TIMER_FLAG_NO_MAPCHANGE);
+    }
+    
 }
 
 public Action prWelcomeClient(Handle timer, int userid)
