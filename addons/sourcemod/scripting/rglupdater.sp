@@ -62,10 +62,7 @@ public OnRGLBetaChanged(ConVar convar, char[] oldValue, char[] newValue)
 
 public OnClientPostAdminCheck(client)
 {
-<<<<<<< HEAD
     char cfgVal[128];
-=======
->>>>>>> 1794aebe076f66ac749fefbb47ab9ef62e0e06e5
     GetConVarString(FindConVar("servercfgfile"), cfgVal, sizeof(cfgVal));
     if (StrContains(cfgVal, "rgl") != -1)
     {
