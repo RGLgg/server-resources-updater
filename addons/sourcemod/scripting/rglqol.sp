@@ -78,19 +78,6 @@ public OnMapStart()
     ServerCommand("sm plugins unload waitforstv");
 }
 
-public OnClientPostAdminCheck(client)
-{
-    CreateTimer(15.0, prWelcomeClient, GetClientUserId(client), TIMER_FLAG_NO_MAPCHANGE);
-}
-
-public Action prWelcomeClient(Handle timer, int userid)
-{
-    int client = GetClientOfUserId(userid);
-    if (client)
-    {
-        PrintColoredChat(client, "\x07FFA07A[RGLQoL]\x01 This server is running RGL QoL version \x07FFA07A%s\x01", PLUGIN_VERSION);
-    }
-}
 
 public Action EventRoundStart(Handle event, const char[] name, bool dontBroadcast)
 {
@@ -120,6 +107,7 @@ public Action checkStuff(Handle timer)
     if (StrContains(cfgVal, "rgl") != -1)
     {
         CfgExecuted = true;
+        CreateTimer(15.0, prWelcomeClient, GetClientUserId(client), TIMER_FLAG_NO_MAPCHANGE);
     }
     else
     {
@@ -180,7 +168,7 @@ public OnSTVChanged(ConVar convar, char[] oldValue, char[] newValue)
     if (StringToInt(newValue) == 1)
     {
         LogMessage("[RGLQoL] tv_enable changed to 1! Changing level in 30 seconds unless manual map change occurs before then.");
-        change30();
+        change15();
     }
     else if (StringToInt(newValue) == 0)
     {
@@ -252,16 +240,16 @@ public void InvokePureCommandCheck(any ignored)
     if (StrContains(pureOut, "changelevel") != -1)
     {
         LogMessage("[RGLQoL] sv_pure cvar changed! Changing level in 30 seconds unless manual map change occurs before then.");
-        change30();
+        change15();
     }
 }
 
-public change30()
+public change15()
 {
     if (!alreadyChanging)
     {
         g_hWarnServ = CreateTimer(5.0, WarnServ, TIMER_FLAG_NO_MAPCHANGE);
-        g_hForceChange = CreateTimer(30.0, ForceChange, TIMER_FLAG_NO_MAPCHANGE);
+        g_hForceChange = CreateTimer(15.0, ForceChange, TIMER_FLAG_NO_MAPCHANGE);
         alreadyChanging = true;
     }
 }
