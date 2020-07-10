@@ -33,6 +33,7 @@
         "Plugin"         "/cfg/rgl_HL_koth_bo5.cfg"
         "Plugin"         "/cfg/rgl_mm_base.cfg"
         "Plugin"         "/cfg/rgl_6s_5cp_gc.cfg"
+        "Plugin"         "/cfg/rgl_6s_koth_scrim.cfg"
         "Plugin"         "/cfg/rgl_7s_koth.cfg"
         "Plugin"         "/cfg/rgl_HL_base.cfg"
         "Plugin"         "/cfg/rgl_6s_5cp_match.cfg"
