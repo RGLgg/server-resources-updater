@@ -1,4 +1,4 @@
-// Whitelist generated at Sat, 18 Jul 2020 23:22:53 +0200
+// Whitelist generated at Fri, 07 Aug 2020 20:13:57 +0200
 // Whitelist: RGL.gg 7v7 (Season 8) (ID: 10834)
 
 // Share or view this whitelist:
