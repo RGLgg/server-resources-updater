@@ -4,9 +4,10 @@
     {
         "Version"
         {
-            "Latest"    "999" // FAKE VERSION THAT FORCES UPDATEs TO PREVENT MODIFYING NON CUSTOM CFGS. CHECK CURRENT VERSION WITH SM PLUGINS LIST
+            "Latest"    "999"
         }
-        "Notes"         "Check the RGL.gg GitHub for the latest updates!"
+        "Notes"         "This version number is used to force updates."
+        "Notes"         "Check the RGL.gg GitHub for the latest patch notes!"
         "Notes"         "https://github.com/RGLgg/server-resources-updater"
     }
     "Files"
