@@ -1,5 +1,5 @@
-// Whitelist generated at Fri, 07 Aug 2020 20:13:53 +0200
-// Whitelist: RGL.gg 6v6 (Season 3) (ID: 10833)
+// Whitelist generated at Sun, 01 Nov 2020 20:59:03 +0100
+// Whitelist: RGL.gg 6v6 (Season 4) (ID: 10833)
 
 // Share or view this whitelist:
 //	https://whitelist.tf/rgl_6v6

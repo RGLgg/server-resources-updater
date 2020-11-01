@@ -1,11 +1,19 @@
 #undef REQUIRE_PLUGIN
-#include <updater>
+#include "include/updater.inc"
 #define REQUIRE_PLUGIN
 
 #pragma semicolon 1
 #pragma newdecls required
 
+#include <dhooks>
+#include <sdkhooks>
+#include <sdktools>
+#include <tf2_stocks>
+
 #include "tf2-comp-fixes/common.sp"
+
+#include "tf2-comp-fixes/concede.sp"
+#include "tf2-comp-fixes/debug.sp"
 #include "tf2-comp-fixes/deterministic-fall-damage.sp"
 #include "tf2-comp-fixes/fix-ghost-crossbow-bolts.sp"
 #include "tf2-comp-fixes/fix-slope-bug.sp"
@@ -19,13 +27,15 @@
 #include "tf2-comp-fixes/tournament-end-ignores-whitelist.sp"
 #include "tf2-comp-fixes/winger-jump-bonus-when-fully-deployed.sp"
 
+#define PLUGIN_VERSION "1.10.3"
+
 // clang-format off
 public
 Plugin myinfo = {
     name = "TF2 Competitive Fixes",
     author = "ldesgoui",
     description = "Various technical or gameplay changes catered towards competitive play",
-    version = "1.8.2",
+    version = PLUGIN_VERSION,
     url = "https://github.com/ldesgoui/tf2-comp-fixes"
 };
 // clang-format on
@@ -47,7 +57,9 @@ void OnPluginStart() {
     RegConsoleCmd("sm_cf", Command_Cf, "Batch update of TF2 Competitive Fixes cvars");
 
     Common_Setup(game_config);
+    Debug_Setup();
 
+    Concede_Setup();
     DeterministicFallDamage_Setup(game_config);
     FixGhostCrossbowBolts_Setup();
     FixSlopeBug_Setup(game_config);
@@ -127,6 +139,8 @@ Action Command_Cf(int client, int args) {
         rgl = true;
     } else if (StrEqual(full, "none")) {
     } else {
+        ReplyToCommand(client, "TF2 Competitive Fixes");
+        ReplyToCommand(client, "Version: %s", PLUGIN_VERSION);
         ReplyToCommand(client, "Usage: sm_cf (list | all | fixes | etf2l | ozf | rgl | none)");
         return Plugin_Handled;
     }
@@ -138,16 +152,16 @@ Action Command_Cf(int client, int args) {
     }
 
     FindConVar("sm_deterministic_fall_damage").SetBool(all || fixes || etf2l || rgl);
-    FindConVar("sm_fix_ghost_crossbow_bolts").SetBool(all || fixes || etf2l || rgl);
+    FindConVar("sm_fix_ghost_crossbow_bolts").SetBool(all || fixes || etf2l || ozf || rgl);
     FindConVar("sm_fix_slope_bug").SetBool(all || fixes || etf2l || ozf || rgl);
     FindConVar("sm_fix_sticky_delay").SetBool(all || fixes || etf2l || ozf || rgl);
-    FindConVar("sm_gunboats_always_apply").SetBool(all);
-    FindConVar("sm_projectiles_ignore_teammates").SetBool(all || fixes);
+    FindConVar("sm_gunboats_always_apply").SetBool(all || etf2l);
+    FindConVar("sm_projectiles_ignore_teammates").SetBool(all || fixes || etf2l);
     FindConVar("sm_remove_halloween_souls").SetBool(all || fixes || etf2l || ozf || rgl);
-    FindConVar("sm_remove_medic_attach_speed").SetBool(all);
+    FindConVar("sm_remove_medic_attach_speed").SetBool(all || etf2l);
     FindConVar("sm_remove_pipe_spin").SetBool(all || fixes);
     FindConVar("sm_rest_in_peace_rick_may").SetInt(all || fixes || rgl ? 128 : ozf ? 255 : 0);
-    FindConVar("sm_winger_jump_bonus_when_fully_deployed").SetBool(all);
+    FindConVar("sm_winger_jump_bonus_when_fully_deployed").SetBool(all || etf2l);
     PrintToChatAll("[TF2 Competitive Fixes] Successfully applied '%s' preset", full);
 
     return Plugin_Handled;
