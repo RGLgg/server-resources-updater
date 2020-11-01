@@ -1,5 +1,5 @@
 #undef REQUIRE_PLUGIN
-#include <updater>
+#include "include/updater.inc"
 #define REQUIRE_PLUGIN
 
 #pragma semicolon 1
@@ -11,6 +11,8 @@
 #include <tf2_stocks>
 
 #include "tf2-comp-fixes/common.sp"
+
+#include "tf2-comp-fixes/concede.sp"
 #include "tf2-comp-fixes/debug.sp"
 #include "tf2-comp-fixes/deterministic-fall-damage.sp"
 #include "tf2-comp-fixes/fix-ghost-crossbow-bolts.sp"
@@ -25,7 +27,7 @@
 #include "tf2-comp-fixes/tournament-end-ignores-whitelist.sp"
 #include "tf2-comp-fixes/winger-jump-bonus-when-fully-deployed.sp"
 
-#define PLUGIN_VERSION "1.9.0"
+#define PLUGIN_VERSION "1.10.3"
 
 // clang-format off
 public
@@ -57,6 +59,7 @@ void OnPluginStart() {
     Common_Setup(game_config);
     Debug_Setup();
 
+    Concede_Setup();
     DeterministicFallDamage_Setup(game_config);
     FixGhostCrossbowBolts_Setup();
     FixSlopeBug_Setup(game_config);
@@ -149,16 +152,16 @@ Action Command_Cf(int client, int args) {
     }
 
     FindConVar("sm_deterministic_fall_damage").SetBool(all || fixes || etf2l || rgl);
-    FindConVar("sm_fix_ghost_crossbow_bolts").SetBool(all || fixes || etf2l || rgl);
+    FindConVar("sm_fix_ghost_crossbow_bolts").SetBool(all || fixes || etf2l || ozf || rgl);
     FindConVar("sm_fix_slope_bug").SetBool(all || fixes || etf2l || ozf || rgl);
     FindConVar("sm_fix_sticky_delay").SetBool(all || fixes || etf2l || ozf || rgl);
-    FindConVar("sm_gunboats_always_apply").SetBool(all);
-    FindConVar("sm_projectiles_ignore_teammates").SetBool(all || fixes);
+    FindConVar("sm_gunboats_always_apply").SetBool(all || etf2l);
+    FindConVar("sm_projectiles_ignore_teammates").SetBool(all || fixes || etf2l);
     FindConVar("sm_remove_halloween_souls").SetBool(all || fixes || etf2l || ozf || rgl);
-    FindConVar("sm_remove_medic_attach_speed").SetBool(all);
+    FindConVar("sm_remove_medic_attach_speed").SetBool(all || etf2l);
     FindConVar("sm_remove_pipe_spin").SetBool(all || fixes);
     FindConVar("sm_rest_in_peace_rick_may").SetInt(all || fixes || rgl ? 128 : ozf ? 255 : 0);
-    FindConVar("sm_winger_jump_bonus_when_fully_deployed").SetBool(all);
+    FindConVar("sm_winger_jump_bonus_when_fully_deployed").SetBool(all || etf2l);
     PrintToChatAll("[TF2 Competitive Fixes] Successfully applied '%s' preset", full);
 
     return Plugin_Handled;
