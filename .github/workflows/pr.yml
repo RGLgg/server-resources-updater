@@ -14,8 +14,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
       - name: Set environment variables
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         run: |
           git fetch --unshallow
           VERSION=$(git rev-list --count HEAD)
