@@ -1,4 +1,4 @@
-// Whitelist generated at Wed, 13 Jan 2021 08:08:42 +0100
+// Whitelist generated at Wed, 13 Jan 2021 08:10:59 +0100
 // Whitelist: RGL.gg Highlander (Season 7) (ID: 10247)
 
 // Share or view this whitelist:
