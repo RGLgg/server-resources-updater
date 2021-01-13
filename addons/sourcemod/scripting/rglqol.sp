@@ -5,7 +5,7 @@
 #include <regex>
 
 #define PLUGIN_NAME                 "RGL.gg QoL Tweaks"
-#define PLUGIN_VERSION              "1.4.1"
+#define PLUGIN_VERSION              "1.4.2"
 
 bool:CfgExecuted;
 bool:alreadyChanging;
@@ -128,15 +128,6 @@ public Action checkStuff(Handle timer)
     {
         LogMessage("[RGLQoL] STV is currently live! Not restarting.");
         return;
-    }
-    // restarts the server if it is empty
-    else
-    {
-        LogMessage("[RGLQoL] Server empty. Issuing sv_shutdown.");
-        // set the server to never shut down here unless it's FULLY empty with this convar...
-        SetConVarInt(FindConVar("sv_shutdown_timeout_minutes"), 0, false);
-        // ...and actually send an sv_shutdown. if MY player-on-server logic somehow fails...tf2's HOPEFULLY shouldn't
-        ServerCommand("sv_shutdown");
     }
 }
 

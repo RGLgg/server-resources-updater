@@ -1,4 +1,4 @@
-// Whitelist generated at Wed, 09 Dec 2020 05:34:47 +0100
+// Whitelist generated at Wed, 13 Jan 2021 08:12:05 +0100
 // Whitelist: RGL.gg Highlander (Season 7) (ID: 10247)
 
 // Share or view this whitelist:
@@ -95,10 +95,13 @@
 	"The Lollichop"							"0"
 	"The Rainblower"						"0"
 
-	//------ Noise making/Explosion on death miscs (Total: 3) -------\\
+	//------ Noise making/Explosion on death miscs (Total: 6) -------\\
 	"Bombinomicon"							"0"
+	"Jolly Jingler"							"0"
+	"Reindoonibeanie"						"0"
 	"The Bootie Time"						"0"
 	"The Jingle Belt"						"0"
+	"Elf Care Provider"						"0"
 
 	//--------------------- Taunts (Total: 39) ----------------------\\
 	//_________________________ All classes _________________________\\
