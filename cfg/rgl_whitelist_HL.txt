@@ -1,5 +1,5 @@
-// Whitelist generated at Wed, 13 Jan 2021 08:10:59 +0100
-// Whitelist: RGL.gg Highlander (Season 7) (ID: 10247)
+// Whitelist generated at Sun, 17 Jan 2021 02:01:45 +0100
+// Whitelist: RGL.gg Highlander (Season 8) (ID: 11484)
 
 // Share or view this whitelist:
 //	https://whitelist.tf/rgl_9v9
@@ -25,6 +25,10 @@
 // - Primary
 //  * Air Strike
 
+// Blocked weapons for Pyro
+// - Secondary
+//  * Scorch Shot
+
 // Blocked weapons for Engineer
 // - Secondary
 //  * Short Circuit
@@ -33,6 +37,7 @@
 // - Primary
 //  * Machina
 // - Secondary
+//  * Darwin's Danger Shield
 //  * Jarate
 
 // Blocked weapons for Spy
@@ -43,18 +48,21 @@
 {
 	"unlisted_items_default_to"		"1"
 
-	//------------- Blocked weapons/reskins (Total: 12) -------------\\
+	//------------- Blocked weapons/reskins (Total: 14) -------------\\
 	//____________________________ Scout ____________________________\\
 	"Crit-a-Cola"							"0"
 	"Mad Milk"							"0"
 	"Mutated Milk"							"0"
 	//___________________________ Soldier ___________________________\\
 	"The Air Strike"						"0"
+	//____________________________ Pyro _____________________________\\
+	"The Scorch Shot"						"0"
 	//____________________________ Heavy ____________________________\\
 	"Deflector"							"0"
 	//__________________________ Engineer ___________________________\\
 	"The Short Circuit"						"0"
 	//___________________________ Sniper ____________________________\\
+	"Darwin's Danger Shield"					"0"
 	"Festive Jarate"						"0"
 	"Jarate"							"0"
 	"Shooting Star"							"0"
