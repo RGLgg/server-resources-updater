@@ -1,4 +1,4 @@
-// Whitelist generated at Sun, 17 Jan 2021 02:01:45 +0100
+// Whitelist generated at Sat, 24 Apr 2021 21:48:52 +0200
 // Whitelist: RGL.gg Highlander (Season 8) (ID: 11484)
 
 // Share or view this whitelist:
