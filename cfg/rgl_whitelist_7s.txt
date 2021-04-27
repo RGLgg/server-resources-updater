@@ -1,5 +1,5 @@
-// Whitelist generated at Sun, 17 Jan 2021 02:20:45 +0100
-// Whitelist: RGL.gg 7v7 (Season 8) (ID: 10834)
+// Whitelist generated at Tue, 27 Apr 2021 22:57:25 +0200
+// Whitelist: RGL.gg 7v7 (Season 9) (ID: 11163)
 
 // Share or view this whitelist:
 //	https://whitelist.tf/rgl_7v7
@@ -43,14 +43,12 @@
 // Blocked weapons for Spy
 // - Secondary
 //  * Diamondback
-// - Sapper
-//  * Red-Tape Recorder
 
 "item_whitelist"
 {
 	"unlisted_items_default_to"		"1"
 
-	//------------- Blocked weapons/reskins (Total: 18) -------------\\
+	//------------- Blocked weapons/reskins (Total: 16) -------------\\
 	//____________________________ Scout ____________________________\\
 	"Crit-a-Cola"							"0"
 	"Mad Milk"							"0"
@@ -71,9 +69,7 @@
 	"The Razorback"							"0"
 	"The Self-Aware Beauty Mark"					"0"
 	//_____________________________ Spy _____________________________\\
-	"Promo Red-Tape Recorder"					"0"
 	"The Diamondback"						"0"
-	"The Red-Tape Recorder"						"0"
 
 	//------------- ConTrabanned ConTracker (Total: 1) --------------\\
 	//_________________________ All classes _________________________\\
