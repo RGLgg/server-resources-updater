@@ -65,12 +65,6 @@ jobs:
           wget -q -O scripting/tf2Halftime.sp https://raw.githubusercontent.com/stephanieLGBT/tf2-halftime/master/scripting/tf2Halftime.sp
         working-directory: ${{ env.SOURCEMOD_PATH }}/
 
-      # Updated Pause Plugin: https://github.com/l-Aad-l/updated-pause-plugin
-      - name: Get latest version of Updated Pause Plugin
-        run: |
-          wget -q -O tmp.zip https://github.com/l-Aad-l/updated-pause-plugin/releases/latest/download/updated-pause-plugin.zip && unzip -o tmp.zip 'addons/*' -d ../../  && rm tmp.zip
-        working-directory: ${{ env.SOURCEMOD_PATH }}/
-
       # Color Literals: https://github.com/JoinedSenses/SourceMod-IncludeLibrary/blob/master/include/color_literals.inc
       - name: Get latest version of Color Literals
         run: |
@@ -99,6 +93,12 @@ jobs:
             spcomp -E -w234 -O2 -v2 -i $SCRIPTS_PATH/include $plugin.sp
           done
         working-directory: ${{ env.SCRIPTS_PATH }}/
+
+      # Updated Pause Plugin: https://github.com/l-Aad-l/updated-pause-plugin
+      - name: Get latest version of Updated Pause Plugin
+        run: |
+          wget -q -O tmp.zip https://github.com/l-Aad-l/updated-pause-plugin/releases/latest/download/updated-pause-plugin.zip && unzip -o tmp.zip 'addons/*' -d ../../  && rm tmp.zip
+        working-directory: ${{ env.SOURCEMOD_PATH }}/
 
       - name: Move compiled plugins
         run: |
