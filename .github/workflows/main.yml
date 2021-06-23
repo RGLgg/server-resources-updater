@@ -45,7 +45,7 @@ jobs:
       - name: Get latest version of TF2 Comp Fixes and its DHooks dependency
         run: |
           wget -q -O tmp.zip https://github.com/ldesgoui/tf2-comp-fixes/releases/latest/download/tf2-comp-fixes.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
-          wget -q -O tmp.zip https://github.com/peace-maker/DHooks2/releases/download/v2.2.0-detours15/dhooks-2.2.0-detours15-sm110.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
+          wget -q -O tmp.zip https://github.com/peace-maker/DHooks2/releases/download/v2.2.0-detours16/dhooks-2.2.0-detours16-sm110.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
                              
         working-directory: ${{ env.SOURCEMOD_PATH }}/
 
@@ -62,12 +62,6 @@ jobs:
         run: |
           wget -q -O scripting/include/morecolors.inc https://raw.githubusercontent.com/stephanieLGBT/tf2-halftime/master/scripting/include/morecolors.inc
           wget -q -O scripting/tf2Halftime.sp https://raw.githubusercontent.com/stephanieLGBT/tf2-halftime/master/scripting/tf2Halftime.sp
-        working-directory: ${{ env.SOURCEMOD_PATH }}/
-
-      # Updated Pause Plugin: https://github.com/l-Aad-l/updated-pause-plugin
-      - name: Get latest version of Updated Pause Plugin
-        run: |
-          wget -q -O tmp.zip https://github.com/l-Aad-l/updated-pause-plugin/releases/latest/download/updated-pause-plugin.zip && unzip -o tmp.zip 'addons/*' -d ../../  && rm tmp.zip
         working-directory: ${{ env.SOURCEMOD_PATH }}/
 
       # Color Literals: https://github.com/JoinedSenses/SourceMod-IncludeLibrary/blob/master/include/color_literals.inc
@@ -98,6 +92,12 @@ jobs:
             spcomp -E -w234 -O2 -v2 -i $SCRIPTS_PATH/include $plugin.sp
           done
         working-directory: ${{ env.SCRIPTS_PATH }}/
+
+      # Updated Pause Plugin: https://github.com/l-Aad-l/updated-pause-plugin
+      - name: Get latest version of Updated Pause Plugin
+        run: |
+          wget -q -O tmp.zip https://github.com/l-Aad-l/updated-pause-plugin/releases/latest/download/updated-pause-plugin.zip && unzip -o tmp.zip 'addons/*' -d ../../  && rm tmp.zip
+        working-directory: ${{ env.SOURCEMOD_PATH }}/
 
       - name: Move compiled plugins
         run: |
