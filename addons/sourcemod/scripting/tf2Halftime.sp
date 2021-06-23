@@ -1,37 +1,42 @@
 #pragma semicolon 1                 // enables strict semicolon mode
+#pragma newdecls required           // force newdecls
 
 #include <sourcemod>
 #include <morecolors>
 
-#define PLUGIN_VERSION  "1.4"
+#pragma newdecls required           // force newdecls again because SourceMod(tm)
+
+
+#define PLUGIN_VERSION  "1.5"
 
 public Plugin myinfo = {
     name                            = "basic halftime for 5cp and koth",
     author                          = "stephanie",
     description                     = "emulates esea style halves for 5cp and koth maps",
     version                         =  PLUGIN_VERSION,
-    url                             = "https://stephanie.lgbt"
+    url                             = "https://sappho.io"
 };
 
-new bluRnds;                        // blu round int created here
-new redRnds;                        // blu round int created here
-new bool:isHalf2;                   // bool value for determining halftime created here
-new String:mapName[128];            // holds map name value to then later check against for determining map type
-new half1Limit;                     // int for determining winlimit for half 1
-new totalWinLimit;                  // int for determining total winlimit b4 resetting tourney
-new bool:tourneyRestart;            // bool value for determining if we should restart the tournament on the next round start
-new String:staleReason[32];         // why did a stalemate happen?
-new HalfStale;                      // if a stalemate happened, was it due to a natural server timelimit being reached, or the winlimit being reached?
-new bool:gameIsLive;                // is the game live yet? set on round end events
+int bluRnds;                        // blu round int created here
+int redRnds;                        // blu round int created here
+bool isHalf2;                       // bool value for determining halftime created here
+char mapName[128];                  // holds map name value to then later check against for determining map type
+int half1Limit;                     // int for determining winlimit for half 1
+int totalWinLimit;                  // int for determining total winlimit b4 resetting tourney
+bool tourneyRestart;                // bool value for determining if we should restart the tournament on the next round start
+char staleReason[32];               // why did a stalemate happen?
+int HalfStale;                      // if a stalemate happened, was it due to a natural server timelimit being reached, or the winlimit being reached?
+bool gameIsLive;                    // is the game live yet? set on round end events
 
 public void OnPluginStart()
 {
-    CPrintToChatAll("{mediumpurple}[tf2Halftime] {white}has been {green}loaded{default}.");
+    MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {white}has been {green}loaded{default}.");
     HookEvent("teamplay_game_over", EventGameOver);                 // hooks game over events
     HookEvent("teamplay_round_win", EventRoundEnd);                 // hooks round win events
     HookEvent("teamplay_round_start", EventRoundStart);             // hooks round start events
     SetConVarInt(FindConVar("mp_winlimit"), 0, true);               // finds and sets winlimit to 0, as this plugin handles it instead
-    SetConVarInt(FindConVar("mp_tournament_readymode"), 1, true);   // sets readymode to per player
+    //SetConVarInt(FindConVar("mp_tournament_readymode"), 1, true);   // sets readymode to per player
+    // ^ OUTSIDE OF SCOPE & VERY BUGGY!
 }
 
 public void OnMapStart()
@@ -51,7 +56,7 @@ public void OnMapStart()
     {
         half1Limit = 0;
         totalWinLimit = 0;
-        CPrintToChatAll("{mediumpurple}[tf2Halftime] {yellow}Warning!{white} tf2Halftime is somehow running on an unsupported map. Unloading!");
+        MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {yellow}Warning!{white} tf2Halftime is somehow running on an unsupported map. Unloading!");
         ServerCommand("sm plugins unload disabled/tf2Halftime");
     }
 }
@@ -88,32 +93,32 @@ public void EventRoundEnd(Event event, const char[] name, bool dontBroadcast)   
     if (team == 2 && winreason == 1)                                            // RED TEAM NON-STALEMATE WIN EVENT
     {
         redRnds++;                                                              // increments red round counter by +1
-        CPrintToChatAll("{mediumpurple}[tf2Halftime] {red}Red{white} wins! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds);
+        MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {red}Red{white} wins! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds);
         if (redRnds >= half1Limit && !isHalf2)                                  // red reaches (half1Limit) rounds before timelimit
         {
             isHalf2 = true;
-            CPrintToChatAll("{mediumpurple}[tf2Halftime] {white}Halftime reached! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds);
+            MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {white}Halftime reached! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds);
             tourneyRestart = true;
         }
         else if (redRnds >= totalWinLimit && isHalf2)                           // red reaches (totalWinLimit) rounds
         {
-            CPrintToChatAll("{mediumpurple}[tf2Halftime] {white}The game is over, and {red}Red{white} wins! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds);
+            MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {white}The game is over, and {red}Red{white} wins! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds);
             tourneyRestart = true;
         }
     }
     else if (team == 3 && winreason == 1)                                       // BLU TEAM NON-STALEMATE WIN EVENT
     {
         bluRnds++;                                                              // increments blu round counter by +1
-        CPrintToChatAll("{mediumpurple}[tf2Halftime] {blue}Blu{white} wins! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds);
+        MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {blue}Blu{white} wins! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds);
         if (bluRnds >= half1Limit && !isHalf2)                                  // blu reaches (half1Limit) rounds before timelimit
         {
             isHalf2 = true;
-            CPrintToChatAll("{mediumpurple}[tf2Halftime] {white}Halftime reached! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds);
+            MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {white}Halftime reached! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds);
             tourneyRestart = true;
         }
         else if (bluRnds >= totalWinLimit && isHalf2)                           // blu reaches (totalWinLimit) rounds
         {
-            CPrintToChatAll("{mediumpurple}[tf2Halftime] {white}The game is over, and {blue}Blu{white} wins! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds);
+            MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {white}The game is over, and {blue}Blu{white} wins! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds);
             tourneyRestart = true;
         }
     }
@@ -121,17 +126,17 @@ public void EventRoundEnd(Event event, const char[] name, bool dontBroadcast)   
     {
         if (winreason == 5 && !HalfStale)                                       // this covers 5cp round timer stalemates
         {
-            CPrintToChatAll("{mediumpurple}[tf2Halftime] {white}Round stalemate! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds);
+            MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {white}Round stalemate! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds);
         }
         else if (redRnds > bluRnds)                                             // does red have more points?
         {
             if (isHalf2)
             {
-                CPrintToChatAll("{mediumpurple}[tf2Halftime] {white}Timelimit reached! The game is over, and {red}Red{white} wins! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds);                           // red win @ timelimit in half 2
+                MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {white}Timelimit reached! The game is over, and {red}Red{white} wins! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds);                           // red win @ timelimit in half 2
             }
             else if (!isHalf2)
             {
-                CPrintToChatAll("{mediumpurple}[tf2Halftime] {white}Timelimit reached! {red}Red{white} is in the lead! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds); // red winning @ halftime
+                MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {white}Timelimit reached! {red}Red{white} is in the lead! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds); // red winning @ halftime
                 isHalf2 = true;
             }
         }
@@ -139,11 +144,11 @@ public void EventRoundEnd(Event event, const char[] name, bool dontBroadcast)   
         {
             if (isHalf2)
             {
-            CPrintToChatAll("{mediumpurple}[tf2Halftime] {white}Timelimit reached! The game is over, and {blue}Blu{white} wins! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds); // blu win @ timelimit in half 2
+            MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {white}Timelimit reached! The game is over, and {blue}Blu{white} wins! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds); // blu win @ timelimit in half 2
             }
             else if (!isHalf2)
             {
-                CPrintToChatAll("{mediumpurple}[tf2Halftime] {white}Timelimit reached! {blue}Blu{white} is in the lead! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds); // blu winning @ halftime
+                MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {white}Timelimit reached! {blue}Blu{white} is in the lead! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds); // blu winning @ halftime
                 isHalf2 = true;
             }
         }
@@ -151,12 +156,12 @@ public void EventRoundEnd(Event event, const char[] name, bool dontBroadcast)   
         {
             if (isHalf2)
             {
-                CPrintToChatAll("{mediumpurple}[tf2Halftime] {white}Timelimit reached! Neither team has won! Setting up golden cap. The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds);                           // tie @ end of game, do GC stuff
+                MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {white}Timelimit reached! Neither team has won! Setting up golden cap. The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds);                           // tie @ end of game, do GC stuff
                 ServerCommand("exec rgl_6s_5cp_gc");                            // rgl_6s_5cp_gc unloads tf2Halftime FYI!
             }
             else if (!isHalf2)
             {
-                CPrintToChatAll("{mediumpurple}[tf2Halftime] {white}Timelimit reached! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds); // tie @ halftime
+                MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {white}Timelimit reached! The score is {red}Red{white}: {red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds); // tie @ halftime
                 isHalf2 = true;
             }
         }
@@ -164,22 +169,22 @@ public void EventRoundEnd(Event event, const char[] name, bool dontBroadcast)   
     }
     else // catch all for nonsensical scenarios
     {
-        CPrintToChatAll("{mediumpurple}[tf2Halftime] {white}Something broke!. The score is {red}Red{white}:{red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds);
-        CPrintToChatAll("{mediumpurple}[tf2Halftime] {white}Spitting out debug info: winreason %i, team %i. Score is {red}Red{white}:{red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", winreason, team, redRnds, bluRnds);
-        CPrintToChatAll("{mediumpurple}[tf2Halftime] {white}More debug info: half1Limit %i, totalWinLimit %i.", half1Limit, totalWinLimit);
-        CPrintToChatAll("{mediumpurple}[tf2Halftime] {white}PLEASE REPORT THIS TO AN RGL ADMIN!");
+        MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {white}Something broke!. The score is {red}Red{white}:{red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", redRnds, bluRnds);
+        MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {white}Spitting out debug info: winreason %i, team %i. Score is {red}Red{white}:{red}%i{white}, {blue}Blu{white}: {blue}%i{white}.", winreason, team, redRnds, bluRnds);
+        MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {white}More debug info: half1Limit %i, totalWinLimit %i.", half1Limit, totalWinLimit);
+        MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {white}PLEASE REPORT THIS TO AN RGL ADMIN!");
         if (isHalf2)
         {
-            CPrintToChatAll("{mediumpurple}[tf2Halftime] {white}isHalf2 = true");
+            MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {white}isHalf2 = true");
         }
         else
         {
-            CPrintToChatAll("{mediumpurple}[tf2Halftime] {white}isHalf2 = false");
+            MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {white}isHalf2 = false");
         }
     }
 }
 
-int printScore(client)
+int printScore(int client)
 {
     if (IsClientInGame(client) && !IsFakeClient(client))
     {
@@ -194,19 +199,16 @@ int printScore(client)
 
 public void EventRoundStart(Event event, const char[] name, bool dontBroadcast)  // Round Start Event
 {
-    CPrintToChatAll("{mediumpurple}[tf2Halftime] {white}This server is running tf2Halftime version {mediumpurple}%s", PLUGIN_VERSION);
+    MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {white}This server is running tf2Halftime version {mediumpurple}%s", PLUGIN_VERSION);
     if (gameIsLive)                     // if the game is live, display the score on round start
     {
-        for (                           // for loop for getting client ids. rewritten from integritf2
-            new client = 1;
-            client <= MaxClients;
-            client++
-            )
+        // for loop for getting client ids
+        for (int client = 1; client <= MaxClients; client++)
         {
             printScore(client);         // print the score if the game is live no matter what
             if (tourneyRestart)         // but only do halftime things if it's halftime
             {
-                CPrintToChatAll("{mediumpurple}[tf2Halftime] {white}Issuing mp_tournament_restart...");
+                MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {white}Issuing mp_tournament_restart...");
                 ServerCommand("mp_tournament_restart");
                 tourneyRestart = false;
                 HalfStale = false;
@@ -215,13 +217,14 @@ public void EventRoundStart(Event event, const char[] name, bool dontBroadcast) 
     }
     else if (!gameIsLive)
     {
-        CPrintToChatAll("{mediumpurple}[tf2Halftime] {white}To see the score at any time during the game, type {mediumpurple}!score");
+        MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {white}To see the score at any time during the game, type {mediumpurple}!score");
     }
 }
 
 public Action OnClientSayCommand(int client, const char[] command, const char[] clTxt)
 {
-    if (SimpleRegexMatch(clTxt, "^(\\!|\\.|\\+|\\/|\\?|sm_|)score(|s)$", 3) >= 1)  // 3 is the igm regex flag for pcre, which sourcemod uses (well i mean technically there's no g flag but who cares)
+    // 3 is the igm regex flag for pcre, which sourcemod uses (well i mean technically there's no g flag but who cares)
+    if (SimpleRegexMatch(clTxt, "^(\\!|\\.|\\+|\\/|\\?|sm_|)score(|s)$", 3) >= 1)
     {
         printScore(client);
         return Plugin_Handled;
@@ -231,8 +234,5 @@ public Action OnClientSayCommand(int client, const char[] command, const char[] 
 
 public void OnPluginEnd()
 {
-    CPrintToChatAll("{mediumpurple}[tf2Halftime] {white}has been {red}unloaded{default}.");
+    MC_PrintToChatAll("{mediumpurple}[tf2Halftime] {white}has been {red}unloaded{default}.");
 }
-
-// shoutouts to my gf, claire, for helping me with this
-// trans rights

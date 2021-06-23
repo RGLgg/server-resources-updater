@@ -1,5 +1,5 @@
-// Whitelist generated at Tue, 27 Apr 2021 22:51:13 +0200
-// Whitelist: RGL.gg 6v6 (Season 5) (ID: 10833)
+// Whitelist generated at Wed, 23 Jun 2021 02:22:53 +0200
+// Whitelist: RGL.gg 6v6 (Season 6) (ID: 10833)
 
 // Share or view this whitelist:
 //	https://whitelist.tf/rgl_6v6
@@ -145,8 +145,7 @@
 	"The Lollichop"							"0"
 	"The Rainblower"						"0"
 
-	//------ Noise making/Explosion on death miscs (Total: 6) -------\\
-	"Bombinomicon"							"0"
+	//------ Noise making/Explosion on death miscs (Total: 5) -------\\
 	"Jolly Jingler"							"0"
 	"Reindoonibeanie"						"0"
 	"The Bootie Time"						"0"

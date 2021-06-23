@@ -1,5 +1,5 @@
-// Whitelist generated at Tue, 27 Apr 2021 22:51:14 +0200
-// Whitelist: RGL.gg Highlander (Season 8) (ID: 11484)
+// Whitelist generated at Wed, 23 Jun 2021 02:22:55 +0200
+// Whitelist: RGL.gg Highlander (Season 9) (ID: 11484)
 
 // Share or view this whitelist:
 //	https://whitelist.tf/rgl_9v9
@@ -103,8 +103,7 @@
 	"The Lollichop"							"0"
 	"The Rainblower"						"0"
 
-	//------ Noise making/Explosion on death miscs (Total: 6) -------\\
-	"Bombinomicon"							"0"
+	//------ Noise making/Explosion on death miscs (Total: 5) -------\\
 	"Jolly Jingler"							"0"
 	"Reindoonibeanie"						"0"
 	"The Bootie Time"						"0"
