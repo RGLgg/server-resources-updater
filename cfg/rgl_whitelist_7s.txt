@@ -1,4 +1,4 @@
-// Whitelist generated at Tue, 27 Apr 2021 22:57:25 +0200
+// Whitelist generated at Wed, 23 Jun 2021 02:25:51 +0200
 // Whitelist: RGL.gg 7v7 (Season 9) (ID: 11163)
 
 // Share or view this whitelist:
@@ -103,8 +103,7 @@
 	"The Lollichop"							"0"
 	"The Rainblower"						"0"
 
-	//------ Noise making/Explosion on death miscs (Total: 6) -------\\
-	"Bombinomicon"							"0"
+	//------ Noise making/Explosion on death miscs (Total: 5) -------\\
 	"Jolly Jingler"							"0"
 	"Reindoonibeanie"						"0"
 	"The Bootie Time"						"0"

@@ -6,7 +6,7 @@
 // Needed for the SDKFuncConfSource enum.
 #include <sdktools>
 
-#define INVALID_HOOK_ID -1
+#define INVALID_HOOK_ID 0
 
 enum ObjectValueType
 {
@@ -411,7 +411,7 @@ methodmap DHookSetup < Handle
 	//
 	// @return              True on success, false if nothing was found.
 	// @error               Invalid setup or gamedata handle.
-	public native bool SetFromConf(GameData gameconf, SDKFuncConfSource source, const char[] name);
+	public native bool SetFromConf(Handle gameconf, SDKFuncConfSource source, const char[] name);
 
 	// Adds a parameter to a hook setup.
 	//
@@ -452,7 +452,7 @@ methodmap DynamicHook < DHookSetup
 	// @return              Setup handle for the detour or null if offset wasn't found.
 	// @error               Failed to create detour setup handle, invalid gamedata handle,
 	//                      invalid callback function or failed to find function in cached "Functions" sections.
-	public static native DynamicHook FromConf(GameData gameconf, const char[] name);
+	public static native DynamicHook FromConf(Handle gameconf, const char[] name);
 
 	// Hook an entity.
 	//
@@ -548,7 +548,7 @@ methodmap DynamicDetour < DHookSetup
 	// @return              Setup handle for the detour or null if offset wasn't found.
 	// @error               Failed to create detour setup handle, invalid gamedata handle,
 	//                      invalid callback function or failed to find function in cached "Functions" sections.
-	public static native DynamicDetour FromConf(GameData gameconf, const char[] name);
+	public static native DynamicDetour FromConf(Handle gameconf, const char[] name);
 
 	// Enable the detour of the function described in this detour setup.
 	// If you need to read the return value of the function, choose a post hook.
@@ -570,7 +570,7 @@ methodmap DynamicDetour < DHookSetup
 	// @param callback      Callback function.
 	//
 	// @return              True if detour was disabled, false otherwise.
-	// @error				Hook handle is not setup for a detour or function is not detoured.
+	// @error               Hook handle is not setup for a detour or function is not detoured.
 	public native bool Disable(HookMode mode, DHookCallback callback);
 };
 
