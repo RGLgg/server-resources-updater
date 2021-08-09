@@ -1,4 +1,4 @@
-// Whitelist generated at Mon, 09 Aug 2021 19:29:50 +0200
+// Whitelist generated at Mon, 09 Aug 2021 23:57:12 +0200
 // Whitelist: RGL.gg Highlander (Season 9) (ID: 11484)
 
 // Share or view this whitelist:

@@ -182,7 +182,8 @@ public SetDefaultWhitelist()
     // check to see if tftrue exists, and if it fails to load after a tf2 update use default mp_tournament_whitelist
     if(FileExists("addons/TFTrue.vdf")) 
     {
-        if (FindConVar("tftrue_version") != INVALID_HANDLE) 
+        // if we don't have a handle for tftrue version it's not loaded
+        if (FindConVar("tftrue_version") == null) 
         {
             LogMessage("[RGLQoL] TFTrue exists but is not loaded, may be broken. Using default mp_tournament_whitelist value instead.");
 
