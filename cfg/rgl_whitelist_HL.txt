@@ -1,4 +1,4 @@
-// Whitelist generated at Mon, 09 Aug 2021 23:57:12 +0200
+// Whitelist generated at Thu, 07 Oct 2021 01:44:34 +0200
 // Whitelist: RGL.gg Highlander (Season 9) (ID: 11484)
 
 // Share or view this whitelist:
@@ -75,6 +75,10 @@
 	//_________________________ All classes _________________________\\
 	"Activated Campaign 3 Pass"					"0"
 
+	//-------------- Globally banned items (Total: 1) ---------------\\
+	//____________________________ Scout ____________________________\\
+	"The Corpse Carrier"						"0"
+
 	//------------------- Noisemakers (Total: 14) -------------------\\
 	"Charity Noise Maker - Bell"					"0"
 	"Charity Noise Maker - Tingsha"					"0"
@@ -110,7 +114,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 39) ----------------------\\
+	//--------------------- Taunts (Total: 44) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -129,10 +133,12 @@
 	"Taunt: The Boston Boarder"					"0"
 	"Taunt: The Bunnyhopper"					"0"
 	"Taunt: The Carlton"						"0"
+	"Taunt: The Homerunner's Hobby"					"0"
 	"Taunt: The Scooty Scoot"					"0"
 	//___________________________ Soldier ___________________________\\
 	"Taunt: Panzer Pants"						"0"
 	"Taunt: Rocket Jockey"						"0"
+	"Taunt: The Profane Puppeteer"					"0"
 	//____________________________ Pyro _____________________________\\
 	"Pool Party Taunt"						"0"
 	"Taunt: Scorcher's Solo"					"0"
@@ -140,8 +146,10 @@
 	"Taunt: The Skating Scorcher"					"0"
 	//___________________________ Demoman ___________________________\\
 	"Taunt: Scotsmann's Stagger"					"0"
+	"Taunt: The Drunken Sailor"					"0"
 	"Taunt: The Pooped Deck"					"0"
 	//____________________________ Heavy ____________________________\\
+	"Taunt: Bare Knuckle Beatdown"					"0"
 	"Taunt: The Boiling Point"					"0"
 	"Taunt: The Russian Arms Race"					"0"
 	"Taunt: The Soviet Strongarm"					"0"
@@ -154,6 +162,7 @@
 	"Taunt: The Jumping Jack"					"0"
 	//____________________________ Medic ____________________________\\
 	"Taunt: Surgeon's Squeezebox"					"0"
+	"Taunt: The Mannbulance!"					"0"
 	"Taunt: Time Out Therapy"					"0"
 	//___________________________ Sniper ____________________________\\
 	"Taunt: Didgeridrongo"						"0"
