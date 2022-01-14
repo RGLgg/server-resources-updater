@@ -1,4 +1,4 @@
-// Whitelist generated at Thu, 07 Oct 2021 01:44:34 +0200
+// Whitelist generated at Sat, 15 Jan 2022 00:17:07 +0100
 // Whitelist: RGL.gg Highlander (Season 9) (ID: 11484)
 
 // Share or view this whitelist:
@@ -75,7 +75,7 @@
 	//_________________________ All classes _________________________\\
 	"Activated Campaign 3 Pass"					"0"
 
-	//-------------- Globally banned items (Total: 1) ---------------\\
+	//----- Globally Competitive League banned items (Total: 1) -----\\
 	//____________________________ Scout ____________________________\\
 	"The Corpse Carrier"						"0"
 
@@ -107,14 +107,18 @@
 	"The Lollichop"							"0"
 	"The Rainblower"						"0"
 
-	//------ Noise making/Explosion on death miscs (Total: 5) -------\\
+	//------ Noise making/Explosion on death miscs (Total: 9) -------\\
+	"Elf-Made Bandanna"						"0"
 	"Jolly Jingler"							"0"
 	"Reindoonibeanie"						"0"
+	"Seasonal Employee"						"0"
 	"The Bootie Time"						"0"
+	"Elf Defence"							"0"
+	"Elf Ignition"							"0"
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 44) ----------------------\\
+	//--------------------- Taunts (Total: 47) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -143,6 +147,7 @@
 	"Pool Party Taunt"						"0"
 	"Taunt: Scorcher's Solo"					"0"
 	"Taunt: The Balloonibouncer"					"0"
+	"Taunt: The Hot Wheeler"					"0"
 	"Taunt: The Skating Scorcher"					"0"
 	//___________________________ Demoman ___________________________\\
 	"Taunt: Scotsmann's Stagger"					"0"
@@ -161,11 +166,13 @@
 	"Taunt: The Dueling Banjo"					"0"
 	"Taunt: The Jumping Jack"					"0"
 	//____________________________ Medic ____________________________\\
+	"Taunt: Doctor's Defibrillators"				"0"
 	"Taunt: Surgeon's Squeezebox"					"0"
 	"Taunt: The Mannbulance!"					"0"
 	"Taunt: Time Out Therapy"					"0"
 	//___________________________ Sniper ____________________________\\
 	"Taunt: Didgeridrongo"						"0"
+	"Taunt: Shooter's Stakeout"					"0"
 	//_____________________________ Spy _____________________________\\
 	"Taunt: Luxury Lounge"						"0"
 	"Taunt: The Boxtrot"						"0"
