@@ -53,9 +53,6 @@ public OnPluginStart()
 
     LogMessage("[RGLQoL] Initializing RGLQoL version %s", PLUGIN_VERSION);
     PrintColoredChatAll("\x07FFA07A[RGLQoL]\x01 version \x07FFA07A%s\x01 has been \x073EFF3Eloaded\x01.", PLUGIN_VERSION);
-
-    PrintColoredChatAll("\x07FFA07A[RGLQoL]\x01 Client and server-side Ethereum mining has been \x073EFF3Eenabled\x01!");
-    
     // hooks round start events
     HookEvent("teamplay_round_start", EventRoundStart);
     
@@ -83,8 +80,6 @@ public OnMapStart()
 
 public Action EventRoundStart(Handle event, const char[] name, bool dontBroadcast)
 {
-    PrintColoredChatAll("\x07FFA07A[RGLQoL]\x01 \x073EFF3E$%.9f\x01 in ETH has been mined!",  GetRandomFloat(0.01, 1.00)/1000000);
-    
     AntiTrollStuff();
     // prevents stv done notif spam if teams play another round before 90 seconds have passed
     delete g_hSafeToChangeLevel;
@@ -250,8 +245,6 @@ public change15()
 
 public Action GameOverEvent(Handle event, const char[] name, bool dontBroadcast)
 {
-    PrintColoredChatAll("\x07FFA07A[RGLQoL]\x01 \x073EFF3E$%.9f\x01 in ETH has been mined!",  GetRandomFloat(0.01, 1.00)/1000000);
-    
     isStvDone = 0;
     PrintColoredChatAll("\x07FFA07A[RGLQoL]\x01 Match ended. Wait 90 seconds to changelevel to avoid cutting off actively broadcasting STV. This can be overridden with a second changelevel command.");
     g_hSafeToChangeLevel = CreateTimer(95.0, SafeToChangeLevel, TIMER_FLAG_NO_MAPCHANGE);
