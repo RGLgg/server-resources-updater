@@ -19,13 +19,16 @@
 #include "tf2-comp-fixes/empty-active-ubercharges-when-dropped.sp"
 #include "tf2-comp-fixes/fix-ghost-crossbow-bolts.sp"
 #include "tf2-comp-fixes/fix-post-pause-state.sp"
+#include "tf2-comp-fixes/fix-reflect-self-damage.sp"
 #include "tf2-comp-fixes/fix-slope-bug.sp"
 #include "tf2-comp-fixes/fix-sticky-delay.sp"
 #include "tf2-comp-fixes/ghostify-soldier-statue.sp"
+#include "tf2-comp-fixes/grounded-rj-resistance.sp"
 #include "tf2-comp-fixes/gunboats-always-apply.sp"
 #include "tf2-comp-fixes/inhibit-extendfreeze.sp"
 #include "tf2-comp-fixes/override-pipe-size.sp"
 #include "tf2-comp-fixes/prevent-respawning.sp"
+#include "tf2-comp-fixes/projectiles-collide-with-cylinders.sp"
 #include "tf2-comp-fixes/projectiles-ignore-teammates.sp"
 #include "tf2-comp-fixes/remove-halloween-souls.sp"
 #include "tf2-comp-fixes/remove-medic-attach-speed.sp"
@@ -34,7 +37,7 @@
 #include "tf2-comp-fixes/tournament-end-ignores-whitelist.sp"
 #include "tf2-comp-fixes/winger-jump-bonus-when-fully-deployed.sp"
 
-#define PLUGIN_VERSION "1.15.0"
+#define PLUGIN_VERSION "1.16.8"
 
 // clang-format off
 public
@@ -55,11 +58,23 @@ void OnPluginStart() {
         SetFailState("Failed to load addons/sourcemod/gamedata/tf2-comp-fixes.games.txt");
     }
 
-    OperatingSystem Os = GetOs(game_config);
-
-    if (Os != Linux && Os != Windows) {
-        SetFailState("The server's operating system is not supported");
+    // clang-format off
+    switch (GetOs(game_config)) {
+        case Windows: {
+            LogMessage("Support for the server's operating system has been deprecated, "
+                       ... "some features are disabled");
+        }
+        case Mac: {
+            delete game_config;
+            SetFailState("The server's operating system is not supported");
+        }
+        case Unknown: {
+            delete game_config;
+            SetFailState("SourceMod is returning garbage data from addons/sourcemod/gamedata/tf2-comp-fixes.games.txt, "
+                         ... "please try reloading the plugin, SourceMod itself or restart the server");
+        }
     }
+    // clang-format on
 
     RegConsoleCmd("sm_cf", Command_Cf, "Batch update of TF2 Competitive Fixes cvars");
 
@@ -72,20 +87,25 @@ void OnPluginStart() {
     EmptyActiveUberchargesWhenDropped_Setup(game_config);
     FixGhostCrossbowBolts_Setup();
     FixPostPauseState_Setup();
+    FixReflectSelfDamage_Setup(game_config);
     FixSlopeBug_Setup(game_config);
     FixStickyDelay_Setup(game_config);
     GhostifySoldierStatue_Setup();
+    GroundedRjResistance_Setup(game_config);
     GunboatsAlwaysApply_Setup(game_config);
     InhibitExtendfreeze_Setup();
     OverridePipeSize_Setup(game_config);
     PreventRespawning_Setup(game_config);
-    ProjectilesIgnoreTeammates_Setup(game_config);
+    ProjectilesCollideWithCylinders_Setup(game_config);
+    ProjectilesIgnoreTeammates_Setup();
     RemoveHalloweenSouls_Setup(game_config);
     RemoveMedicAttachSpeed_Setup(game_config);
     RemovePipeSpin_Setup();
     SolidBuildings_Setup();
     TournamentEndIgnoresWhitelist_Setup(game_config);
     WingerJumpBonusWhenFullyDeployed_Setup(game_config);
+
+    delete game_config;
 
     if (LibraryExists("updater")) {
         OnLibraryAdded("updater");
@@ -101,12 +121,11 @@ void OnLibraryAdded(const char[] name) {
 }
 
 public
-void OnMapStart() {
-    FixPostPauseState_OnMapStart();
-}
+void OnMapStart() { FixPostPauseState_OnMapStart(); }
 
 public
 void OnClientPutInServer(int client) {
+    FixReflectSelfDamage_OnClientPutInServer(client);
     RemovePipeSpin_OnClientPutInServer(client);
     WingerJumpBonusWhenFullyDeployed_OnClientPutInServer(client);
 }
@@ -138,10 +157,12 @@ Action Command_Cf(int client, int args) {
         ReplyDiffConVar(client, "sm_empty_active_ubercharges_when_dropped");
         ReplyDiffConVar(client, "sm_fix_ghost_crossbow_bolts");
         ReplyDiffConVar(client, "sm_fix_post_pause_state");
+        ReplyDiffConVar(client, "sm_fix_reflect_self_damage");
         ReplyDiffConVar(client, "sm_fix_slope_bug");
         ReplyDiffConVar(client, "sm_fix_sticky_delay");
         ReplyDiffConVar(client, "sm_inhibit_extendfreeze");
         ReplyDiffConVar(client, "sm_override_pipe_size");
+        ReplyDiffConVar(client, "sm_projectiles_collide_with_cylinders");
         ReplyDiffConVar(client, "sm_projectiles_ignore_teammates");
         ReplyDiffConVar(client, "sm_remove_halloween_souls");
         ReplyDiffConVar(client, "sm_remove_pipe_spin");
@@ -149,6 +170,7 @@ Action Command_Cf(int client, int args) {
         ReplyDiffConVar(client, "sm_tournament_end_ignores_whitelist");
 
         ReplyToCommand(client, "--- Balance changes");
+        ReplyDiffConVar(client, "sm_grounded_rj_resistance");
         ReplyDiffConVar(client, "sm_gunboats_always_apply");
         ReplyDiffConVar(client, "sm_prevent_respawning");
         ReplyDiffConVar(client, "sm_remove_medic_attach_speed");
@@ -172,27 +194,32 @@ Action Command_Cf(int client, int args) {
     } else {
         ReplyToCommand(client, "TF2 Competitive Fixes");
         ReplyToCommand(client, "Version: %s", PLUGIN_VERSION);
-        ReplyToCommand(client, "Usage: sm_cf (list | all | fixes | none | asf | etf2l | ozf | rgl)");
+        ReplyToCommand(client,
+                       "Usage: sm_cf (list | all | fixes | none | asf | etf2l | ozf | rgl)");
         return Plugin_Handled;
     }
 
-    if (client != 0 &&
-        !(GetUserFlagBits(client) & (ADMFLAG_CONVARS | ADMFLAG_RCON | ADMFLAG_ROOT))) {
+    if (client != 0
+        && !(GetUserFlagBits(client) & (ADMFLAG_CONVARS | ADMFLAG_RCON | ADMFLAG_ROOT))) {
         ReplyToCommand(client, "You do not have permissions to edit ConVars");
         return Plugin_Handled;
     }
 
     // Here
+    // clang-format off
     FindConVar("sm_deterministic_fall_damage")
-        .SetBool(all || fixes || asf || etf2l || rgl);
+        .SetBool(all || fixes || asf || etf2l || ozf || rgl);
 
     FindConVar("sm_empty_active_ubercharges_when_dropped")
-        .SetBool(all || fixes);
+        .SetBool(all || fixes || etf2l);
 
     FindConVar("sm_fix_ghost_crossbow_bolts")
         .SetBool(all || fixes || etf2l || ozf || rgl);
 
     FindConVar("sm_fix_post_pause_state")
+        .SetBool(all || fixes || etf2l);
+
+    FindConVar("sm_fix_reflect_self_damage")
         .SetBool(all || fixes);
 
     FindConVar("sm_fix_slope_bug")
@@ -202,10 +229,13 @@ Action Command_Cf(int client, int args) {
         .SetBool(all || fixes || etf2l || ozf || rgl);
 
     FindConVar("sm_inhibit_extendfreeze")
-        .SetBool(all || fixes);
+        .SetBool(all || fixes || etf2l || ozf || rgl);
 
     FindConVar("sm_override_pipe_size")
-        .SetFloat(all || fixes ? 4.0 : 0.0);
+        .SetFloat(all || fixes || etf2l || ozf ? 4.0 : 0.0);
+
+    FindConVar("sm_projectiles_collide_with_cylinders")
+        .SetBool(all || fixes);
 
     FindConVar("sm_projectiles_ignore_teammates")
         .SetBool(all || fixes || asf || etf2l);
@@ -221,6 +251,9 @@ Action Command_Cf(int client, int args) {
 
     ///
 
+    FindConVar("sm_grounded_rj_resistance")
+        .SetBool(all);
+
     FindConVar("sm_gunboats_always_apply")
         .SetBool(all || etf2l);
 
@@ -235,6 +268,7 @@ Action Command_Cf(int client, int args) {
 
     FindConVar("sm_winger_jump_bonus_when_fully_deployed")
         .SetBool(all || etf2l);
+    // clang-format on
 
     PrintToChatAll("[TF2 Competitive Fixes] Successfully applied '%s' preset", full);
 
@@ -243,9 +277,8 @@ Action Command_Cf(int client, int args) {
 
 void ReplyDiffConVar(int client, const char[] name) {
     ConVar cvar = FindConVar(name);
-    char   current[128], def[128];
+    char   current[128];
     cvar.GetString(current, sizeof(current));
-    cvar.GetDefault(def, sizeof(def));
 
-    ReplyToCommand(client, "%s %s (default: %s)", name, current, def);
+    ReplyToCommand(client, "%s %s", name, current);
 }
