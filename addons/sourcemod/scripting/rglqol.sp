@@ -5,7 +5,7 @@
 #include <regex>
 
 #define PLUGIN_NAME                 "RGL.gg QoL Tweaks"
-#define PLUGIN_VERSION              "1.4.2"
+#define PLUGIN_VERSION              "1.4.3"
 
 bool:CfgExecuted;
 bool:alreadyChanging;
