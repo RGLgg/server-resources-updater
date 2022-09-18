@@ -111,6 +111,7 @@ jobs:
       - name: Disable optional plugins
         run: |
           mv tf2Halftime.smx disabled
+          mv roundtimer_override.smx disabled/
         working-directory: ${{ env.PLUGINS_PATH }}/
 
       - name: Rebuild updatefile.txt 
