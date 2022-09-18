@@ -1,5 +1,5 @@
-// Whitelist generated at Mon, 05 Sep 2022 02:20:10 +0200
-// Whitelist: RGL.gg Highlander (Season 9) (ID: 11484)
+// Whitelist generated at Sun, 18 Sep 2022 23:34:23 +0200
+// Whitelist: RGL.gg Highlander (Season 13) (ID: 13297)
 
 // Share or view this whitelist:
 //	https://whitelist.tf/rgl_9v9
@@ -118,7 +118,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 47) ----------------------\\
+	//--------------------- Taunts (Total: 45) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -142,7 +142,6 @@
 	//___________________________ Soldier ___________________________\\
 	"Taunt: Panzer Pants"						"0"
 	"Taunt: Rocket Jockey"						"0"
-	"Taunt: The Profane Puppeteer"					"0"
 	//____________________________ Pyro _____________________________\\
 	"Pool Party Taunt"						"0"
 	"Taunt: Scorcher's Solo"					"0"
@@ -166,7 +165,6 @@
 	"Taunt: The Dueling Banjo"					"0"
 	"Taunt: The Jumping Jack"					"0"
 	//____________________________ Medic ____________________________\\
-	"Taunt: Doctor's Defibrillators"				"0"
 	"Taunt: Surgeon's Squeezebox"					"0"
 	"Taunt: The Mannbulance!"					"0"
 	"Taunt: Time Out Therapy"					"0"
