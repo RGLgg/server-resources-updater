@@ -44,7 +44,7 @@ public OnPluginStart()
     
 }
 
-public DisablePlugin(const String:plugin_file[])
+public Action DisablePlugin(const String:plugin_file[])
 {
     // Thanks to DarthNinja's Plugin Enable/Disable
     new String:disabledpath[256], String:enabledpath[256];
@@ -52,7 +52,7 @@ public DisablePlugin(const String:plugin_file[])
     BuildPath(Path_SM, disabledpath, sizeof(disabledpath), "plugins/disabled/%s.smx", plugin_file);	
     BuildPath(Path_SM, enabledpath, sizeof(enabledpath), "plugins/%s.smx", plugin_file);	
     new String:PluginWExt[70];
-	Format(PluginWExt, sizeof(PluginWExt), "%s.smx", plugin_file);
+    Format(PluginWExt, sizeof(PluginWExt), "%s.smx", plugin_file);
     
     if (!FileExists(enabledpath))
     {
@@ -76,7 +76,7 @@ public DisablePlugin(const String:plugin_file[])
     RenameFile(disabledpath, enabledpath);
     
     LogMessage("[RGLUpdater] The plugin '%s' has been unloaded and moved to the /disabled/ directory.", PluginName);
-    return true;
+    return Plugin_Continue;
 }
 
 public OnLibraryAdded(const String:name[])
