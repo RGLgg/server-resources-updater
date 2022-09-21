@@ -23,6 +23,7 @@ public Plugin:myinfo =
 
 public OnPluginStart()
 {
+    DisablePlugin("roundtimer_override");
     LogMessage("[RGLUpdater] version %s has been loaded.", PLUGIN_VERSION);
     PrintColoredChatAll("\x07FFA07A[RGLUpdater]\x01 version \x07FFA07A%s\x01 has been \x073EFF3Eloaded\x01.", PLUGIN_VERSION);
     updatePlug = false;
@@ -40,6 +41,42 @@ public OnPluginStart()
         );
     HookConVarChange(FindConVar("rgl_beta"), OnRGLBetaChanged);
     CheckRGLBeta();
+    
+}
+
+public DisablePlugin(const String:plugin_file[])
+{
+    // Thanks to DarthNinja's Plugin Enable/Disable
+    new String:disabledpath[256], String:enabledpath[256];
+    
+    BuildPath(Path_SM, disabledpath, sizeof(disabledpath), "plugins/disabled/%s.smx", plugin_file);	
+    BuildPath(Path_SM, enabledpath, sizeof(enabledpath), "plugins/%s.smx", plugin_file);	
+    new String:PluginWExt[70];
+	Format(PluginWExt, sizeof(PluginWExt), "%s.smx", plugin_file);
+    
+    if (!FileExists(enabledpath))
+    {
+        LogMessage("[RGLUpdater] The plugin file could not be found.");
+        return Plugin_Handled;
+    }
+
+    if (FileExists(disabledpath))
+    {
+        LogMessage("[RGLUpdater] An existing plugin file (%s) has been detected that conflicts with the one being moved. No action has been taken.", disabledpath);
+        return Plugin_Handled;
+    }
+    
+    new Handle:Loaded = FindPluginByFile(PluginWExt);
+    new String:PluginName[128];
+    if (Loaded != INVALID_HANDLE)
+        GetPluginInfo(Loaded, PlInfo_Name, PluginName, sizeof(PluginName));
+    else
+        strcopy(PluginName, sizeof(PluginName), PluginWExt);
+    ServerCommand("sm plugins unload %s", plugin_file);
+    RenameFile(disabledpath, enabledpath);
+    
+    LogMessage("[RGLUpdater] The plugin '%s' has been unloaded and moved to the /disabled/ directory.", PluginName);
+    return true;
 }
 
 public OnLibraryAdded(const String:name[])
