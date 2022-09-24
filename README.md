@@ -25,6 +25,9 @@ Parts of this README are still in the process of being updated.
     * Included dependency 
         * [DHooks2](https://github.com/peace-maker/DHooks2)
     * By twiikuu
+* [Progressive Ruleset Timer Plugins](https://github.com/b4nnyBot/Progressive-Ruleset-Timer-Plugins)
+    * Creates dynamic win conditions for 5CP gamemodes
+    * By b4nny and Dooby Skoo
 * [SrcTV+](https://github.com/dalegaard/srctvplus)
     * SrcTV+ makes the server send all events to SrcTV.
     * By GipsArm - [TFTV Thread](https://www.teamfortress.tv/46380/srctv)
