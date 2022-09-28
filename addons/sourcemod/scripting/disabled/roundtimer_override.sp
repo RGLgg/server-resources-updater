@@ -7,6 +7,15 @@
 ConVar round_time_override = null;
 Handle timer_preventSpam = INVALID_HANDLE;
 
+public Plugin myinfo =
+{
+	name = "Roundtimer Override",
+	author = "Dooby Skoo",
+	description = "???",
+	version = "0.0.3",
+	url = "https://github.com/dewbsku"
+};
+
 public void OnPluginStart()
 {
 	round_time_override = CreateConVar("round_time_override", "-1", "(Seconds) Overrides the round timer on 5cp maps so that instead of 10 minutes, it can be set to any length");
