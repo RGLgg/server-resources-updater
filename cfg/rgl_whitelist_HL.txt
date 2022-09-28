@@ -1,4 +1,4 @@
-// Whitelist generated at Wed, 28 Sep 2022 04:19:57 +0200
+// Whitelist generated at Wed, 28 Sep 2022 04:24:13 +0200
 // Whitelist: RGL.gg Highlander (Season 13) (ID: 13297)
 
 // Share or view this whitelist:
