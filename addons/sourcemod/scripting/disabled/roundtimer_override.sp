@@ -5,6 +5,16 @@
 #include <sdktools>
 
 ConVar round_time_override = null;
+Handle timer_preventSpam = INVALID_HANDLE;
+
+public Plugin myinfo =
+{
+	name = "Roundtimer Override",
+	author = "Dooby Skoo",
+	description = "???",
+	version = "0.0.3",
+	url = "https://github.com/dewbsku"
+};
 
 public void OnPluginStart()
 {
@@ -26,5 +36,13 @@ public void timer_spawn_post(int timer)
 {
 	SetVariantInt(round_time_override.IntValue);
 	AcceptEntityInput(timer, "SetMaxTime");
-	PrintToChatAll("Overrode round timer time to %d seconds", round_time_override.IntValue);
+	if(timer_preventSpam==INVALID_HANDLE){
+        PrintToChatAll("Overrode round timer time to %d seconds", round_time_override.IntValue);
+        timer_preventSpam = CreateTimer(1.0, preventSpam, _, TIMER_FLAG_NO_MAPCHANGE);
+    }
+}
+
+public Action preventSpam(Handle timer){
+    timer_preventSpam = INVALID_HANDLE;
+    return Plugin_Continue;
 }
