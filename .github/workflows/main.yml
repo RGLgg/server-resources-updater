@@ -54,8 +54,8 @@ jobs:
       # SrcTV+: https://github.com/dalegaard/srctvplus
       - name: Get latest version of SrcTV+
         run: |
-          wget -q -O addons/srctvplus.dll https://github.com/dalegaard/srctvplus/releases/latest/download/srctvplus.dll
-          wget -q -O addons/srctvplus.so https://github.com/dalegaard/srctvplus/releases/latest/download/srctvplus.so
+          wget -q -O addons/srctvplus.dll https://cdn.discordapp.com/attachments/326429943623974912/1029917640589844480/srctvplus.dll
+          wget -q -O addons/srctvplus.so https://cdn.discordapp.com/attachments/326429943623974912/1029917520494342214/srctvplus.so
           wget -q -O addons/srctvplus.vdf https://github.com/dalegaard/srctvplus/releases/latest/download/srctvplus.vdf
         working-directory: ${{ env.WORKSPACE }}/
       
