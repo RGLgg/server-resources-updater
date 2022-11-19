@@ -7,7 +7,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/RGLgg/server-resources-updater/blob/master/LICENSE)
 
 **Please ensure you read ALL of the [Installation](https://github.com/RGLgg/server-resources-updater/tree/master#installation) section.**
-Clicking on the `Clone and download` button will not work, instead ensure your server has [SourceMod 1.10](http://www.sourcemod.net/downloads.php?branch=stable) and click this badge [![GitHub All Releases](https://img.shields.io/github/downloads/RGLgg/server-resources-updater/total)](https://github.com/RGLgg/server-resources-updater/releases/latest/download/server-resources-updater.zip)
+Clicking on the `Clone and download` button will not work, instead ensure your server has [SourceMod 1.10](https://www.sourcemod.net/downloads.php?branch=1.10-dev&all=1) and click this badge [![GitHub All Releases](https://img.shields.io/github/downloads/RGLgg/server-resources-updater/total)](https://github.com/RGLgg/server-resources-updater/releases/latest/download/server-resources-updater.zip)
 
 If youre running a **linux distro**, please **make sure it's up to date with EPEL**, some servers may have issues with TF2 Comp Fixes / RGL Updater.
 
