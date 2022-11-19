@@ -1,4 +1,4 @@
-// Whitelist generated at Thu, 13 Oct 2022 03:52:58 +0200
+// Whitelist generated at Sat, 19 Nov 2022 01:17:02 +0100
 // Whitelist: RGL.gg 6v6 (Season 7) (ID: 13347)
 
 // Share or view this whitelist:
@@ -117,9 +117,10 @@
 	//_________________________ All classes _________________________\\
 	"Activated Campaign 3 Pass"					"0"
 
-	//----- Globally Competitive League banned items (Total: 1) -----\\
+	//----- Globally Competitive League banned items (Total: 2) -----\\
 	//____________________________ Scout ____________________________\\
 	"The Corpse Carrier"						"0"
+	"The Sprinting Cephalopod"					"0"
 
 	//------------------- Noisemakers (Total: 14) -------------------\\
 	"Charity Noise Maker - Bell"					"0"
