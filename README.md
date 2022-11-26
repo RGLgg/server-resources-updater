@@ -1,7 +1,7 @@
 [![RGL.gg](https://img.shields.io/badge/RGL.gg-blue?logo=data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABEXAAARFwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKITtQenz/f/6/P//+vz///r8///6/P///////4u89cYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACeD7EHu9f7///////////////////////////+MvvbGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlguxB+Pv///////////////////7+/v//////jL72xgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATZjvPkaV8P9VnfH/h7n1/9Xn/P/5+/7//////4u99sUAAAAAAAAAAAAAAAAAAAAATJjwv0uW782SwfbNh7v1zUyX8NpMl+//TJfv/0uX7/9Ll+//XKDx/9vq/P+rz/j0j8D2zJDA9s2QwPbNjr/2zU2X8O9Klu//5/H8//n7/v9XnfD/TZjw/k2Y8P9NmPD/TZjw/02Y8P9GlO/+vtr6//////////////////////9NmPDuTJfv/67Q+P//////cKzz/0yX7/9NmPD/TZjw/02Y8P9NmPD/TZjw/02Y8P/d6/z////////////6/P//TZjw7k2Y8P9tqvL//////8vh+v9AkO7/TJfv/02Y8P9NmPD/TZjw/02Y8P9Ml+//Tpnv//r8////////+vz//02Y8O5NmPD/QZHu/+z0/f//////psz4/4O39P9QmvD/TJfv/0mV7/9Sm/D/ca3z/63Q+P/2+f7///////r8//9NmPDuTZjw/1ad8P/+/v//////////////////5O/9/1Sb8P+61/n/+vv+//3+/v///////////////v/6/P//TZjw+UyX7/+u0Pj/6vP9/+v0/f/+/v/+/v7+/////////////////+71/f6rzvj/da/z/2Gk8f/s9f3/5vH9/0uY8DZLmPA5MYjtOSSB7Dkgf+xs7/b+///////+/v7/6/P9/3Ou8/9Dku//Spbv0kuY8DdHle85JIHsOSWC7DkAAAAAAAAAAAAAAAAAAAAAJ4PsQO71/v///////////8Hb+f9Ml+//TZjw/02Y8MUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACeD7EHu9f7///////3+/v9ipPH/TJfv/02Y8P9NmPDGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAohOxB6/T9//3+/v9vq/P/TJfv/02Y8P9MmPD/TZjwxgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASZbvPXqy8/m01PnubKry7kyX7+5NmPDuTZjw70yY8LgAAAAAAAAAAAAAAAAAAAAA8A8AAPAPAADwDwAA8A8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8A8AAPAPAADwDwAA8A8AAA==)](https://rgl.gg/?r=38)
 [![Beta Build](https://github.com/RGLgg/server-resources-updater/workflows/Beta%20Build/badge.svg)](https://github.com/RGLgg/server-resources-updater/actions?query=workflow%3A%22Beta+Build%22)
 [![Release Build](https://github.com/RGLgg/server-resources-updater/workflows/Release%20Build/badge.svg)](https://github.com/RGLgg/server-resources-updater/actions?query=workflow%3A%22Release+Build%22)
-[![Sourcemod Version](https://img.shields.io/badge/SourceMod-v1.10-blue?labelColor=d9860a&color=5596cf)](http://www.sourcemod.net/downloads.php?branch=stable)
+[![Sourcemod Version](https://img.shields.io/badge/SourceMod-v1.10-blue?labelColor=d9860a&color=5596cf)](https://www.sourcemod.net/downloads.php?branch=1.10-dev&all=1)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/RGLgg/server-resources-updater)](https://github.com/RGLgg/server-resources-updater/releases/latest)
 [![GitHub All Releases](https://img.shields.io/github/downloads/RGLgg/server-resources-updater/total)](https://github.com/RGLgg/server-resources-updater/releases/latest/download/server-resources-updater.zip)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/RGLgg/server-resources-updater/blob/master/LICENSE)
@@ -70,11 +70,11 @@ If you have problems with the plugin, or if you have a suggestion, please submit
 
 # Installation
 ## Prerequisites
-[![Sourcemod Version](https://img.shields.io/badge/SourceMod-v1.10-blue?labelColor=d9860a&color=5596cf)](http://www.sourcemod.net/downloads.php?branch=stable)
+[![Sourcemod Version](https://img.shields.io/badge/SourceMod-v1.10-blue?labelColor=d9860a&color=5596cf)](https://www.sourcemod.net/downloads.php?branch=1.10-dev&all=1)
 
 With the TF2 Comp Fixes plugin requiring SM 1.10 at minimum due to SM 1.9 now being phased out. The RGL Server Resources Updater will **only support SourceMod 1.10 and higher**. Please make sure you get the right version for your server's operating system! Any previous versions of SourceMod are **unsupported**. 
 
-**Note**: This plugin breaks on the SourceMod dev branch, which is currently on 1.11. Use stable branch instead.
+**Note**: This plugin breaks on the SourceMod v1.11. Use the [1.10](https://www.sourcemod.net/downloads.php?branch=1.10-dev&all=1) branch instead.
 
 This guide [here](https://wiki.alliedmods.net/Upgrading_SourceMod) contains instructions on how to upgrade the files, but please consider doing a fresh install of all your current files to avoid any potential issues. 
 
@@ -82,7 +82,7 @@ After installation, typing `sm version` into the server console will confirm if 
 
 ## Install Instructions
 
-1. [Update SourceMod to at least 1.10](https://www.sourcemod.net/downloads.php?branch=stable). SourceMod 1.11 currently breaks this plugin, however.
+1. [Update SourceMod to at least 1.10](https://www.sourcemod.net/downloads.php?branch=1.10-dev&all=1). SourceMod 1.11 currently breaks this plugin, however.
 2. Download the latest zip by clicking on this badge [![GitHub All Releases](https://img.shields.io/github/downloads/RGLgg/server-resources-updater/total)](https://github.com/RGLgg/server-resources-updater/releases/latest/download/server-resources-updater.zip).
 
 3. Navigate to your server install folder in an (S)FTP client of your choice.
