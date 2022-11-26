@@ -1,4 +1,4 @@
-// Whitelist generated at Sat, 19 Nov 2022 01:16:49 +0100
+// Whitelist generated at Sat, 26 Nov 2022 02:19:31 +0100
 // Whitelist: RGL.gg 6v6 (Season 7) (ID: 13347)
 
 // Share or view this whitelist:
