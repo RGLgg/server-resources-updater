@@ -46,7 +46,7 @@ jobs:
       # wget -q -O tmp.zip https://github.com/ldesgoui/tf2-comp-fixes/releases/latest/download/tf2-comp-fixes.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
       - name: Get latest version of TF2 Comp Fixes and its DHooks dependency
         run: |
-          wget -q -O tmp.zip https://github.com/ldesgoui/tf2-comp-fixes/releases/download/v1.16.8/tf2-comp-fixes.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
+          wget -q -O tmp.zip https://github.com/ldesgoui/tf2-comp-fixes/releases/download/v1.16.11/tf2-comp-fixes.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
           wget -q -O tmp.zip https://github.com/peace-maker/DHooks2/releases/download/v2.2.0-detours17/dhooks-2.2.0-detours17-sm110.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
                              
         working-directory: ${{ env.SOURCEMOD_PATH }}/
@@ -54,8 +54,8 @@ jobs:
       # SrcTV+: https://github.com/dalegaard/srctvplus
       - name: Get latest version of SrcTV+
         run: |
-          wget -q -O addons/srctvplus.dll https://cdn.discordapp.com/attachments/326429943623974912/1029917640589844480/srctvplus.dll
-          wget -q -O addons/srctvplus.so https://cdn.discordapp.com/attachments/326429943623974912/1029917520494342214/srctvplus.so
+          wget -q -O addons/srctvplus.dll https://github.com/dalegaard/srctvplus/releases/latest/download/srctvplus.dll
+          wget -q -O addons/srctvplus.so https://github.com/dalegaard/srctvplus/releases/latest/download/srctvplus.so
           wget -q -O addons/srctvplus.vdf https://github.com/dalegaard/srctvplus/releases/latest/download/srctvplus.vdf
         working-directory: ${{ env.WORKSPACE }}/
       
