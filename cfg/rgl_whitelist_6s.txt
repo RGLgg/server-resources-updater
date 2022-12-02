@@ -1,5 +1,5 @@
-// Whitelist generated at Sat, 26 Nov 2022 02:19:31 +0100
-// Whitelist: RGL.gg 6v6 (Season 7) (ID: 13347)
+// Whitelist generated at Fri, 02 Dec 2022 17:28:23 +0100
+// Whitelist: RGL.gg 6v6 (Season 7) (ID: 13395)
 
 // Share or view this whitelist:
 //	https://whitelist.tf/rgl_6v6
@@ -161,7 +161,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 48) ----------------------\\
+	//--------------------- Taunts (Total: 49) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -172,6 +172,7 @@
 	"Taunt: Kazotsky Kick"						"0"
 	"Taunt: Mannrobics"						"0"
 	"Taunt: The Fist Bump"						"0"
+	"Taunt: The Scaredy-cat!"					"0"
 	"Taunt: The Victory Lap"					"0"
 	"Taunt: Zoomin' Broom"						"0"
 	//____________________________ Scout ____________________________\\
