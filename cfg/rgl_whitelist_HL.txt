@@ -1,5 +1,5 @@
-// Whitelist generated at Sat, 26 Nov 2022 02:20:02 +0100
-// Whitelist: RGL.gg Highlander (Season 13) (ID: 13297)
+// Whitelist generated at Fri, 02 Dec 2022 17:33:59 +0100
+// Whitelist: RGL.gg Highlander (Season 13) (ID: 13397)
 
 // Share or view this whitelist:
 //	https://whitelist.tf/rgl_9v9
@@ -119,7 +119,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 50) ----------------------\\
+	//--------------------- Taunts (Total: 49) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -166,7 +166,6 @@
 	"Rancho Relaxo Taunt"						"0"
 	"Taunt: Bucking Bronco"						"0"
 	"Taunt: Texas Truckin"						"0"
-	"Taunt: Texas Twirl 'Em"					"0"
 	"Taunt: The Dueling Banjo"					"0"
 	"Taunt: The Jumping Jack"					"0"
 	//____________________________ Medic ____________________________\\
