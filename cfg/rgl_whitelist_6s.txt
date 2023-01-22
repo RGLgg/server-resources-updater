@@ -1,4 +1,4 @@
-// Whitelist generated at Sun, 22 Jan 2023 19:14:39 +0100
+// Whitelist generated at Sun, 22 Jan 2023 21:53:31 +0100
 // Whitelist: RGL.gg 6v6 (Season 11) (ID: 13531)
 
 // Share or view this whitelist:
