@@ -1,4 +1,4 @@
-// Whitelist generated at Fri, 02 Dec 2022 22:22:26 +0100
+// Whitelist generated at Sun, 22 Jan 2023 19:15:00 +0100
 // Whitelist: RGL.gg 7v7 (Season 9) (ID: 11163)
 
 // Share or view this whitelist:
@@ -119,7 +119,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 52) ----------------------\\
+	//--------------------- Taunts (Total: 55) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -147,6 +147,7 @@
 	"Taunt: The Profane Puppeteer"					"0"
 	//____________________________ Pyro _____________________________\\
 	"Pool Party Taunt"						"0"
+	"Taunt: Roasty Toasty"						"0"
 	"Taunt: Scorcher's Solo"					"0"
 	"Taunt: The Balloonibouncer"					"0"
 	"Taunt: The Hot Wheeler"					"0"
@@ -159,6 +160,7 @@
 	"Taunt: The Pooped Deck"					"0"
 	//____________________________ Heavy ____________________________\\
 	"Taunt: Bare Knuckle Beatdown"					"0"
+	"Taunt: Russian Rubdown"					"0"
 	"Taunt: The Boiling Point"					"0"
 	"Taunt: The Russian Arms Race"					"0"
 	"Taunt: The Soviet Strongarm"					"0"
@@ -180,6 +182,7 @@
 	"Taunt: Shooter's Stakeout"					"0"
 	//_____________________________ Spy _____________________________\\
 	"Taunt: Luxury Lounge"						"0"
+	"Taunt: Tailored Terminal"					"0"
 	"Taunt: The Boxtrot"						"0"
 	"Taunt: The Travel Agent"					"0"
 }
