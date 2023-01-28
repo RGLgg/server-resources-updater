@@ -1,4 +1,4 @@
-// Whitelist generated at Sat, 28 Jan 2023 17:13:11 +0100
+// Whitelist generated at Sat, 28 Jan 2023 18:09:43 +0100
 // Whitelist: RGL.gg No Restriction 6s (Season 3) (ID: 9914)
 
 // Share or view this whitelist:
