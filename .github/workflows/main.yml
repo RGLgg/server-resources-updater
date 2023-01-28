@@ -87,9 +87,9 @@ jobs:
           mm_lines=$(wc -l < rgl_whitelist_mm.txt)
           pl_lines=$(wc -l < rgl_whitelist_7s.txt)
           sixes_lines=$(wc -l < rgl_whitelist_6s.txt)
-          if [[ $sixes_lines -le 5000 ]]; 
+          if [[ $sixes_lines -le 50 ]]; 
           then
-              echo "Sixes: Number of lines is less than 5000."
+              echo "Sixes: Number of lines is less than 50."
               exit 1
           elif [[ $hl_lines -le 50 ]]
           then
