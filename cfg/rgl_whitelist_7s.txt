@@ -1,4 +1,4 @@
-// Whitelist generated at Tue, 14 Mar 2023 01:13:02 +0100
+// Whitelist generated at Fri, 17 Mar 2023 03:30:45 +0100
 // Whitelist: RGL.gg 7v7 (Season 9) (ID: 11163)
 
 // Share or view this whitelist:
@@ -75,7 +75,9 @@
 	//_________________________ All classes _________________________\\
 	"Activated Campaign 3 Pass"					"0"
 
-	//----- Globally Competitive League banned items (Total: 2) -----\\
+	//----- Globally Competitive League banned items (Total: 3) -----\\
+	//_________________________ All classes _________________________\\
+	"Yeti Park Cap"							"0"
 	//____________________________ Scout ____________________________\\
 	"The Corpse Carrier"						"0"
 	"The Sprinting Cephalopod"					"0"
