@@ -1,4 +1,4 @@
-// Whitelist generated at Tue, 14 Mar 2023 01:17:05 +0100
+// Whitelist generated at Fri, 17 Mar 2023 03:31:09 +0100
 // Whitelist: RGL.gg Highlander (Season 14) (ID: 13397)
 
 // Share or view this whitelist:
@@ -75,7 +75,9 @@
 	//_________________________ All classes _________________________\\
 	"Activated Campaign 3 Pass"					"0"
 
-	//----- Globally Competitive League banned items (Total: 2) -----\\
+	//----- Globally Competitive League banned items (Total: 3) -----\\
+	//_________________________ All classes _________________________\\
+	"Yeti Park Cap"							"0"
 	//____________________________ Scout ____________________________\\
 	"The Corpse Carrier"						"0"
 	"The Sprinting Cephalopod"					"0"
