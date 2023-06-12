@@ -1,4 +1,4 @@
-// Whitelist generated at Fri, 17 Mar 2023 03:30:45 +0100
+// Whitelist generated at Mon, 12 Jun 2023 22:45:35 +0200
 // Whitelist: RGL.gg 7v7 (Season 9) (ID: 11163)
 
 // Share or view this whitelist:
