@@ -1,4 +1,4 @@
-// Whitelist generated at Fri, 17 Mar 2023 03:31:19 +0100
+// Whitelist generated at Fri, 04 Aug 2023 04:19:49 +0200
 // Whitelist: RGL.gg 7v7 (Season 9) (ID: 11163)
 
 // Share or view this whitelist:
@@ -121,7 +121,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 55) ----------------------\\
+	//--------------------- Taunts (Total: 61) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -130,6 +130,7 @@
 	"Skullcracker Taunt"						"0"
 	"Square Dance Taunt"						"0"
 	"Taunt: Kazotsky Kick"						"0"
+	"Taunt: Killer Joke"						"0"
 	"Taunt: Mannrobics"						"0"
 	"Taunt: The Fist Bump"						"0"
 	"Taunt: The Scaredy-cat!"					"0"
@@ -142,10 +143,12 @@
 	"Taunt: The Bunnyhopper"					"0"
 	"Taunt: The Carlton"						"0"
 	"Taunt: The Homerunner's Hobby"					"0"
+	"Taunt: The Killer Signature"					"0"
 	"Taunt: The Scooty Scoot"					"0"
 	//___________________________ Soldier ___________________________\\
 	"Taunt: Panzer Pants"						"0"
 	"Taunt: Rocket Jockey"						"0"
+	"Taunt: Star-Spangled Strategy"					"0"
 	"Taunt: The Profane Puppeteer"					"0"
 	//____________________________ Pyro _____________________________\\
 	"Pool Party Taunt"						"0"
@@ -164,6 +167,7 @@
 	"Taunt: Bare Knuckle Beatdown"					"0"
 	"Taunt: Russian Rubdown"					"0"
 	"Taunt: The Boiling Point"					"0"
+	"Taunt: The Road Rager"						"0"
 	"Taunt: The Russian Arms Race"					"0"
 	"Taunt: The Soviet Strongarm"					"0"
 	"Taunt: The Table Tantrum"					"0"
@@ -177,6 +181,7 @@
 	//____________________________ Medic ____________________________\\
 	"Taunt: Doctor's Defibrillators"				"0"
 	"Taunt: Surgeon's Squeezebox"					"0"
+	"Taunt: The Head Doctor"					"0"
 	"Taunt: The Mannbulance!"					"0"
 	"Taunt: Time Out Therapy"					"0"
 	//___________________________ Sniper ____________________________\\
@@ -187,4 +192,5 @@
 	"Taunt: Tailored Terminal"					"0"
 	"Taunt: The Boxtrot"						"0"
 	"Taunt: The Travel Agent"					"0"
+	"Taunt: Tuefort Tango"						"0"
 }

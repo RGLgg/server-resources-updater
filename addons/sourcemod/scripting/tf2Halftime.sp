@@ -7,7 +7,7 @@
 #pragma newdecls required           // force newdecls again because SourceMod(tm)
 
 
-#define PLUGIN_VERSION  "1.5"
+#define PLUGIN_VERSION  "1.5.1"
 
 public Plugin myinfo = {
     name                            = "basic halftime for 5cp and koth",
@@ -184,7 +184,7 @@ public void EventRoundEnd(Event event, const char[] name, bool dontBroadcast)   
     }
 }
 
-int printScore(int client)
+void printScore(int client)
 {
     if (IsClientInGame(client) && !IsFakeClient(client))
     {
