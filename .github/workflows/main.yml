@@ -78,6 +78,8 @@ jobs:
           wget -q -O rgl_whitelist_HL.txt https://whitelist.tf/rgl_9v9.txt
           wget -q -O rgl_whitelist_mm.txt https://whitelist.tf/rgl_nr6s.txt
           wget -q -O rgl_whitelist_7s.txt https://whitelist.tf/rgl_7v7.txt
+          wget -q -O rgl_whitelist_pt.txt https://whitelist.tf/rgl_passtime.txt
+          wget -q -O rgl_whitelist_ud.txt https://whitelist.tf/rgl_ultiduo.txt
         working-directory: ${{ env.CONFIG_PATH }}/
 
       - name: Validate whitelists for each format
@@ -87,6 +89,8 @@ jobs:
           mm_lines=$(wc -l < rgl_whitelist_mm.txt)
           pl_lines=$(wc -l < rgl_whitelist_7s.txt)
           sixes_lines=$(wc -l < rgl_whitelist_6s.txt)
+          passtime_lines=$(wc -l < rgl_whitelist_pt.txt)
+          ultiduo_lines=$(wc -l < rgl_whitelist_ud.txt)
           if [[ $sixes_lines -le 50 ]]; 
           then
               echo "Sixes: Number of lines is less than 50."
@@ -103,6 +107,14 @@ jobs:
           then
               echo "PL: Number of lines is less than 50." 
               exit 1
+          elif [[ $passtime_lines -le 50 ]]
+          then
+              echo "PT: Number of lines is less than 50." 
+              exit 1
+          elif [[ $ultiduo_lines -le 50 ]]
+          then
+              echo "PT: Number of lines is less than 50." 
+              exit 1
           fi
 
           echo "Whitelist Checks Complete"
@@ -116,7 +128,7 @@ jobs:
 
       - name: Compile RGL Suite Plugins against SM ${{ steps.setup-sp.outputs.version }}
         run: |
-          for plugin in "rglqol" "rglupdater" "tf2Halftime" "improved_match_timer" "disabled/roundtimer_override"
+          for plugin in "rglqol" "rglupdater" "tf2Halftime" "improved_match_timer" "disabled/roundtimer_override" "disabled/passthestats" "disabled/passtimecontrol"
           do
             echo -e "\nCompiling $plugin.sp..."
             spcomp -E -w234 -O2 -v2 -i $SCRIPTS_PATH/include $plugin.sp
@@ -139,6 +151,8 @@ jobs:
         run: |
           mv tf2Halftime.smx disabled/
           mv roundtimer_override.smx disabled/
+          mv passthestats.smx disabled/
+          mv passtimecontrol.smx disabled/
         working-directory: ${{ env.PLUGINS_PATH }}/
 
       - name: Rebuild updatefile.txt 
