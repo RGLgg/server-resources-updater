@@ -10,3 +10,6 @@ README.txt
 
 # ignore vscode folder
 .vscode
+
+# ignore smx builds
+*.smx
