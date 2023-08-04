@@ -32,9 +32,8 @@ jobs:
           echo ::set-env name=PLUGINS_PATH::$SOURCEMOD_PATH/plugins
 
       # Include Updater & SteamWorks 
-      - name: Get latest version of updater.inc & SteamWorks.inc 
+      - name: Get latest version of SteamWorks.inc 
         run: |
-          wget -q -O tmp.zip https://git.empiresmod.com/sourcemod/Updater/-/jobs/artifacts/master/download?job=build && unzip -o tmp.zip 'addons/sourcemod/scripting/include/updater.inc' -d ../../  && rm tmp.zip
           wget -q -O tmp.zip http://users.alliedmods.net/~kyles/builds/SteamWorks/SteamWorks-git132-windows.zip && unzip -o tmp.zip 'addons/sourcemod/scripting/include/SteamWorks.inc' -d ../../  && rm tmp.zip
         working-directory: ${{ env.SOURCEMOD_PATH }}/
 
@@ -52,7 +51,7 @@ jobs:
 
       - name: Compile RGL Suite Plugins against SM ${{ steps.setup-sp.outputs.version }}
         run: |
-          for plugin in "rglqol" "rglupdater" "improved_match_timer" "disabled/roundtimer_override"
+          for plugin in "rglqol" "rglupdater" "improved_match_timer" "disabled/roundtimer_override" "disabled/passthestats" "disabled/passtimecontrol"
           do
             echo -e "\nCompiling $plugin.sp..."
             spcomp -E -w234 -O2 -v2 -i $SCRIPTS_PATH/include $plugin.sp
@@ -68,6 +67,8 @@ jobs:
       - name: Disable optional plugins
         run: |
           mv roundtimer_override.smx disabled/
+          mv passthestats.smx disabled/
+          mv passtimecontrol.smx disabled/
         working-directory: ${{ env.PLUGINS_PATH }}/
 
       - name: Rebuild updatefile.txt 
