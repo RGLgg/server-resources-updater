@@ -32,9 +32,8 @@ jobs:
           echo ::set-env name=PLUGINS_PATH::$SOURCEMOD_PATH/plugins
 
       # Include Updater & SteamWorks 
-      - name: Get latest version of updater.inc & SteamWorks.inc 
+      - name: Get latest version of SteamWorks.inc 
         run: |
-          wget -q -O tmp.zip https://git.empiresmod.com/sourcemod/Updater/-/jobs/artifacts/master/download?job=build && unzip -o tmp.zip 'addons/sourcemod/scripting/include/updater.inc' -d ../../  && rm tmp.zip
           wget -q -O tmp.zip http://users.alliedmods.net/~kyles/builds/SteamWorks/SteamWorks-git132-windows.zip && unzip -o tmp.zip 'addons/sourcemod/scripting/include/SteamWorks.inc' -d ../../  && rm tmp.zip
         working-directory: ${{ env.SOURCEMOD_PATH }}/
 
