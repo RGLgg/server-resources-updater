@@ -1,4 +1,4 @@
-// Whitelist generated at Fri, 04 Aug 2023 03:33:22 +0200
+// Whitelist generated at Fri, 01 Dec 2023 23:50:02 +0100
 // Whitelist: RGL.gg Ultiduo (ID: 13914)
 
 // Share or view this whitelist:
@@ -259,7 +259,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 70) ----------------------\\
+	//--------------------- Taunts (Total: 74) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -286,6 +286,7 @@
 	"Taunt: The Scooty Scoot"					"0"
 	"Taunt: The Trackman's Touchdown"				"0"
 	//___________________________ Soldier ___________________________\\
+	"Taunt: Neck Snap"						"0"
 	"Taunt: Panzer Pants"						"0"
 	"Taunt: Rocket Jockey"						"0"
 	//____________________________ Pyro _____________________________\\
@@ -301,6 +302,7 @@
 	"Oblooterated Taunt"						"0"
 	"Spent Well Spirits Taunt"					"0"
 	"Taunt: Drunk Mann's Cannon"					"0"
+	"Taunt: Roar O'War"						"0"
 	"Taunt: Scotsmann's Stagger"					"0"
 	"Taunt: Shanty Shipmate"					"0"
 	"Taunt: The Drunken Sailor"					"0"
@@ -323,6 +325,7 @@
 	"Taunt: The Dueling Banjo"					"0"
 	"Taunt: The Jumping Jack"					"0"
 	//____________________________ Medic ____________________________\\
+	"Taunt: Borrowed Bones"						"0"
 	"Taunt: Surgeon's Squeezebox"					"0"
 	"Taunt: The Mannbulance!"					"0"
 	"Taunt: Time Out Therapy"					"0"
@@ -338,6 +341,7 @@
 	"Taunt: Luxury Lounge"						"0"
 	"Taunt: Tailored Terminal"					"0"
 	"Taunt: The Boxtrot"						"0"
+	"Taunt: The Crypt Creeper"					"0"
 	"Taunt: The Travel Agent"					"0"
 	"Taunt: Tuefort Tango"						"0"
 }
