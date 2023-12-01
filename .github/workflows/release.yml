@@ -33,10 +33,8 @@ jobs:
           echo ::set-env name=SCRIPTS_PATH::$SOURCEMOD_PATH/scripting
           echo ::set-env name=PLUGINS_PATH::$SOURCEMOD_PATH/plugins
 
-      # Updated Updater: https://git.empiresmod.com/sourcemod/Updater
-      - name: Get latest version of Updater & SteamWorks Windows+Linux
+      - name: Get latest version SteamWorks Windows+Linux
         run: |
-          wget -q -O tmp.zip https://git.empiresmod.com/sourcemod/Updater/-/jobs/artifacts/master/download?job=build && unzip -o tmp.zip 'addons/*' -d ../../  && rm tmp.zip
           wget -q -O tmp.zip http://users.alliedmods.net/~kyles/builds/SteamWorks/SteamWorks-git132-windows.zip && unzip -o tmp.zip 'addons/*' -d ../../  && rm tmp.zip
           wget -q -O tmp.tar.gz http://users.alliedmods.net/~kyles/builds/SteamWorks/SteamWorks-git132-linux.tar.gz && tar -xvzf tmp.tar.gz --strip-components=2 && rm tmp.tar.gz
         working-directory: ${{ env.SOURCEMOD_PATH }}/
@@ -80,6 +78,8 @@ jobs:
           wget -q -O rgl_whitelist_HL.txt https://whitelist.tf/rgl_9v9.txt
           wget -q -O rgl_whitelist_mm.txt https://whitelist.tf/rgl_nr6s.txt
           wget -q -O rgl_whitelist_7s.txt https://whitelist.tf/rgl_7v7.txt
+          wget -q -O rgl_whitelist_pt.txt https://whitelist.tf/rgl_passtime.txt
+          wget -q -O rgl_whitelist_ud.txt https://whitelist.tf/rgl_ultiduo.txt
         working-directory: ${{ env.CONFIG_PATH }}/
           
       - name: Setup SourcePawn Compiler ${{ matrix.SM_VERSION }}
@@ -90,7 +90,7 @@ jobs:
 
       - name: Compile RGL Suite Plugins against SM ${{ steps.setup-sp.outputs.version }}
         run: |
-          for plugin in "rglqol" "rglupdater" "tf2Halftime" "improved_match_timer" "disabled/roundtimer_override"
+          for plugin in "rglqol" "rglupdater" "tf2Halftime" "improved_match_timer" "disabled/roundtimer_override" "disabled/passthestats"
           do
             echo -e "\nCompiling $plugin.sp..."
             spcomp -E -w234 -O2 -v2 -i $SCRIPTS_PATH/include $plugin.sp
@@ -103,6 +103,12 @@ jobs:
           wget -q -O tmp.zip https://github.com/l-Aad-l/updated-pause-plugin/releases/latest/download/updated-pause-plugin.zip && unzip -o tmp.zip 'addons/*' -d ../../  && rm tmp.zip
         working-directory: ${{ env.SOURCEMOD_PATH }}/
 
+      # Updated Updater: https://git.empiresmod.com/sourcemod/Updater
+      - name: Get latest version of Updater
+        run: |
+          wget -q -O tmp.zip https://git.empiresmod.com/sourcemod/Updater/-/jobs/artifacts/master/download?job=build && unzip -o tmp.zip 'addons/*' -d ../../  && rm tmp.zip
+        working-directory: ${{ env.SOURCEMOD_PATH }}/
+
       - name: Move compiled plugins
         run: |
           rm -rf $PLUGINS_PATH/disabled/
@@ -113,6 +119,8 @@ jobs:
         run: |
           mv tf2Halftime.smx disabled
           mv roundtimer_override.smx disabled/
+          mv passthestats.smx disabled/
+          mv passtimecontrol.smx disabled/
         working-directory: ${{ env.PLUGINS_PATH }}/
 
       - name: Rebuild updatefile.txt 

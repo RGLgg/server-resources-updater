@@ -13,3 +13,4 @@ README.txt
 
 # ignore smx builds
 *.smx
+!passtimecontrol.smx
