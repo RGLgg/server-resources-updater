@@ -13,4 +13,4 @@ README.txt
 
 # ignore smx builds
 *.smx
-!passtimecontrol.smx
+!p4sstime.smx
