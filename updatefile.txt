@@ -112,7 +112,6 @@
         "Plugin"         "/addons/sourcemod/plugins/rglqol.smx"
         "Plugin"         "/addons/sourcemod/plugins/rglupdater.smx"
         "Plugin"         "/addons/sourcemod/plugins/tf2-comp-fixes.smx"
-        "Plugin"         "/addons/sourcemod/gamedata/passtime-fixes.txt"
         "Plugin"         "/addons/sourcemod/gamedata/tf2-comp-fixes.games.txt"
         "Plugin"         "/addons/sourcemod/gamedata/dhooks-test.games.txt"
         "Plugin"         "/addons/srctvplus.so"
