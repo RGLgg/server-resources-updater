@@ -1,5 +1,5 @@
-// Whitelist generated at Sat, 02 Dec 2023 02:33:03 +0100
-// Whitelist: RGL.gg Passtime (ID: 13912)
+// Whitelist generated at Sun, 03 Dec 2023 16:30:38 +0100
+// Whitelist: RGL.gg Passtime (ID: 14176)
 
 // Share or view this whitelist:
 //	https://whitelist.tf/rgl_passtime
@@ -18,7 +18,6 @@
 
 // Allowed weapons for Multiple classes
 // - Melee
-//  * Half-Zatoichi
 //  * Pain Train
 
 // Allowed weapons for Soldier
@@ -56,10 +55,11 @@
 {
 	"unlisted_items_default_to"		"1"
 
-	//------------ Blocked weapons/reskins (Total: 148) -------------\\
+	//------------ Blocked weapons/reskins (Total: 149) -------------\\
 	//______________________ Multiple classes _______________________\\
 	"Panic Attack Shotgun"						"0"
 	"The B.A.S.E. Jumper"						"0"
+	"The Half-Zatoichi"						"0"
 	"The Reserve Shooter"						"0"
 	//____________________________ Scout ____________________________\\
 	"Baby Face's Blaster"						"0"
@@ -266,7 +266,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 57) ----------------------\\
+	//--------------------- Taunts (Total: 55) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -300,7 +300,6 @@
 	"Taunt: The Skating Scorcher"					"0"
 	//___________________________ Demoman ___________________________\\
 	"Taunt: Drunk Mann's Cannon"					"0"
-	"Taunt: Roar O'War"						"0"
 	"Taunt: Scotsmann's Stagger"					"0"
 	"Taunt: Shanty Shipmate"					"0"
 	"Taunt: The Drunken Sailor"					"0"
@@ -320,7 +319,6 @@
 	"Taunt: The Dueling Banjo"					"0"
 	"Taunt: The Jumping Jack"					"0"
 	//____________________________ Medic ____________________________\\
-	"Taunt: Borrowed Bones"						"0"
 	"Taunt: Surgeon's Squeezebox"					"0"
 	"Taunt: The Mannbulance!"					"0"
 	"Taunt: Time Out Therapy"					"0"

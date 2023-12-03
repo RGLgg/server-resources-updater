@@ -1,5 +1,5 @@
-// Whitelist generated at Sat, 02 Dec 2023 02:33:08 +0100
-// Whitelist: RGL.gg Ultiduo (ID: 13914)
+// Whitelist generated at Sun, 03 Dec 2023 16:30:39 +0100
+// Whitelist: RGL.gg Ultiduo (ID: 14177)
 
 // Share or view this whitelist:
 //	https://whitelist.tf/rgl_ultiduo
@@ -259,7 +259,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 74) ----------------------\\
+	//--------------------- Taunts (Total: 73) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -325,7 +325,6 @@
 	"Taunt: The Dueling Banjo"					"0"
 	"Taunt: The Jumping Jack"					"0"
 	//____________________________ Medic ____________________________\\
-	"Taunt: Borrowed Bones"						"0"
 	"Taunt: Surgeon's Squeezebox"					"0"
 	"Taunt: The Mannbulance!"					"0"
 	"Taunt: Time Out Therapy"					"0"
