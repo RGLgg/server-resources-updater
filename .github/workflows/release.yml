@@ -79,6 +79,7 @@ jobs:
           wget -q -O rgl_whitelist_7s.txt https://whitelist.tf/rgl_7v7.txt
           wget -q -O rgl_whitelist_pt.txt https://whitelist.tf/rgl_passtime.txt
           wget -q -O rgl_whitelist_ud.txt https://whitelist.tf/rgl_ultiduo.txt
+          wget -q -O rgl_whitelist_6s_cups.txt https://whitelist.tf/custom_whitelist_14183.txt
         working-directory: ${{ env.CONFIG_PATH }}/
           
       - name: Setup SourcePawn Compiler ${{ matrix.SM_VERSION }}
