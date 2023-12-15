@@ -1,4 +1,4 @@
-// Whitelist generated at Fri, 15 Dec 2023 03:52:31 +0100
+// Whitelist generated at Fri, 15 Dec 2023 04:11:48 +0100
 // Whitelist: RGL.gg Passtime (ID: 14176)
 
 // Share or view this whitelist:
