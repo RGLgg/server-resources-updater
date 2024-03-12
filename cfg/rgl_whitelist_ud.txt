@@ -1,4 +1,4 @@
-// Whitelist generated at Fri, 15 Dec 2023 04:14:35 +0100
+// Whitelist generated at Tue, 12 Mar 2024 01:38:38 +0100
 // Whitelist: RGL.gg Ultiduo (ID: 14177)
 
 // Share or view this whitelist:
