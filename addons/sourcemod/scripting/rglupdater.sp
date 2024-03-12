@@ -1,18 +1,16 @@
+#pragma newdecls required
 #pragma semicolon 1
 
 #include <sourcemod>
 #include <updater>
 #include <color_literals>
 
-#define REQUIRE_EXTENSIONS
-#include <SteamWorks>
-
 #define PLUGIN_NAME                   "RGL.gg Server Resources Updater"
-#define PLUGIN_VERSION                "2.0.2"
+#define PLUGIN_VERSION                "2.0.4"
 char UPDATE_URL[128]                = "";
-bool:updatePlug;
+bool updatePlug;
 
-public Plugin:myinfo =
+public Plugin myinfo =
 {
     name                            =  PLUGIN_NAME,
     author                          = "Stephanie, Aad",
@@ -21,7 +19,7 @@ public Plugin:myinfo =
     url                             = "https://github.com/RGLgg/server-resources-updater"
 }
 
-public OnPluginStart()
+public void OnPluginStart()
 {
     DisablePlugin("roundtimer_override");
     LogMessage("[RGLUpdater] version %s has been loaded.", PLUGIN_VERSION);
@@ -44,14 +42,15 @@ public OnPluginStart()
     
 }
 
-public Action DisablePlugin(const String:plugin_file[])
+public Action DisablePlugin(const char plugin_file[PLATFORM_MAX_PATH])
 {
     // Thanks to DarthNinja's Plugin Enable/Disable
-    new String:disabledpath[256], String:enabledpath[256];
+    char disabledpath[256];
+    char enabledpath[256];
     
     BuildPath(Path_SM, disabledpath, sizeof(disabledpath), "plugins/disabled/%s.smx", plugin_file);	
     BuildPath(Path_SM, enabledpath, sizeof(enabledpath), "plugins/%s.smx", plugin_file);	
-    new String:PluginWExt[70];
+    char PluginWExt[70];
     Format(PluginWExt, sizeof(PluginWExt), "%s.smx", plugin_file);
     
     if (!FileExists(enabledpath))
@@ -66,8 +65,8 @@ public Action DisablePlugin(const String:plugin_file[])
         return Plugin_Handled;
     }
     
-    new Handle:Loaded = FindPluginByFile(PluginWExt);
-    new String:PluginName[128];
+    Handle Loaded = FindPluginByFile(PluginWExt);
+    char PluginName[128];
     if (Loaded != INVALID_HANDLE)
         GetPluginInfo(Loaded, PlInfo_Name, PluginName, sizeof(PluginName));
     else
@@ -79,15 +78,14 @@ public Action DisablePlugin(const String:plugin_file[])
     return Plugin_Continue;
 }
 
-public OnLibraryAdded(const String:name[])
-{
-    if (StrEqual(name, "updater"))
+public void OnLibraryAdded(const char[] name) {
+	if (StrEqual(name, "updater"))
     {
         Updater_AddPlugin(UPDATE_URL);
     }
 }
 
-public OnRGLBetaChanged(ConVar convar, char[] oldValue, char[] newValue)
+public void OnRGLBetaChanged(ConVar convar, char[] oldValue, char[] newValue)
 {
     LogMessage("[RGLUpdater] rgl_beta cvar changed!");
     CheckRGLBeta();
@@ -97,7 +95,7 @@ public OnRGLBetaChanged(ConVar convar, char[] oldValue, char[] newValue)
     updatePlug = true;
 }
 
-public OnClientPostAdminCheck(client)
+public void OnClientPostAdminCheck(int client)
 {
     char cfgVal[128];
     GetConVarString(FindConVar("servercfgfile"), cfgVal, sizeof(cfgVal));
@@ -116,9 +114,11 @@ public Action prWelcomeClient(Handle timer, int userid)
         PrintColoredChat(client, "\x07FFA07A[RGLUpdater]\x01 This server is running RGL Updater version \x07FFA07A%s\x01", PLUGIN_VERSION);
         PrintColoredChat(client, "\x07FFA07A[RGLUpdater]\x01 Remember, per RGL rules, players must record POV demos for every match!");
     }
+    
+    return Plugin_Continue;
 }
 
-CheckRGLBeta()
+public void CheckRGLBeta()
 {
     if (!GetConVarBool(FindConVar("rgl_beta")))
     {
@@ -134,7 +134,7 @@ CheckRGLBeta()
     }
 }
 
-public Updater_OnPluginUpdated()
+public void Updater_OnPluginUpdated()
 {
     if (updatePlug)
     {
@@ -148,6 +148,8 @@ public Action reloadPlug(Handle timer)
     ServerCommand("sm plugins reload pause");
     ServerCommand("sm plugins reload rglqol");
     ServerCommand("sm plugins reload rglupdater");
+
+    return Plugin_Continue;
 }
 
 public void OnPluginEnd()
