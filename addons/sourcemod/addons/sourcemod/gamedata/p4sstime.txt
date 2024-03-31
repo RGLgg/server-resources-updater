@@ -1,0 +1,56 @@
+"Games"
+{
+	"tf"
+	{
+		"Signatures"
+		{
+			"CPasstimeGun::BValidPassTarget()"
+			{
+				"library" "server"
+				"linux" "@_ZN12CPasstimeGun16BValidPassTargetEP9CTFPlayerS1_P17HudNotification_t"
+				"windows" "\x55\x8B\xEC\x53\x56\x8B\x75\x10\x57\x85\xF6\x74\x06\xC7\x06\x00\x00\x00\x00\x8B\x7D\x0C"
+			}
+		}
+
+		"Offsets"
+		{
+			"CBaseProjectile::CanCollideWithTeammates"
+			{
+				"library"	"server"
+				"linux"		"230"
+				"windows"	"229"
+			}
+		}
+		"Functions"
+		{
+			"CBaseProjectile::CanCollideWithTeammates"
+			{
+				"offset"	"CBaseProjectile::CanCollideWithTeammates"
+				"hooktype"	"entity"
+				"return"	"bool"
+				"this"		"entity"
+			}
+			"CPasstimeGun::BValidPassTarget()"
+			{
+				"signature" "CPasstimeGun::BValidPassTarget()"
+				"callconv" "cdecl"
+				"return" "bool"
+				"arguments"
+				{
+					"source"
+					{
+						"type" "cbaseentity"
+					}
+					"target"
+					{
+						"type" "cbaseentity"
+					}
+					"reason"
+					{
+						"type" "int"
+					}
+				}
+			}
+		}
+	}
+}
