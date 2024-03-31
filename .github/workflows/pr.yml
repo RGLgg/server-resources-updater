@@ -51,7 +51,7 @@ jobs:
 
       - name: Compile RGL Suite Plugins against SM ${{ steps.setup-sp.outputs.version }}
         run: |
-          for plugin in "rglqol" "rglupdater" "improved_match_timer" "disabled/roundtimer_override"
+          for plugin in "rglqol" "rglupdater" "config_checker" "improved_match_timer" "disabled/roundtimer_override"
           do
             echo -e "\nCompiling $plugin.sp..."
             spcomp -E -w234 -O2 -v2 -i $SCRIPTS_PATH/include $plugin.sp
@@ -67,7 +67,6 @@ jobs:
       - name: Disable optional plugins
         run: |
           mv roundtimer_override.smx disabled/
-          mv p4sstime.smx disabled/
         working-directory: ${{ env.PLUGINS_PATH }}/
 
       - name: Rebuild updatefile.txt 

@@ -13,4 +13,5 @@ README.txt
 
 # ignore smx builds
 *.smx
-!p4sstime.smx
+#!p4sstime.smx
+
