@@ -1,8 +1,10 @@
-name: Release Build
+name: Branch Build
 
 on:
   push:
-    branches: [ master ]
+    branches-ignore:
+      - master
+      - beta
 
 jobs:
   build:
@@ -25,15 +27,14 @@ jobs:
           SOURCEMOD_PATH=$GITHUB_WORKSPACE/addons/sourcemod
           CONFIG_PATH=$GITHUB_WORKSPACE/cfg
           echo ::set-env name=GIT_COMMIT::$VERSION
-          echo ::set-env name=PLUGIN_VERSION::${{ matrix.SM_VERSION }}.$VERSION
-          echo ::set-env name=PLUGIN_VERSION_SHORT::${{ matrix.SM_VERSION }}.$VERSION.$SHORT
+          echo ::set-env name=PLUGIN_VERSION::${{ matrix.SM_VERSION }}.$VERSION.$SHORT
           echo ::set-env name=WORKSPACE::$GITHUB_WORKSPACE
           echo ::set-env name=CONFIG_PATH::$CONFIG_PATH
           echo ::set-env name=SOURCEMOD_PATH::$SOURCEMOD_PATH
           echo ::set-env name=SCRIPTS_PATH::$SOURCEMOD_PATH/scripting
           echo ::set-env name=PLUGINS_PATH::$SOURCEMOD_PATH/plugins
 
-      - name: Get latest version SteamWorks Windows+Linux
+      - name: Get latest version of SteamWorks Windows+Linux
         run: |
           wget -q -O tmp.zip http://users.alliedmods.net/~kyles/builds/SteamWorks/SteamWorks-git132-windows.zip && unzip -o tmp.zip 'addons/*' -d ../../  && rm tmp.zip
           wget -q -O tmp.tar.gz http://users.alliedmods.net/~kyles/builds/SteamWorks/SteamWorks-git132-linux.tar.gz && tar -xvzf tmp.tar.gz --strip-components=2 && rm tmp.tar.gz
@@ -55,7 +56,7 @@ jobs:
         run: |
           wget -q -O addons/srctvplus.dll https://github.com/dalegaard/srctvplus/releases/latest/download/srctvplus.dll
           wget -q -O addons/srctvplus.so https://github.com/dalegaard/srctvplus/releases/latest/download/srctvplus.so
-          wget -q -O addons/srctvplus.vdf https://github.com/dalegaard/srctvplus//releases/latest/download/srctvplus.vdf
+          wget -q -O addons/srctvplus.vdf https://github.com/dalegaard/srctvplus/releases/latest/download/srctvplus.vdf
         working-directory: ${{ env.WORKSPACE }}/
       
       # TF2 Halftime: https://github.com/stephanieLGBT/tf2-halftime
@@ -80,6 +81,44 @@ jobs:
           wget -q -O rgl_whitelist_pt.txt https://whitelist.tf/rgl_passtime.txt
           wget -q -O rgl_whitelist_ud.txt https://whitelist.tf/rgl_ultiduo.txt
           wget -q -O rgl_whitelist_6s_cups.txt https://whitelist.tf/custom_whitelist_14183.txt
+        working-directory: ${{ env.CONFIG_PATH }}/
+
+      - name: Validate whitelists for each format
+        run: |
+          sixes_lines=$(wc -l < rgl_whitelist_6s.txt)
+          hl_lines=$(wc -l < rgl_whitelist_HL.txt)
+          mm_lines=$(wc -l < rgl_whitelist_mm.txt)
+          pl_lines=$(wc -l < rgl_whitelist_7s.txt)
+          sixes_lines=$(wc -l < rgl_whitelist_6s.txt)
+          passtime_lines=$(wc -l < rgl_whitelist_pt.txt)
+          ultiduo_lines=$(wc -l < rgl_whitelist_ud.txt)
+          if [[ $sixes_lines -le 50 ]]; 
+          then
+              echo "Sixes: Number of lines is less than 50."
+              exit 1
+          elif [[ $hl_lines -le 50 ]]
+          then
+              echo "HL: Number of lines is less than 50." 
+              exit 1
+          elif [[ $mm_lines -le 50 ]]
+          then
+              echo "MM: Number of lines is less than 50." 
+              exit 1
+          elif [[ $pl_lines -le 50 ]]
+          then
+              echo "PL: Number of lines is less than 50." 
+              exit 1
+          elif [[ $passtime_lines -le 50 ]]
+          then
+              echo "PT: Number of lines is less than 50." 
+              exit 1
+          elif [[ $ultiduo_lines -le 50 ]]
+          then
+              echo "PT: Number of lines is less than 50." 
+              exit 1
+          fi
+
+          echo "Whitelist Checks Complete"
         working-directory: ${{ env.CONFIG_PATH }}/
           
       - name: Setup SourcePawn Compiler ${{ matrix.SM_VERSION }}
@@ -109,11 +148,11 @@ jobs:
           wget -q -O tmp.zip https://git.empiresmod.com/sourcemod/Updater/-/jobs/artifacts/master/download?job=build && unzip -o tmp.zip 'addons/*' -d ../../  && rm tmp.zip
         working-directory: ${{ env.SOURCEMOD_PATH }}/
 
-        # PASS Time plugins
+      # PASS Time plugins
       - name: Get latest version of PASS Time Plugin
         run: |
           mkdir -p addons/sourcemod/plugins
-          wget -q -O ../../addons/sourcemod/plugins/p4sstime.smx https://github.com/blakeplusplus/p4sstime/releases/latest/download/p4sstime.smx
+          wget -q -O $PLUGINS_PATH/p4sstime.smx https://github.com/blakeplusplus/p4sstime/releases/latest/download/p4sstime.smx
           wget -q -O tmp.zip https://github.com/blakeplusplus/p4sstime/archive/refs/heads/main.zip && first_folder=$(unzip -Z1 tmp.zip | awk -F/ '{print $1}' | head -n 1) && unzip -q tmp.zip "$first_folder/*" -d "passtime" && cd passtime/$first_folder && cp -r addons/sourcemod/gamedata ../../addons/sourcemod/ && cd ../../ && rm -rf passtime && rm tmp.zip
         working-directory: ${{ env.SOURCEMOD_PATH }}/
 
@@ -122,10 +161,11 @@ jobs:
           rm -rf $PLUGINS_PATH/disabled/
           mkdir -p $PLUGINS_PATH/disabled/
           rsync -av --include='*/' --include="*.smx" --exclude="*" --prune-empty-dirs --remove-source-files $SCRIPTS_PATH/ $PLUGINS_PATH/
+          ls
 
       - name: Disable optional plugins
         run: |
-          mv tf2Halftime.smx disabled
+          mv tf2Halftime.smx disabled/
           mv roundtimer_override.smx disabled/
           mv p4sstime.smx disabled/
         working-directory: ${{ env.PLUGINS_PATH }}/
@@ -153,6 +193,7 @@ jobs:
                   echo $'        "Plugin"        ' $FILE
                 fi
               fi
+              
           done >> updatefile.txt
 
           echo $'    }' >> updatefile.txt
@@ -168,42 +209,10 @@ jobs:
         run: |
           mv $GITHUB_WORKSPACE/{updatefile.txt,README.md} .
         working-directory: ./build
- 
-      - name: Update updater branch
-        uses: peaceiris/actions-gh-pages@v3
+
+      - name: Upload plugin artifact
+        uses: actions/upload-artifact@master
+        if: ${{ always() }}
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: updater
-          publish_dir: build/
-
-      - name: Remove updatefile.txt, README.md for release
-        run: |
-          rm updatefile.txt README.md
-        working-directory: ./build
-
-      - name: Zip build folder
-        run: |
-          zip -r release.zip addons cfg
-        working-directory: ./build
-
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: v${{ env.GIT_COMMIT }}
-          release_name: Release v${{ env.PLUGIN_VERSION }}
-          draft: false
-          prerelease: false
-
-      - name: Upload Release Asset
-        id: upload-release-asset 
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./build/release.zip
-          asset_name: server-resources-updater.zip
-          asset_content_type: application/zip
+          name: Plugin.${{ env.PLUGIN_VERSION }}
+          path: build/
