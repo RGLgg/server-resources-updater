@@ -67,7 +67,6 @@ jobs:
       - name: Disable optional plugins
         run: |
           mv roundtimer_override.smx disabled/
-          mv p4sstime.smx disabled/
         working-directory: ${{ env.PLUGINS_PATH }}/
 
       - name: Rebuild updatefile.txt 
