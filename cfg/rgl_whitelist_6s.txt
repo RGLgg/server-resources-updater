@@ -1,4 +1,4 @@
-// Whitelist generated at Sun, 31 Mar 2024 23:54:02 +0200
+// Whitelist generated at Mon, 15 Apr 2024 03:41:57 +0200
 // Whitelist: RGL.gg 6v6 (Season 11) (ID: 13531)
 
 // Share or view this whitelist:
@@ -114,9 +114,13 @@
 	//_________________________ All classes _________________________\\
 	"Activated Campaign 3 Pass"					"0"
 
-	//----- Globally Competitive League banned items (Total: 3) -----\\
+	//----- Globally Competitive League banned items (Total: 6) -----\\
 	//_________________________ All classes _________________________\\
+	"Flair!"							"0"
+	"Photo Badge"							"0"
 	"Yeti Park Cap"							"0"
+	//______________________ Multiple classes _______________________\\
+	"The Conscientious Objector"					"0"
 	//____________________________ Scout ____________________________\\
 	"The Corpse Carrier"						"0"
 	"The Sprinting Cephalopod"					"0"
