@@ -1,5 +1,5 @@
-// Whitelist generated at Mon, 15 Apr 2024 03:41:59 +0200
-// Whitelist: RGL.gg Highlander (Season 14) (ID: 14011)
+// Whitelist generated at Wed, 08 May 2024 03:49:32 +0200
+// Whitelist: RGL.gg Highlander (Season 18) (ID: 14011)
 
 // Share or view this whitelist:
 //	https://whitelist.tf/rgl_9v9
@@ -75,13 +75,9 @@
 	//_________________________ All classes _________________________\\
 	"Activated Campaign 3 Pass"					"0"
 
-	//----- Globally Competitive League banned items (Total: 6) -----\\
+	//----- Globally Competitive League banned items (Total: 3) -----\\
 	//_________________________ All classes _________________________\\
-	"Flair!"							"0"
-	"Photo Badge"							"0"
 	"Yeti Park Cap"							"0"
-	//______________________ Multiple classes _______________________\\
-	"The Conscientious Objector"					"0"
 	//____________________________ Scout ____________________________\\
 	"The Corpse Carrier"						"0"
 	"The Sprinting Cephalopod"					"0"
