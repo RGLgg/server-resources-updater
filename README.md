@@ -288,6 +288,8 @@ thank you to Mastercomms for helping me out with net settings
 
 thank you to Arie from serveme for letting me run some things by him for the configs
 
+thank you to Wiethoofd for creating all the item whitelists
+
 thank you to JarateKing for adding a .gitattributes file and fixing typos and grammar because I suck with github and english
 
 thank you to Sigafoo for running RGL
