@@ -1,5 +1,5 @@
-// Whitelist generated at Sat, 13 Apr 2024 19:13:04 +0200
-// Whitelist: RGL.gg Highlander (Season 14) (ID: 14011)
+// Whitelist generated at Wed, 08 May 2024 03:50:34 +0200
+// Whitelist: RGL.gg Highlander (Season 18) (ID: 14011)
 
 // Share or view this whitelist:
 //	https://whitelist.tf/rgl_9v9
