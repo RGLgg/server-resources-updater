@@ -1,3 +1,4 @@
+#pragma newdecls required
 #pragma semicolon 1
 
 #include <sourcemod>
@@ -5,23 +6,23 @@
 #include <regex>
 
 #define PLUGIN_NAME                 "RGL.gg QoL Tweaks"
-#define PLUGIN_VERSION              "1.4.3"
+#define PLUGIN_VERSION              "1.4.5"
 
-bool:CfgExecuted;
-bool:alreadyChanging;
-bool:IsSafe;
-bool:warnedStv;
-isStvDone                           = -1;
-stvOn;
-formatVal;
-slotVal;
-curplayers;
-Handle:g_hForceChange;
-Handle:g_hWarnServ;
-Handle:g_hcheckStuff;
-Handle:g_hSafeToChangeLevel;
+bool CfgExecuted;
+bool alreadyChanging;
+bool IsSafe;
+bool warnedStv;
+int isStvDone = -1;
+int stvOn;
+int formatVal;
+int slotVal;
+int curplayers;
+Handle g_hForceChange;
+Handle g_hWarnServ;
+Handle g_hcheckStuff;
+Handle g_hSafeToChangeLevel;
 
-public Plugin:myinfo =
+public Plugin myinfo =
 {
     name                            =  PLUGIN_NAME,
     author                          = "Stephanie, Aad",
@@ -30,7 +31,7 @@ public Plugin:myinfo =
     url                             = "https://github.com/RGLgg/server-resources-updater"
 }
 
-public OnPluginStart()
+public void OnPluginStart()
 {
     // creates cvar for antitrolling stuff
     CreateConVar
@@ -64,7 +65,7 @@ public OnPluginStart()
     RegServerCmd("changelevel", changeLvl);
 }
 
-public OnMapStart()
+public void OnMapStart()
 {
     delete g_hForceChange;
     delete g_hWarnServ;
@@ -83,6 +84,7 @@ public Action EventRoundStart(Handle event, const char[] name, bool dontBroadcas
     AntiTrollStuff();
     // prevents stv done notif spam if teams play another round before 90 seconds have passed
     delete g_hSafeToChangeLevel;
+    return Plugin_Continue;
 }
 
 // checks stuff for restarting server
@@ -115,23 +117,24 @@ public Action checkStuff(Handle timer)
     if (curplayers > 0)
     {
         LogMessage("[RGLQoL] At least 1 player on server. Not restarting.");
-        return;
+        return Plugin_Continue;
     }
     else if (!CfgExecuted)
     // if the rgl isnt exec'd dont restart.
     {
         LogMessage("[RGLQoL] RGL config not executed. Not restarting.");
-        return;
+        return Plugin_Continue;
     }
     // if the stv hasnt ended aka if the GAME hasn't ended + 90 seconds, don't restart. If isStvDone is -1 or 1 then it's ok.
     else if (isStvDone == 0)
     {
         LogMessage("[RGLQoL] STV is currently live! Not restarting.");
-        return;
+        return Plugin_Continue;
     }
+    return Plugin_Continue;
 }
 
-public OnRGLChanged(ConVar convar, char[] oldValue, char[] newValue)
+public void OnRGLChanged(ConVar convar, char[] oldValue, char[] newValue)
 {
     if (StringToInt(newValue) == 1)
     {
@@ -152,7 +155,7 @@ public OnRGLChanged(ConVar convar, char[] oldValue, char[] newValue)
 }
 
 // this section was influenced by f2's broken FixSTV plugin
-public OnSTVChanged(ConVar convar, char[] oldValue, char[] newValue)
+public void OnSTVChanged(ConVar convar, char[] oldValue, char[] newValue)
 {
     if (StringToInt(newValue) == 1)
     {
@@ -165,7 +168,7 @@ public OnSTVChanged(ConVar convar, char[] oldValue, char[] newValue)
     }
 }
 
-public OnServerCfgChanged(ConVar convar, char[] oldValue, char[] newValue)
+public void OnServerCfgChanged(ConVar convar, char[] oldValue, char[] newValue)
 {
     // if cfg changes, then update tv_maxclients to 5
     if (GetConVarInt(FindConVar("tv_maxclients")) == 128)
@@ -177,7 +180,7 @@ public OnServerCfgChanged(ConVar convar, char[] oldValue, char[] newValue)
     AntiTrollStuff();
 }
 
-public SetDefaultWhitelist() 
+public void SetDefaultWhitelist() 
 {
     // check to see if tftrue exists, and if it fails to load after a tf2 update use default mp_tournament_whitelist
     if(FileExists("addons/TFTrue.vdf")) 
@@ -233,7 +236,7 @@ public void InvokePureCommandCheck(any ignored)
     }
 }
 
-public change15()
+public void change15()
 {
     if (!alreadyChanging)
     {
@@ -257,12 +260,14 @@ public Action GameOverEvent(Handle event, const char[] name, bool dontBroadcast)
     {
         g_hcheckStuff = CreateTimer(600.0, checkStuff, _, TIMER_REPEAT);
     }
+    return Plugin_Continue;
 }
 
 public Action unloadMapChooserNextMap(Handle timer)
 {
     ServerCommand("sm plugins unload nextmap");
     ServerCommand("sm plugins unload mapchooser");
+    return Plugin_Continue;
 }
 
 public Action WarnServ(Handle timer)
@@ -270,6 +275,7 @@ public Action WarnServ(Handle timer)
     LogMessage("[RGLQoL] An important cvar has changed. Forcing a map change in 25 seconds unless the map is manually changed before then.");
     PrintColoredChatAll("\x07FFA07A[RGLQoL]\x01 An important cvar has changed. Forcing a map change in 25 seconds unless the map is manually changed before then.");
     g_hWarnServ = null;
+    return Plugin_Continue;
 }
 
 public Action SafeToChangeLevel(Handle timer)
@@ -282,6 +288,7 @@ public Action SafeToChangeLevel(Handle timer)
         IsSafe = true;
     }
     g_hSafeToChangeLevel = null;
+    return Plugin_Continue;
 }
 
 public Action changeLvl(int args)
@@ -307,9 +314,10 @@ public Action ForceChange(Handle timer)
     GetCurrentMap(mapName, sizeof(mapName));
     ForceChangeLevel(mapName, "Important cvar changed! Forcibly changing level to prevent bugs.");
     g_hForceChange = null;
+    return Plugin_Continue;
 }
 
-public AntiTrollStuff()
+public void AntiTrollStuff()
 {
     if (!GetConVarBool(FindConVar("rgl_cast")))
     {
@@ -363,7 +371,7 @@ public AntiTrollStuff()
     }
 }
 
-public OnPluginEnd()
+public void OnPluginEnd()
 {
     PrintColoredChatAll("\x07FFA07A[RGLQoL]\x01 version \x07FFA07A%s\x01 has been \x07FF4040unloaded\x01.", PLUGIN_VERSION);
 }
