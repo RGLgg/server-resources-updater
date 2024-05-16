@@ -55,6 +55,7 @@ public void OnPluginStart(){
 public Action OnExec(int client, const char[] command, int argc){
     winlimit_original = -1;
     timelimit_original = -1;
+    return Plugin_Continue;
 }
 
 public void OnMapStart()
@@ -122,6 +123,7 @@ public Action WaitTime(Handle timer){
     doOnRestart = true;
     timer2 = CreateTimer(0.5, CheckRoundTime, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
     timer1 = INVALID_HANDLE;
+    return Plugin_Continue;
 }
 
 public Action CheckRoundTime(Handle timer){
