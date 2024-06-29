@@ -151,8 +151,7 @@ jobs:
       - name: Get latest version of PASS Time Plugin
         run: |
           mkdir -p addons/sourcemod/plugins
-          wget -q -O ../../addons/sourcemod/plugins/p4sstime.smx https://github.com/blakeplusplus/p4sstime/releases/latest/download/p4sstime.smx
-          wget -q -O tmp.zip https://github.com/blakeplusplus/p4sstime/archive/refs/heads/main.zip && first_folder=$(unzip -Z1 tmp.zip | awk -F/ '{print $1}' | head -n 1) && unzip -q tmp.zip "$first_folder/*" -d "passtime" && cd passtime/$first_folder && cp -r addons/sourcemod/gamedata ../../addons/sourcemod/ && cd ../../ && rm -rf passtime && rm tmp.zip
+          wget -q -O ../../addons/sourcemod/plugins/p4sstime.smx https://github.com/prplnorangesoda/p4sstime-plugin/releases/latest/download/p4sstime.smx
         working-directory: ${{ env.SOURCEMOD_PATH }}/
 
       - name: Move compiled plugins
