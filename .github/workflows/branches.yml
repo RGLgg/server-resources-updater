@@ -47,7 +47,7 @@ jobs:
       - name: Get latest version of TF2 Comp Fixes and its DHooks dependency
         run: |
           wget -q -O tmp.zip https://github.com/ldesgoui/tf2-comp-fixes/releases/download/v1.16.12/tf2-comp-fixes.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
-          wget -q -O tmp.zip https://github.com/peace-maker/DHooks2/releases/download/v2.2.0-detours17/dhooks-2.2.0-detours17-sm110.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
+        #  wget -q -O tmp.zip https://github.com/peace-maker/DHooks2/releases/download/v2.2.0-detours17/dhooks-2.2.0-detours17-sm110.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
                              
         working-directory: ${{ env.SOURCEMOD_PATH }}/
 
