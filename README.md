@@ -15,11 +15,11 @@ If youre running a **linux distro**, please **make sure it's up to date with EPE
 Parts of this README are still in the process of being updated.
 
 # Pre-Bundled Plugins & Dependencies 
-* [Updater](https://git.empiresmod.com/sourcemod/Updater) 
+* [Updater](https://github.com/nukkonyan/Updater) 
     * Automatically updates SourceMod plugins and files.
     * Included dependency
         * [SteamWorks Extension](https://forums.alliedmods.net/showthread.php?t=229556)
-    * Originally created by GoD-Tony. Edited by Neoony.
+    * Originally created by GoD-Tony. Edited by Tk /id/Teamkiller324.
 * [TF2 Competitive Fixes](https://github.com/ldesgoui/tf2-comp-fixes)
     * Various technical or gameplay changes catered towards competitive play.
     * Included dependency 
@@ -28,6 +28,9 @@ Parts of this README are still in the process of being updated.
 * [Progressive Ruleset Timer Plugins](https://github.com/b4nnyBot/Progressive-Ruleset-Timer-Plugins)
     * Creates dynamic win conditions for 5CP gamemodes
     * By b4nny and Dooby Skoo
+* [p4sstime plugin - lxdi fork](https://github.com/prplnorangesoda/p4sstime-plugin)
+    * The main plugin for 4v4 Competitive PASS Time.
+    * Originally created by [blake++](https://github.com/blakeplusplus/p4sstime),
 * [SrcTV+](https://github.com/dalegaard/srctvplus)
     * SrcTV+ makes the server send all events to SrcTV.
     * By GipsArm - [TFTV Thread](https://www.teamfortress.tv/46380/srctv)

@@ -1,4 +1,4 @@
-// Whitelist generated at Thu, 16 May 2024 17:17:40 +0200
+// Whitelist generated at Fri, 13 Sep 2024 01:17:59 +0200
 // Whitelist: RGL.gg 6v6 (Season 15) (ID: 14474)
 
 // Share or view this whitelist:
@@ -160,7 +160,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 56) ----------------------\\
+	//--------------------- Taunts (Total: 60) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -173,6 +173,7 @@
 	"Taunt: The Fist Bump"						"0"
 	"Taunt: The Scaredy-cat!"					"0"
 	"Taunt: The Victory Lap"					"0"
+	"Taunt: Unleashed Rage"						"0"
 	"Taunt: Zoomin' Broom"						"0"
 	//____________________________ Scout ____________________________\\
 	"Taunt: Runner's Rhythm"					"0"
@@ -183,11 +184,13 @@
 	"Taunt: The Homerunner's Hobby"					"0"
 	"Taunt: The Scooty Scoot"					"0"
 	//___________________________ Soldier ___________________________\\
+	"Taunt: Can It!"						"0"
 	"Taunt: Neck Snap"						"0"
 	"Taunt: Panzer Pants"						"0"
 	"Taunt: Rocket Jockey"						"0"
 	//____________________________ Pyro _____________________________\\
 	"Pool Party Taunt"						"0"
+	"Taunt: Cremator's Condolences"					"0"
 	"Taunt: Roasty Toasty"						"0"
 	"Taunt: Scorcher's Solo"					"0"
 	"Taunt: The Balloonibouncer"					"0"
@@ -220,6 +223,7 @@
 	//___________________________ Sniper ____________________________\\
 	"Taunt: Didgeridrongo"						"0"
 	"Taunt: Shooter's Stakeout"					"0"
+	"Taunt: Straight Shooter Tutor"					"0"
 	//_____________________________ Spy _____________________________\\
 	"Taunt: Luxury Lounge"						"0"
 	"Taunt: Tailored Terminal"					"0"
