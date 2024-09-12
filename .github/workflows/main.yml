@@ -34,8 +34,8 @@ jobs:
 
       - name: Get latest version of SteamWorks Windows+Linux
         run: |
-          wget -q -O tmp.zip http://users.alliedmods.net/~kyles/builds/SteamWorks/SteamWorks-git132-windows.zip && unzip -o tmp.zip 'addons/*' -d ../../  && rm tmp.zip
-          wget -q -O tmp.tar.gz http://users.alliedmods.net/~kyles/builds/SteamWorks/SteamWorks-git132-linux.tar.gz && tar -xvzf tmp.tar.gz --strip-components=2 && rm tmp.tar.gz
+          wget -q -O tmp.zip http://users.alliedmods.net/~kyles/builds/SteamWorks/SteamWorks-git132-windows.zip && unzip -o tmp.zip 'addons/*' -x 'addons/sourcemod/scripting/include/SteamWorks.inc' 'addons/sourcemod/scripting/swag.sp' -d ../../ && rm tmp.zip
+          wget -q -O tmp.tar.gz http://users.alliedmods.net/~kyles/builds/SteamWorks/SteamWorks-git132-linux.tar.gz && tar -xvzf tmp.tar.gz --strip-components=2 --exclude='addons/sourcemod/scripting/include/SteamWorks.inc' --exclude='addons/sourcemod/scripting/swag.sp' && rm tmp.tar.gz
         working-directory: ${{ env.SOURCEMOD_PATH }}/
 
       # TF2 Comp Fixes: https://github.com/ldesgoui/tf2-comp-fixes
@@ -44,7 +44,7 @@ jobs:
       # wget -q -O tmp.zip https://github.com/ldesgoui/tf2-comp-fixes/releases/latest/download/tf2-comp-fixes.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
       - name: Get latest version of TF2 Comp Fixes and its DHooks dependency
         run: |
-          wget -q -O tmp.zip https://github.com/ldesgoui/tf2-comp-fixes/releases/download/v1.16.13/tf2-comp-fixes.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
+          wget -q -O tmp.zip https://github.com/ldesgoui/tf2-comp-fixes/releases/download/v1.16.16/tf2-comp-fixes.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
         #  wget -q -O tmp.zip https://github.com/peace-maker/DHooks2/releases/download/v2.2.0-detours17/dhooks-2.2.0-detours17-sm110.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
         # Dhooks was bundled with Sourcemod starting SM 1.11 Release
                      
