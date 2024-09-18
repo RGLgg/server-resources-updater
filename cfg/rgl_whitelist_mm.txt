@@ -1,4 +1,4 @@
-// Whitelist generated at Sat, 29 Jun 2024 23:00:42 +0200
+// Whitelist generated at Thu, 19 Sep 2024 00:49:35 +0200
 // Whitelist: RGL.gg No Restriction 6s (Season 3) (ID: 9914)
 
 // Share or view this whitelist:
@@ -75,7 +75,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 68) ----------------------\\
+	//--------------------- Taunts (Total: 72) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -91,6 +91,7 @@
 	"Taunt: The Fist Bump"						"0"
 	"Taunt: The Scaredy-cat!"					"0"
 	"Taunt: The Victory Lap"					"0"
+	"Taunt: Unleashed Rage"						"0"
 	"Taunt: Zoomin' Broom"						"0"
 	//____________________________ Scout ____________________________\\
 	"Taunt: Foul Play"						"0"
@@ -103,6 +104,7 @@
 	"Taunt: The Killer Signature"					"0"
 	"Taunt: The Scooty Scoot"					"0"
 	//___________________________ Soldier ___________________________\\
+	"Taunt: Can It!"						"0"
 	"Taunt: Neck Snap"						"0"
 	"Taunt: Panzer Pants"						"0"
 	"Taunt: Rocket Jockey"						"0"
@@ -110,6 +112,7 @@
 	"Taunt: The Profane Puppeteer"					"0"
 	//____________________________ Pyro _____________________________\\
 	"Pool Party Taunt"						"0"
+	"Taunt: Cremator's Condolences"					"0"
 	"Taunt: Roasty Toasty"						"0"
 	"Taunt: Scorcher's Solo"					"0"
 	"Taunt: The Balloonibouncer"					"0"
@@ -147,6 +150,7 @@
 	//___________________________ Sniper ____________________________\\
 	"Taunt: Didgeridrongo"						"0"
 	"Taunt: Shooter's Stakeout"					"0"
+	"Taunt: Straight Shooter Tutor"					"0"
 	//_____________________________ Spy _____________________________\\
 	"Taunt: Luxury Lounge"						"0"
 	"Taunt: Tailored Terminal"					"0"

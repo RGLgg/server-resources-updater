@@ -1,194 +1,165 @@
 
 /* PluginPack Helpers */
 
-static PluginPack_Plugin = 0;
-static PluginPack_Files = 0;
-static PluginPack_Status = 0;
-static PluginPack_URL = 0;
+static DataPackPos PluginPack_Plugin;
+static DataPackPos PluginPack_Files;
+static DataPackPos PluginPack_Status;
+static DataPackPos PluginPack_URL;
 
-GetMaxPlugins()
-{
-	return GetArraySize(g_hPluginPacks);
+int GetMaxPlugins()	{
+	return g_hPluginPacks.Length;
 }
 
-bool:IsValidPlugin(Handle:plugin)
-{
+bool IsValidPlugin(Handle plugin)	{
 	/* Check if the plugin handle is pointing to a valid plugin. */
-	new Handle:hIterator = GetPluginIterator();
-	new bool:bIsValid = false;
+	Handle hIterator = GetPluginIterator();
+	bool bIsValid = false;
 	
-	while (MorePlugins(hIterator))
-	{
-		if (plugin == ReadPlugin(hIterator))
-		{
+	while(MorePlugins(hIterator))	{
+		if(plugin == ReadPlugin(hIterator))	{
 			bIsValid = true;
 			break;
 		}
 	}
 	
-	CloseHandle(hIterator);
+	delete hIterator;
 	return bIsValid;
 }
 
-PluginToIndex(Handle:plugin)
-{
-	new Handle:hPluginPack = INVALID_HANDLE;
+int PluginToIndex(Handle plugin)	{
+	DataPack hPluginPack = null;
 	
-	new maxPlugins = GetMaxPlugins();
-	for (new i = 0; i < maxPlugins; i++)
-	{
-		hPluginPack = GetArrayCell(g_hPluginPacks, i);
-		SetPackPosition(hPluginPack, PluginPack_Plugin);
+	int maxPlugins = GetMaxPlugins();
+	for(int i = 0; i < maxPlugins; i++)	{
+		hPluginPack = g_hPluginPacks.Get(i);
+		hPluginPack.Position = PluginPack_Plugin;
 		
-		if (plugin == Handle:ReadPackCell(hPluginPack))
-		{
+		if(plugin == view_as<Handle>(hPluginPack.ReadCell()))
 			return i;
-		}
 	}
 	
 	return -1;
 }
 
-Handle:IndexToPlugin(index)
-{
-	new Handle:hPluginPack = GetArrayCell(g_hPluginPacks, index);
-	SetPackPosition(hPluginPack, PluginPack_Plugin);
-	return Handle:ReadPackCell(hPluginPack);
+Handle IndexToPlugin(int index)	{
+	DataPack hPluginPack = view_as<DataPack>(g_hPluginPacks.Get(index));
+	hPluginPack.Position = PluginPack_Plugin;
+	return view_as<Handle>(hPluginPack.ReadCell());
 }
 
-Updater_AddPlugin(Handle:plugin, const String:url[])
-{	
-	new index = PluginToIndex(plugin);
+void Updater_AddPlugin(Handle plugin, const char[] url)	{
+	int index = PluginToIndex(plugin);
 	
-	if (index != -1)
-	{
-		// Remove plugin from removal queue.
-		new maxPlugins = GetArraySize(g_hRemoveQueue);
-		for (new i = 0; i < maxPlugins; i++)
-		{
-			if (plugin == GetArrayCell(g_hRemoveQueue, i))
-			{
-				RemoveFromArray(g_hRemoveQueue, i);
-				break;
+	switch(index != -1)	{
+		case true:	{
+			// Remove plugin from removal queue.
+			int maxPlugins = g_hRemoveQueue.Length;
+			for(int i = 0; i < maxPlugins; i++)	{
+				if(plugin == g_hRemoveQueue.Get(i))	{
+					g_hRemoveQueue.Erase(i);
+					break;
+				}
 			}
+			
+			// Update the url.
+			Updater_SetURL(index, url);
 		}
-		
-		// Update the url.
-		Updater_SetURL(index, url);
-	}
-	else
-	{
-		new Handle:hPluginPack = CreateDataPack();
-		new Handle:hFiles = CreateArray(PLATFORM_MAX_PATH);
-		
-		PluginPack_Plugin = GetPackPosition(hPluginPack);
-		WritePackCell(hPluginPack, _:plugin);
-		
-		PluginPack_Files = GetPackPosition(hPluginPack);
-		WritePackCell(hPluginPack, _:hFiles);
-		
-		PluginPack_Status = GetPackPosition(hPluginPack);
-		WritePackCell(hPluginPack, _:Status_Idle);
-		
-		PluginPack_URL = GetPackPosition(hPluginPack);
-		WritePackString(hPluginPack, url);
-		
-		PushArrayCell(g_hPluginPacks, hPluginPack);
+		case false:	{
+			DataPack hPluginPack = new DataPack();
+			ArrayList hFiles = new ArrayList(PLATFORM_MAX_PATH);
+			
+			PluginPack_Plugin = hPluginPack.Position;
+			hPluginPack.WriteCell(view_as<int>(plugin));
+			
+			PluginPack_Files = hPluginPack.Position;
+			hPluginPack.WriteCell(view_as<int>(hFiles));
+			
+			PluginPack_Status = hPluginPack.Position;
+			hPluginPack.WriteCell(view_as<int>(Status_Idle));
+			
+			PluginPack_URL = hPluginPack.Position;
+			hPluginPack.WriteString(url);
+			
+			g_hPluginPacks.Push(hPluginPack);
+		}
 	}
 }
 
-Updater_QueueRemovePlugin(Handle:plugin)
-{
+void Updater_QueueRemovePlugin(Handle plugin)	{
 	/* Flag a plugin for removal. */
-	new maxPlugins = GetArraySize(g_hRemoveQueue);
-	for (new i = 0; i < maxPlugins; i++)
-	{
+	int maxPlugins = g_hRemoveQueue.Length;
+	for(int i = 0; i < maxPlugins; i++)	{
 		// Make sure it wasn't previously flagged.
-		if (plugin == GetArrayCell(g_hRemoveQueue, i))
-		{
+		if(plugin == g_hRemoveQueue.Get(i))
 			return;
-		}
 	}
 	
-	PushArrayCell(g_hRemoveQueue, plugin);
+	g_hRemoveQueue.Push(plugin);
 	Updater_FreeMemory();
 }
 
-Updater_RemovePlugin(index)
-{
+void Updater_RemovePlugin(int index)	{
 	/* Warning: Removing a plugin will shift indexes. */
 	CloseHandle(Updater_GetFiles(index)); // hFiles
 	CloseHandle(GetArrayCell(g_hPluginPacks, index)); // hPluginPack
-	RemoveFromArray(g_hPluginPacks, index);
+	g_hPluginPacks.Erase(index);
 }
 
-Handle:Updater_GetFiles(index)
-{
-	new Handle:hPluginPack = GetArrayCell(g_hPluginPacks, index);
-	SetPackPosition(hPluginPack, PluginPack_Files);
-	return Handle:ReadPackCell(hPluginPack);
+Handle Updater_GetFiles(int index)	{
+	DataPack hPluginPack = g_hPluginPacks.Get(index);
+	hPluginPack.Position = PluginPack_Files;
+	return view_as<Handle>(hPluginPack.ReadCell());
 }
 
-UpdateStatus:Updater_GetStatus(index)
-{
-	new Handle:hPluginPack = GetArrayCell(g_hPluginPacks, index);
-	SetPackPosition(hPluginPack, PluginPack_Status);
-	return UpdateStatus:ReadPackCell(hPluginPack);
+UpdateStatus Updater_GetStatus(int index)	{
+	DataPack hPluginPack = g_hPluginPacks.Get(index);
+	hPluginPack.Position = PluginPack_Status;
+	return view_as<UpdateStatus>(hPluginPack.ReadCell());
 }
 
-Updater_SetStatus(index, UpdateStatus:status)
-{
-	new Handle:hPluginPack = GetArrayCell(g_hPluginPacks, index);
-	SetPackPosition(hPluginPack, PluginPack_Status);
-	WritePackCell(hPluginPack, _:status);
+void Updater_SetStatus(int index, UpdateStatus status)	{
+	DataPack hPluginPack = g_hPluginPacks.Get(index);
+	hPluginPack.Position = PluginPack_Status;
+	hPluginPack.WriteCell(view_as<int>(status));
 }
 
-Updater_GetURL(index, String:buffer[], size)
-{
-	new Handle:hPluginPack = GetArrayCell(g_hPluginPacks, index);
-	SetPackPosition(hPluginPack, PluginPack_URL);
-	ReadPackString(hPluginPack, buffer, size);
+void Updater_GetURL(int index, char[] buffer, int size)	{
+	DataPack hPluginPack = g_hPluginPacks.Get(index);
+	hPluginPack.Position = PluginPack_URL;
+	hPluginPack.ReadString(buffer, size);
 }
 
-Updater_SetURL(index, const String:url[])
-{
-	new Handle:hPluginPack = GetArrayCell(g_hPluginPacks, index);
-	SetPackPosition(hPluginPack, PluginPack_URL);
-	WritePackString(hPluginPack, url);
+void Updater_SetURL(int index, const char[] url)	{
+	DataPack hPluginPack = g_hPluginPacks.Get(index);
+	hPluginPack.Position = PluginPack_URL;
+	hPluginPack.WriteString(url);
 }
 
 /* Stocks */
-stock ReloadPlugin(Handle:plugin=INVALID_HANDLE)
-{
-	decl String:filename[64];
+stock void ReloadPlugin(Handle plugin=null)	{
+	char filename[64];
 	GetPluginFilename(plugin, filename, sizeof(filename));
 	ServerCommand("sm plugins reload %s", filename);
 }
 
-stock UnloadPlugin(Handle:plugin=INVALID_HANDLE)
-{
-	decl String:filename[64];
+stock void UnloadPlugin(Handle plugin=null)	{
+	char filename[64];
 	GetPluginFilename(plugin, filename, sizeof(filename));
 	ServerCommand("sm plugins unload %s", filename);
 }
 
-stock DisablePlugin(Handle:plugin=INVALID_HANDLE)
-{
-	decl String:filename[64] String:path_disabled[PLATFORM_MAX_PATH], String:path_plugin[PLATFORM_MAX_PATH];
+stock void DisablePlugin(Handle plugin=null)	{
+	char filename[64], path_disabled[PLATFORM_MAX_PATH], path_plugin[PLATFORM_MAX_PATH];
 	
 	GetPluginFilename(plugin, filename, sizeof(filename));
 	BuildPath(Path_SM, path_disabled, sizeof(path_disabled), "plugins/disabled/%s", filename);
 	BuildPath(Path_SM, path_plugin, sizeof(path_plugin), "plugins/%s", filename);
 	
-	if (FileExists(path_disabled))
-	{
+	if(FileExists(path_disabled))
 		DeleteFile(path_disabled);
-	}
 	
-	if (!RenameFile(path_disabled, path_plugin))
-	{
+	if(!RenameFile(path_disabled, path_plugin))
 		DeleteFile(path_plugin);
-	}
 	
 	ServerCommand("sm plugins unload %s", filename);
 }

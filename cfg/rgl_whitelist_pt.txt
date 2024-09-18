@@ -1,4 +1,4 @@
-// Whitelist generated at Sat, 29 Jun 2024 23:00:52 +0200
+// Whitelist generated at Thu, 19 Sep 2024 00:49:37 +0200
 // Whitelist: RGL.gg Passtime (ID: 14202)
 
 // Share or view this whitelist:
@@ -106,8 +106,8 @@
 	"Promo Neon Annihilator"					"0"
 	"Sharpened Volcano Fragment"					"0"
 	"The Axtinguisher"						"0"
-	"The Back Scratcher"						"0"
 	"The Backburner"						"0"
+	"The Back Scratcher"						"0"
 	"The Degreaser"							"0"
 	"The Detonator"							"0"
 	"The Dragon's Fury"						"0"
@@ -265,4 +265,14 @@
 	"Elf Ignition"							"0"
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
+
+	//---------------------- Taunts (Total: 4) ----------------------\\
+	//_________________________ All classes _________________________\\
+	"Taunt: Unleashed Rage"						"0"
+	//___________________________ Soldier ___________________________\\
+	"Taunt: Can It!"						"0"
+	//____________________________ Pyro _____________________________\\
+	"Taunt: Cremator's Condolences"					"0"
+	//___________________________ Sniper ____________________________\\
+	"Taunt: Straight Shooter Tutor"					"0"
 }
