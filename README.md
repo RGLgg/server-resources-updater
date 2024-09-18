@@ -15,11 +15,11 @@ If youre running a **linux distro**, please **make sure it's up to date with EPE
 Parts of this README are still in the process of being updated.
 
 # Pre-Bundled Plugins & Dependencies 
-* [Updater](https://git.empiresmod.com/sourcemod/Updater) 
+* [Updater](https://github.com/nukkonyan/Updater) 
     * Automatically updates SourceMod plugins and files.
     * Included dependency
         * [SteamWorks Extension](https://forums.alliedmods.net/showthread.php?t=229556)
-    * Originally created by GoD-Tony. Edited by Neoony.
+    * Originally created by GoD-Tony. Edited by Tk /id/Teamkiller324.
 * [TF2 Competitive Fixes](https://github.com/ldesgoui/tf2-comp-fixes)
     * Various technical or gameplay changes catered towards competitive play.
     * Included dependency 
