@@ -35,8 +35,8 @@ jobs:
 
       - name: Get latest version SteamWorks Windows+Linux
         run: |
-          wget -q -O tmp.zip http://users.alliedmods.net/~kyles/builds/SteamWorks/SteamWorks-git132-windows.zip && unzip -o tmp.zip 'addons/*' -d ../../  && rm tmp.zip
-          wget -q -O tmp.tar.gz http://users.alliedmods.net/~kyles/builds/SteamWorks/SteamWorks-git132-linux.tar.gz && tar -xvzf tmp.tar.gz --strip-components=2 && rm tmp.tar.gz
+          wget -q -O tmp.zip http://users.alliedmods.net/~kyles/builds/SteamWorks/SteamWorks-git132-windows.zip && unzip -o tmp.zip 'addons/*' -x 'addons/sourcemod/scripting/include/SteamWorks.inc' 'addons/sourcemod/scripting/swag.sp' -d ../../ && rm tmp.zip
+          wget -q -O tmp.tar.gz http://users.alliedmods.net/~kyles/builds/SteamWorks/SteamWorks-git132-linux.tar.gz && tar -xvzf tmp.tar.gz --strip-components=2 --exclude='addons/sourcemod/scripting/include/SteamWorks.inc' --exclude='addons/sourcemod/scripting/swag.sp' && rm tmp.tar.gz
         working-directory: ${{ env.SOURCEMOD_PATH }}/
 
       # TF2 Comp Fixes: https://github.com/ldesgoui/tf2-comp-fixes
@@ -45,7 +45,7 @@ jobs:
       # wget -q -O tmp.zip https://github.com/ldesgoui/tf2-comp-fixes/releases/latest/download/tf2-comp-fixes.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
       - name: Get latest version of TF2 Comp Fixes and its DHooks dependency
         run: |
-          wget -q -O tmp.zip https://github.com/ldesgoui/tf2-comp-fixes/releases/download/v1.16.13/tf2-comp-fixes.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
+          wget -q -O tmp.zip https://github.com/ldesgoui/tf2-comp-fixes/releases/download/v1.16.16/tf2-comp-fixes.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
         #  wget -q -O tmp.zip https://github.com/peace-maker/DHooks2/releases/download/v2.2.0-detours17/dhooks-2.2.0-detours17-sm110.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
         # Dhooks was bundled with Sourcemod starting SM 1.11 Release          
          
@@ -91,7 +91,7 @@ jobs:
 
       - name: Compile RGL Suite Plugins against SM ${{ steps.setup-sp.outputs.version }}
         run: |
-          for plugin in "rglqol" "rglupdater" "config_checker" "tf2Halftime" "improved_match_timer" "disabled/roundtimer_override"
+          for plugin in "rglqol" "rglupdater" "updater" "config_checker" "tf2Halftime" "improved_match_timer" "disabled/roundtimer_override"
           do
             echo -e "\nCompiling $plugin.sp..."
             spcomp -E -w234 -O2 -v2 -i $SCRIPTS_PATH/include $plugin.sp
@@ -105,10 +105,10 @@ jobs:
         working-directory: ${{ env.SOURCEMOD_PATH }}/
 
       # Updated Updater: https://git.empiresmod.com/sourcemod/Updater
-      - name: Get latest version of Updater
-        run: |
-          wget -q -O tmp.zip https://git.empiresmod.com/sourcemod/Updater/-/jobs/artifacts/master/download?job=build && unzip -o tmp.zip 'addons/*' -d ../../  && rm tmp.zip
-        working-directory: ${{ env.SOURCEMOD_PATH }}/
+      # - name: Get latest version of Updater
+      #   run: |
+      #     wget -q -O tmp.zip https://git.empiresmod.com/sourcemod/Updater/-/jobs/artifacts/master/download?job=build && unzip -o tmp.zip 'addons/*' -d ../../  && rm tmp.zip
+      #   working-directory: ${{ env.SOURCEMOD_PATH }}/
 
         # PASS Time plugins
       - name: Get latest version of PASS Time Plugin
