@@ -1,4 +1,4 @@
-// Whitelist generated at Thu, 19 Sep 2024 04:03:31 +0200
+// Whitelist generated at Fri, 08 Nov 2024 15:34:53 +0100
 // Whitelist: RGL.gg Highlander (Season 18) (ID: 14475)
 
 // Share or view this whitelist:
@@ -127,7 +127,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 60) ----------------------\\
+	//--------------------- Taunts (Total: 64) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -135,6 +135,7 @@
 	"RPS Taunt"							"0"
 	"Skullcracker Taunt"						"0"
 	"Square Dance Taunt"						"0"
+	"Taunt: Commending Clap"					"0"
 	"Taunt: Kazotsky Kick"						"0"
 	"Taunt: Mannrobics"						"0"
 	"Taunt: The Fist Bump"						"0"
@@ -143,6 +144,7 @@
 	"Taunt: Unleashed Rage"						"0"
 	"Taunt: Zoomin' Broom"						"0"
 	//____________________________ Scout ____________________________\\
+	"Taunt: Peace Out"						"0"
 	"Taunt: Runner's Rhythm"					"0"
 	"Taunt: Spin-to-Win"						"0"
 	"Taunt: The Boston Boarder"					"0"
@@ -171,6 +173,7 @@
 	"Taunt: The Pooped Deck"					"0"
 	//____________________________ Heavy ____________________________\\
 	"Taunt: Bare Knuckle Beatdown"					"0"
+	"Taunt: Crushing Defeat"					"0"
 	"Taunt: Russian Rubdown"					"0"
 	"Taunt: The Boiling Point"					"0"
 	"Taunt: The Road Rager"						"0"
@@ -196,6 +199,7 @@
 	"Taunt: Tailored Terminal"					"0"
 	"Taunt: The Boxtrot"						"0"
 	"Taunt: The Crypt Creeper"					"0"
+	"Taunt: The Punchline"						"0"
 	"Taunt: The Travel Agent"					"0"
 	"Taunt: Tuefort Tango"						"0"
 }
