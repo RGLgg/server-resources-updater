@@ -1,4 +1,4 @@
-// Whitelist generated at Wed, 20 Nov 2024 17:16:51 +0100
+// Whitelist generated at Wed, 20 Nov 2024 17:22:31 +0100
 // Whitelist: RGL.gg 6v6 (Season 15) (ID: 14474)
 
 // Share or view this whitelist:
