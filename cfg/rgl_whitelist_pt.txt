@@ -1,5 +1,5 @@
-// Whitelist generated at Wed, 20 Nov 2024 17:22:52 +0100
-// Whitelist: RGL.gg Passtime (ID: 14202)
+// Whitelist generated at Fri, 22 Nov 2024 02:53:32 +0100
+// Whitelist: RGL.gg Passtime (ID: 17879)
 
 // Share or view this whitelist:
 //	https://whitelist.tf/rgl_passtime
@@ -25,6 +25,7 @@
 //  * Black Box
 // - Secondary
 //  * Gunboats
+//  * Mantreads
 // - Melee
 //  * Equalizer
 //  * Escape Plan
@@ -35,7 +36,6 @@
 //  * Ali Baba's Wee Booties
 //  * Iron Bomber
 // - Secondary
-//  * Chargin' Targe
 //  * Splendid Screen
 // - Melee
 //  * Claidheamh Mòr
@@ -55,7 +55,7 @@
 {
 	"unlisted_items_default_to"		"1"
 
-	//------------ Blocked weapons/reskins (Total: 149) -------------\\
+	//------------ Blocked weapons/reskins (Total: 150) -------------\\
 	//______________________ Multiple classes _______________________\\
 	"Panic Attack Shotgun"						"0"
 	"The B.A.S.E. Jumper"						"0"
@@ -97,7 +97,6 @@
 	"The Direct Hit"						"0"
 	"The Disciplinary Action"					"0"
 	"The Liberty Launcher"						"0"
-	"The Mantreads"							"0"
 	"The Righteous Bison"						"0"
 	//____________________________ Pyro _____________________________\\
 	"Festive Axtinguisher"						"0"
@@ -126,8 +125,10 @@
 	"The Third Degree"						"0"
 	//___________________________ Demoman ___________________________\\
 	"Festive Eyelander"						"0"
+	"Festive Targe 2014"						"0"
 	"Nessie's Nine Iron"						"0"
 	"Stickybomb Jumper"						"0"
+	"The Chargin' Targe"						"0"
 	"The Eyelander"							"0"
 	"The Horseless Headless Horseman's Headtaker"			"0"
 	"The Loch-n-Load"						"0"

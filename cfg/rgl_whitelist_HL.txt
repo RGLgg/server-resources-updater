@@ -1,4 +1,4 @@
-// Whitelist generated at Wed, 20 Nov 2024 17:22:48 +0100
+// Whitelist generated at Fri, 22 Nov 2024 02:53:29 +0100
 // Whitelist: RGL.gg Highlander (Season 18) (ID: 14475)
 
 // Share or view this whitelist:
