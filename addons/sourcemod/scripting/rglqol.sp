@@ -78,6 +78,11 @@ public void OnMapStart()
     ServerCommand("sm plugins unload waitforstv");
 }
 
+public void OnClientPostAdminCheck(int client)
+{
+    // Prevents users from bypassing sv_client_cmdrate_difference set in rgl_base.cfg
+    SetConVarInt(FindConVar("sv_client_cmdrate_difference"), 0);
+}
 
 public Action EventRoundStart(Handle event, const char[] name, bool dontBroadcast)
 {
