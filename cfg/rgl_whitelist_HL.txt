@@ -1,4 +1,4 @@
-// Whitelist generated at Mon, 25 Nov 2024 03:46:00 +0100
+// Whitelist generated at Tue, 07 Jan 2025 19:07:38 +0100
 // Whitelist: RGL.gg Highlander (Season 18) (ID: 14475)
 
 // Share or view this whitelist:
@@ -127,7 +127,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 64) ----------------------\\
+	//--------------------- Taunts (Total: 67) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -138,6 +138,7 @@
 	"Taunt: Commending Clap"					"0"
 	"Taunt: Kazotsky Kick"						"0"
 	"Taunt: Mannrobics"						"0"
+	"Taunt: Peace!"							"0"
 	"Taunt: The Fist Bump"						"0"
 	"Taunt: The Scaredy-cat!"					"0"
 	"Taunt: The Victory Lap"					"0"
@@ -167,6 +168,7 @@
 	"Taunt: The Skating Scorcher"					"0"
 	//___________________________ Demoman ___________________________\\
 	"Taunt: Drunk Mann's Cannon"					"0"
+	"Taunt: Fore-Head Slice"					"0"
 	"Taunt: Scotsmann's Stagger"					"0"
 	"Taunt: Shanty Shipmate"					"0"
 	"Taunt: The Drunken Sailor"					"0"
@@ -195,6 +197,7 @@
 	"Taunt: Shooter's Stakeout"					"0"
 	"Taunt: Straight Shooter Tutor"					"0"
 	//_____________________________ Spy _____________________________\\
+	"Taunt: Curtain Call"						"0"
 	"Taunt: Luxury Lounge"						"0"
 	"Taunt: Tailored Terminal"					"0"
 	"Taunt: The Boxtrot"						"0"

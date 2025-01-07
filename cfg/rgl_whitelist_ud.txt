@@ -1,4 +1,4 @@
-// Whitelist generated at Mon, 25 Nov 2024 03:46:13 +0100
+// Whitelist generated at Tue, 07 Jan 2025 19:07:43 +0100
 // Whitelist: RGL.gg Ultiduo (ID: 14177)
 
 // Share or view this whitelist:
@@ -259,7 +259,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 84) ----------------------\\
+	//--------------------- Taunts (Total: 87) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -272,6 +272,7 @@
 	"Taunt: Kazotsky Kick"						"0"
 	"Taunt: Mannrobics"						"0"
 	"Taunt: Mourning Mercs"						"0"
+	"Taunt: Peace!"							"0"
 	"Taunt: The Fist Bump"						"0"
 	"Taunt: The Victory Lap"					"0"
 	"Taunt: Unleashed Rage"						"0"
@@ -310,6 +311,7 @@
 	"Oblooterated Taunt"						"0"
 	"Spent Well Spirits Taunt"					"0"
 	"Taunt: Drunk Mann's Cannon"					"0"
+	"Taunt: Fore-Head Slice"					"0"
 	"Taunt: Roar O'War"						"0"
 	"Taunt: Scotsmann's Stagger"					"0"
 	"Taunt: Shanty Shipmate"					"0"
@@ -346,6 +348,7 @@
 	"Taunt: The Killer Solo"					"0"
 	//_____________________________ Spy _____________________________\\
 	"Buy A Life Taunt"						"0"
+	"Taunt: Curtain Call"						"0"
 	"Taunt: Disco Fever"						"0"
 	"Taunt: Luxury Lounge"						"0"
 	"Taunt: Tailored Terminal"					"0"

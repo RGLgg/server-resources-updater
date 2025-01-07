@@ -12,41 +12,42 @@ Clicking on the `Clone and download` button will not work, instead ensure your s
 If youre running a **linux distro**, please **make sure it's up to date with EPEL**, some servers may have issues with TF2 Comp Fixes / RGL Updater.
 
 # If you have the old version of this plugin, please reinstall the plugin from this repo!
+
 Parts of this README are still in the process of being updated.
 
-# Pre-Bundled Plugins & Dependencies 
-* [Updater](https://github.com/nukkonyan/Updater) 
-    * Automatically updates SourceMod plugins and files.
-    * Included dependency
-        * [SteamWorks Extension](https://forums.alliedmods.net/showthread.php?t=229556)
-    * Originally created by GoD-Tony. Edited by Tk /id/Teamkiller324.
-* [TF2 Competitive Fixes](https://github.com/ldesgoui/tf2-comp-fixes)
-    * Various technical or gameplay changes catered towards competitive play.
-    * Included dependency 
-        * ~~[DHooks2](https://github.com/peace-maker/DHooks2)~~ - As of SM 1.11, it is prebundled in Sourcemod, users no longer have to manually maintain this package.
-    * By twiikuu
-* [Progressive Ruleset Timer Plugins](https://github.com/b4nnyBot/Progressive-Ruleset-Timer-Plugins)
-    * Creates dynamic win conditions for 5CP gamemodes
-    * By b4nny and Dooby Skoo
-* [p4sstime plugin - lxdi fork](https://github.com/p4sstime/p4sstime-plugin)
-    * The main plugin for 4v4 Competitive PASS Time.
-    * Originally created by [blake++](https://github.com/blakeplusplus/p4sstime),
-* [SrcTV+](https://github.com/dalegaard/srctvplus)
-    * SrcTV+ makes the server send all events to SrcTV.
-    * By GipsArm - [TFTV Thread](https://www.teamfortress.tv/46380/srctv)
-* [TF2 Halftime](https://github.com/stephanieLGBT/tf2-halftime)
-    * Emulates ESEA style halftimes for 5CP (halftime at 3 points or timelimit) and King of the Hill (halftime at 2 points) modes.
-    * By stephanieLGBT
-* [Updated Pause](https://github.com/l-Aad-l/updated-pause-plugin)
-    * Updated version of F2's original [pause](https://github.com/F2/F2s-sourcemod-plugins/tree/master/pause) to prevent building of Medic ÜberCharge during a pause .
-    * Originally created by F2. Edited by Aad.
-* [RGL.gg QoL Tweaks](https://github.com/RGLgg/server-resources-updater/blob/master/addons/sourcemod/scripting/rglqol.sp)
-    * Adds QoL tweaks for easier competitive server management and competitive integrity
-    * By stephanieLGBT and Aad
-* [RGL.gg Server Resources Updater](https://github.com/RGLgg/server-resources-updater/blob/master/addons/sourcemod/scripting/rglupdater.sp)
-    * Automatically updates RGL.gg plugins and files
-    * By stephanieLGBT and Aad
+# Pre-Bundled Plugins & Dependencies
 
+- [Updater](https://github.com/nukkonyan/Updater)
+  - Automatically updates SourceMod plugins and files.
+  - Included dependency
+    - [SteamWorks Extension](https://forums.alliedmods.net/showthread.php?t=229556)
+  - Originally created by GoD-Tony. Edited by Tk /id/Teamkiller324.
+- [TF2 Competitive Fixes](https://github.com/ldesgoui/tf2-comp-fixes)
+  - Various technical or gameplay changes catered towards competitive play.
+  - Included dependency
+    - ~~[DHooks2](https://github.com/peace-maker/DHooks2)~~ - As of SM 1.11, it is prebundled in Sourcemod, users no longer have to manually maintain this package.
+  - By twiikuu
+- [Progressive Ruleset Timer Plugins](https://github.com/b4nnyBot/Progressive-Ruleset-Timer-Plugins)
+  - Creates dynamic win conditions for 5CP gamemodes
+  - By b4nny and Dooby Skoo
+- [p4sstime plugin - lxdi fork](https://github.com/p4sstime/p4sstime-server-resources)
+  - The main plugin for 4v4 Competitive PASS Time.
+  - Originally created by [blake++](https://github.com/blakeplusplus/p4sstime),
+- [SrcTV+](https://github.com/dalegaard/srctvplus)
+  - SrcTV+ makes the server send all events to SrcTV.
+  - By GipsArm - [TFTV Thread](https://www.teamfortress.tv/46380/srctv)
+- [TF2 Halftime](https://github.com/stephanieLGBT/tf2-halftime)
+  - Emulates ESEA style halftimes for 5CP (halftime at 3 points or timelimit) and King of the Hill (halftime at 2 points) modes.
+  - By stephanieLGBT
+- [Updated Pause](https://github.com/l-Aad-l/updated-pause-plugin)
+  - Updated version of F2's original [pause](https://github.com/F2/F2s-sourcemod-plugins/tree/master/pause) to prevent building of Medic ÜberCharge during a pause .
+  - Originally created by F2. Edited by Aad.
+- [RGL.gg QoL Tweaks](https://github.com/RGLgg/server-resources-updater/blob/master/addons/sourcemod/scripting/rglqol.sp)
+  - Adds QoL tweaks for easier competitive server management and competitive integrity
+  - By stephanieLGBT and Aad
+- [RGL.gg Server Resources Updater](https://github.com/RGLgg/server-resources-updater/blob/master/addons/sourcemod/scripting/rglupdater.sp)
+  - Automatically updates RGL.gg plugins and files
+  - By stephanieLGBT and Aad
 
 # Server Resources for RGL.gg
 
@@ -54,32 +55,33 @@ Hi! This github repository contains all of the **required** plugins, configs, ma
 
 In creating the configs, I tried my best to prevent extra and/or useless commands while also minimizing the ability for cheating, exploitation, and unfair play due to preexisting client and/or server settings.
 
-The RGL updater plugin automatically updates itself and the rest of the files downloaded to your server as this repository gets updated. 
+The RGL updater plugin automatically updates itself and the rest of the files downloaded to your server as this repository gets updated.
 
 It also contains Quality of Life tweaks for TF2 servers, such as:
 
-* Preventing servers from automatically changing level after a match
+- Preventing servers from automatically changing level after a match
 
-* Warning server owners about cutting off STV before changing the level
+- Warning server owners about cutting off STV before changing the level
 
-* Automatically restarting servers after all players have left
+- Automatically restarting servers after all players have left
 
-* An automatic "Casting Antitroll" mode (enabled with `rgl_cast 1`) that locks your server's slot count at 12/12, 14/14, or 18/18, depending on what config is executed
+- An automatic "Casting Antitroll" mode (enabled with `rgl_cast 1`) that locks your server's slot count at 12/12, 14/14, or 18/18, depending on what config is executed
 
-If you find that was missed something in the configs, or if something doesn't work the way it should, and if you have a suggestion, *please submit an issue on GitHub*.
+If you find that was missed something in the configs, or if something doesn't work the way it should, and if you have a suggestion, _please submit an issue on GitHub_.
 
-If you have problems with the plugin, or if you have a suggestion, please submit an issue with details. 
-
+If you have problems with the plugin, or if you have a suggestion, please submit an issue with details.
 
 # Installation
+
 ## Prerequisites
+
 [![Sourcemod Version](https://img.shields.io/badge/SourceMod-v1.11-blue?labelColor=d9860a&color=5596cf)](https://www.sourcemod.net/downloads.php?branch=stable)
 
-With SM 1.10 causing issues, SM 1.11 is required for this plugin. The RGL Server Resources Updater will **only support SourceMod 1.11 and higher**. Please make sure you get the right version for your server's operating system! Any previous versions of SourceMod are **unsupported**. 
+With SM 1.10 causing issues, SM 1.11 is required for this plugin. The RGL Server Resources Updater will **only support SourceMod 1.11 and higher**. Please make sure you get the right version for your server's operating system! Any previous versions of SourceMod are **unsupported**.
 
 **Note**: Use the [1.11](https://www.sourcemod.net/downloads.php?branch=stable) branch instead.
 
-This guide [here](https://wiki.alliedmods.net/Upgrading_SourceMod) contains instructions on how to upgrade the files, but please consider doing a fresh install of all your current files to avoid any potential issues. 
+This guide [here](https://wiki.alliedmods.net/Upgrading_SourceMod) contains instructions on how to upgrade the files, but please consider doing a fresh install of all your current files to avoid any potential issues.
 
 After installation, typing `sm version` into the server console will confirm if the update was successful.
 
@@ -102,7 +104,6 @@ The plugin updates itself, along with the RGL configs, after every exec and chan
 
 You will have to add new maps to your server manually as RGL introduces them to each gamemode's map pool. This is to prevent lengthly download times with the updater plugin. Simply download the new map and place it in the `/tf/maps/` folder, through an (S)FTP client of your choice, and you're done.
 
-
 # !!Please read this section if you're not going to read anything else!!
 
 There are different configs and plugins for scrims and matches if you're playing 5cp and koth in 6s. Halftimes in 5cp and koth are handled by the tf2Halftime plugin, mirrored from [here](https://github.com/stephanieLGBT/tf2-halftime).
@@ -110,7 +111,6 @@ There are different configs and plugins for scrims and matches if you're playing
 Every other gamemode and type has the same config for scrims and matches.
 
 Here are the configs you need to exec for specific modes and map types:
-
 
 <table>
 <thead>
@@ -263,19 +263,17 @@ Here are the configs you need to exec for specific modes and map types:
 </table>
 <br>
 
-
 ### Reset Config
 
 `(rcon) exec rgl_off`
 
-This will reset your server to default settings, plus whatever you have set in server.cfg. It *will not* unload the STV bot (though it will stop recording). A more detailed explanation is below.
-
+This will reset your server to default settings, plus whatever you have set in server.cfg. It _will not_ unload the STV bot (though it will stop recording). A more detailed explanation is below.
 
 #### On the off config and STV bugginess
 
 There is something seriously wrong with STV in TF2. For no apparent reason, when you start it up, it eats a player slot by incrementing the value of your server's `maxplayers` by 1. This isn't a problem, typically, because TF2 can technically handle 33 "players", aka 32 + STV. If you were to set +maxplayers to 33 and then add stv, things would get ugly, really quickly.
 
-But that's not all. When the bot is unloaded, it, for no apparent reason, reads the value of `tv_maxplayers` and sets your server's visible player count to *that* number. Why? Who knows. `sv_visiblemaxplayers` has ZERO effect on this. For that reason, I decided to *not* unload the STV bot in the `rgl_off` config, as things would get broken quickly if players didn't set `tv_maxplayers` AND `sv_visiblemaxplayers` to the same value, which also has to be at or under the server's slot limit.
+But that's not all. When the bot is unloaded, it, for no apparent reason, reads the value of `tv_maxplayers` and sets your server's visible player count to _that_ number. Why? Who knows. `sv_visiblemaxplayers` has ZERO effect on this. For that reason, I decided to _not_ unload the STV bot in the `rgl_off` config, as things would get broken quickly if players didn't set `tv_maxplayers` AND `sv_visiblemaxplayers` to the same value, which also has to be at or under the server's slot limit.
 
 For this reason, and on the advice of some server network operators, I have decided to not shut down stv with rgl_off. If you need to disable the STV, please restart your server.
 
@@ -305,6 +303,6 @@ thank you to Miggy for being a cool anticheat admin who inspired me to make the 
 
 and shoutouts to plenty of other people for helping me with miscellaneous other stuff
 
-
 ## License
+
 This project is under the GPLv3 license. Unless otherwise stated in individual files.
