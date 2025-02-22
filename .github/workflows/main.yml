@@ -152,7 +152,7 @@ jobs:
       - name: Get latest version of PASS Time Plugin
         run: |
           mkdir -p addons/sourcemod/plugins
-          wget -q -O ../../addons/sourcemod/plugins/p4sstime.smx https://github.com/p4sstime/p4sstime-plugin/releases/latest/download/p4sstime.smx
+          wget -q -O ../../addons/sourcemod/plugins/p4sstime.smx https://github.com/p4sstime/p4sstime-server-resources/releases/latest/download/p4sstime.smx
         working-directory: ${{ env.SOURCEMOD_PATH }}/
 
       - name: Move compiled plugins
