@@ -1,5 +1,5 @@
-// Whitelist generated at Sat, 23 Nov 2024 00:23:50 +0100
-// Whitelist: RGL.gg Passtime (ID: 17879)
+// Whitelist generated at Sat, 22 Feb 2025 22:57:53 +0100
+// Whitelist: RGL.gg Passtime (ID: 18035)
 
 // Share or view this whitelist:
 //	https://whitelist.tf/rgl_passtime
@@ -266,21 +266,4 @@
 	"Elf Ignition"							"0"
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
-
-	//---------------------- Taunts (Total: 8) ----------------------\\
-	//_________________________ All classes _________________________\\
-	"Taunt: Commending Clap"					"0"
-	"Taunt: Unleashed Rage"						"0"
-	//____________________________ Scout ____________________________\\
-	"Taunt: Peace Out"						"0"
-	//___________________________ Soldier ___________________________\\
-	"Taunt: Can It!"						"0"
-	//____________________________ Pyro _____________________________\\
-	"Taunt: Cremator's Condolences"					"0"
-	//____________________________ Heavy ____________________________\\
-	"Taunt: Crushing Defeat"					"0"
-	//___________________________ Sniper ____________________________\\
-	"Taunt: Straight Shooter Tutor"					"0"
-	//_____________________________ Spy _____________________________\\
-	"Taunt: The Punchline"						"0"
 }
