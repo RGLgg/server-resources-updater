@@ -1,5 +1,5 @@
-// Whitelist generated at Tue, 07 Jan 2025 19:07:43 +0100
-// Whitelist: RGL.gg Ultiduo (ID: 14177)
+// Whitelist generated at Sat, 22 Feb 2025 23:02:33 +0100
+// Whitelist: RGL.gg Ultiduo (ID: 18034)
 
 // Share or view this whitelist:
 //	https://whitelist.tf/rgl_ultiduo
@@ -259,7 +259,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 87) ----------------------\\
+	//--------------------- Taunts (Total: 82) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -267,15 +267,11 @@
 	"RPS Taunt"							"0"
 	"Skullcracker Taunt"						"0"
 	"Square Dance Taunt"						"0"
-	"Taunt: Cheers!"						"0"
-	"Taunt: Commending Clap"					"0"
 	"Taunt: Kazotsky Kick"						"0"
 	"Taunt: Mannrobics"						"0"
-	"Taunt: Mourning Mercs"						"0"
-	"Taunt: Peace!"							"0"
 	"Taunt: The Fist Bump"						"0"
+	"Taunt: The Scaredy-cat!"					"0"
 	"Taunt: The Victory Lap"					"0"
-	"Taunt: Unleashed Rage"						"0"
 	"Taunt: Zoomin' Broom"						"0"
 	//____________________________ Scout ____________________________\\
 	"Battin' a Thousand Taunt"					"0"
@@ -293,7 +289,6 @@
 	"Taunt: The Scooty Scoot"					"0"
 	"Taunt: The Trackman's Touchdown"				"0"
 	//___________________________ Soldier ___________________________\\
-	"Taunt: Can It!"						"0"
 	"Taunt: Neck Snap"						"0"
 	"Taunt: Panzer Pants"						"0"
 	"Taunt: Rocket Jockey"						"0"

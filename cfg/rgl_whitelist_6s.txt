@@ -1,5 +1,5 @@
-// Whitelist generated at Tue, 07 Jan 2025 19:07:37 +0100
-// Whitelist: RGL.gg 6v6 (Season 15) (ID: 14474)
+// Whitelist generated at Sat, 22 Feb 2025 23:02:20 +0100
+// Whitelist: RGL.gg 6v6 (Season 17) (ID: 14474)
 
 // Share or view this whitelist:
 //	https://whitelist.tf/rgl_6v6
