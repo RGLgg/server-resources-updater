@@ -1,5 +1,5 @@
-// Whitelist generated at Sun, 23 Feb 2025 18:46:41 +0100
-// Whitelist: RGL.gg Highlander (Season 20) (ID: 18032)
+// Whitelist generated at Wed, 23 Apr 2025 18:59:30 +0200
+// Whitelist: RGL.gg Highlander (Season 20) (ID: 18150)
 
 // Share or view this whitelist:
 //	https://whitelist.tf/rgl_9v9
@@ -20,10 +20,6 @@
 // - Secondary
 //  * Crit-a-Cola
 //  * Mad Milk
-
-// Blocked weapons for Soldier
-// - Primary
-//  * Air Strike
 
 // Blocked weapons for Pyro
 // - Secondary
@@ -52,13 +48,11 @@
 {
 	"unlisted_items_default_to"		"1"
 
-	//------------- Blocked weapons/reskins (Total: 15) -------------\\
+	//------------- Blocked weapons/reskins (Total: 14) -------------\\
 	//____________________________ Scout ____________________________\\
 	"Crit-a-Cola"							"0"
 	"Mad Milk"							"0"
 	"Mutated Milk"							"0"
-	//___________________________ Soldier ___________________________\\
-	"The Air Strike"						"0"
 	//____________________________ Pyro _____________________________\\
 	"The Scorch Shot"						"0"
 	//___________________________ Demoman ___________________________\\
