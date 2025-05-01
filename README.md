@@ -36,18 +36,15 @@ Parts of this README are still in the process of being updated.
 - [SrcTV+](https://github.com/dalegaard/srctvplus)
   - SrcTV+ makes the server send all events to SrcTV.
   - By GipsArm - [TFTV Thread](https://www.teamfortress.tv/46380/srctv)
-- [TF2 Halftime](https://github.com/stephanieLGBT/tf2-halftime)
+- [TF2 Halftime](https://github.com/sapphonie/tf2-halftime)
   - Emulates ESEA style halftimes for 5CP (halftime at 3 points or timelimit) and King of the Hill (halftime at 2 points) modes.
-  - By stephanieLGBT
-- [Updated Pause](https://github.com/l-Aad-l/updated-pause-plugin)
-  - Updated version of F2's original [pause](https://github.com/F2/F2s-sourcemod-plugins/tree/master/pause) to prevent building of Medic ÜberCharge during a pause .
-  - Originally created by F2. Edited by Aad.
+  - By sapphonie
 - [RGL.gg QoL Tweaks](https://github.com/RGLgg/server-resources-updater/blob/master/addons/sourcemod/scripting/rglqol.sp)
   - Adds QoL tweaks for easier competitive server management and competitive integrity
-  - By stephanieLGBT and Aad
+  - By sapphonie and Aad
 - [RGL.gg Server Resources Updater](https://github.com/RGLgg/server-resources-updater/blob/master/addons/sourcemod/scripting/rglupdater.sp)
   - Automatically updates RGL.gg plugins and files
-  - By stephanieLGBT and Aad
+  - By sapphonie and Aad
 
 # Server Resources for RGL.gg
 
