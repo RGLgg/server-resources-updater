@@ -1,4 +1,4 @@
-// Whitelist generated at Thu, 24 Apr 2025 01:23:23 +0200
+// Whitelist generated at Thu, 01 May 2025 23:13:18 +0200
 // Whitelist: RGL.gg Highlander (Season 21) (ID: 18150)
 
 // Share or view this whitelist:
