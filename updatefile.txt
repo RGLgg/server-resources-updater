@@ -59,6 +59,7 @@
         "Plugin"         "/addons/sourcemod/extensions/SteamWorks.ext.so"
         "Plugin"         "/addons/sourcemod/extensions/SteamWorks.ext.dll"
         "Plugin"         "/addons/sourcemod/plugins/rglqol.smx"
+        "Plugin"         "/addons/sourcemod/plugins/demo_check_no_discord.smx"
         "Plugin"         "/addons/sourcemod/plugins/pause.smx"
         "Plugin"         "/addons/sourcemod/plugins/config_checker.smx"
         "Plugin"         "/addons/sourcemod/plugins/improved_match_timer.smx"
