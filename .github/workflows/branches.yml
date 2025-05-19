@@ -157,6 +157,12 @@ jobs:
           wget -q -O $PLUGINS_PATH/p4sstime.smx https://github.com/p4sstime/p4sstime-server-resources/releases/latest/download/p4sstime.smx
         working-directory: ${{ env.SOURCEMOD_PATH }}/
 
+      - name: Get latest version of Demo Check plugin
+        run: |
+          mkdir -p addons/sourcemod/plugins
+          wget -q -O $PLUGINS_PATH/demo_check_no_discord.smx https://github.com/ozfortress/demo_check_plugin/blob/main/plugins/demo_check_no_discord.smx
+        working-directory: ${{ env.SOURCEMOD_PATH }}/
+
       - name: Move compiled plugins
         run: |
           rm -rf $PLUGINS_PATH/disabled/

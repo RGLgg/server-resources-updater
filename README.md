@@ -32,7 +32,10 @@ Parts of this README are still in the process of being updated.
   - By b4nny and Dooby Skoo
 - [p4sstime plugin - lxdi fork](https://github.com/p4sstime/p4sstime-server-resources)
   - The main plugin for 4v4 Competitive PASS Time.
-  - Originally created by [blake++](https://github.com/blakeplusplus/p4sstime),
+  - Originally created by [blake++](https://github.com/blakeplusplus/p4sstime)
+- [Demo Checker Plugin](https://github.com/ozfortress/demo_check_plugin)
+  - This plugin is used to check if players are recording demos or not.
+  - By [Shigbeard](https://github.com/Shigbeard) and [Aad](https://github.com/l-Aad-l)
 - [SrcTV+](https://github.com/dalegaard/srctvplus)
   - SrcTV+ makes the server send all events to SrcTV.
   - By GipsArm - [TFTV Thread](https://www.teamfortress.tv/46380/srctv)
