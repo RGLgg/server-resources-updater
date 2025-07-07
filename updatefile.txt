@@ -110,5 +110,6 @@
         "Source"         "/addons/sourcemod/scripting/rglupdater.sp"
         "Source"         "/addons/sourcemod/scripting/demo_check_no_discord.sp"
         "Plugin"         "/addons/sourcemod/gamedata/tf2-comp-fixes.games.txt"
+        "Plugin"         "/addons/sourcemod/translations/demo_check.phrases.txt"
     }
 }
