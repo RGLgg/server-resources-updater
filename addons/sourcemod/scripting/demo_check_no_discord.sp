@@ -4,13 +4,16 @@
  * Plugin to check if a player is recording a demo.
  */
 
+#pragma newdecls required
+#pragma semicolon 1
+
 #include <sourcemod>
 #include <sdktools>
 #include <morecolors>
 
 #define DEMOCHECK_TAG "{lime}[{red}Demo Check{lime}]{white} "
 
-public Plugin:myinfo =
+public Plugin myinfo =
 {
     name = "Demo Check (No Discord)",
     author = "Shigbeard, Aad",
@@ -54,7 +57,7 @@ public void OnPluginStart()
     RegServerCmd("sm_democheck_disable", Cmd_DemoCheckDisable_Console, "Disable demo check", 0);
     RegServerCmd("sm_democheck_all", Cmd_DemoCheckAll_Console, "Check if all players are recording a demo", 0);
 
-    HookConVarChange(g_bDemoCheckEnabled, OnDemoCheckEnabledChange)
+    HookConVarChange(g_bDemoCheckEnabled, OnDemoCheckEnabledChange);
     g_readymode_min = FindConVar("mp_tournament_readymode_min");
 
     HookConVarChange(g_bDemoCheckWarn, OnDemoCheckWarn);
@@ -359,7 +362,7 @@ public void Log_Incident(int client, bool warn, char[] failType)
     {
         Format(sMsg, sizeof(sMsg), "[Demo Check] (Warn) %t", "logs_democheck_warn",sName, sSteamID, sProfileURL, failType);
     }
-    LogToGame(sMsg)
+    LogToGame(sMsg);
 }
 
 public Action Timer_KickClient(Handle timer, int client)
