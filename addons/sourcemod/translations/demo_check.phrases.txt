@@ -1,0 +1,90 @@
+"Phrases"
+{
+    "enabled"
+    {
+        "en"    "Demo Checking has been enabled. Testing all users in the server and new users joining."
+    }
+    "disabled"
+    {
+        "en"    "Demo Checking has been disabled."
+    }
+    "ds_enabled 0"
+    {
+        "en"    "ds_enable is set to 0, you are not recording a demo."
+    }
+    "ds_enabled 1"
+    {
+        "en"    "ds_enable is set to 1, you are only recording Valve Competitive Demos."
+    }
+    "ds_enabled 2 or 3"
+    {
+        "en"    "ds_enable is set to 2 or 3, you are recording a demo."
+    }
+    "ds_autodelete 1"
+    {
+        "en"    "ds_autodelete is set to 1, demos are being deleted."
+    }
+    "ds_autodelete 0"
+    {
+        "en"    "ds_autodelete is set to 0, demos are not being deleted."
+    }
+    "kicked"
+    {
+        "en"    "You have been kicked from the server for failing the Demo Check. See console for details."
+    }
+    "kicked_announce_disabled"
+    {
+        "#format" "{1:s}"
+        "en"    "{red}Warning! {lime}{1}{white} does not appear to be auto-recording demos correctly. If this is a match, please ensure you are recording a demo."
+    }
+    "kicked_announce"
+    {
+        "#format" "{1:s}"
+        "en"    "{lime}{1}{white} was kicked from the server for failing the Demo Check."
+    }
+    "docs"
+    {
+        "en"    "Your settings for recording Demos is incorrect. Please read the docs here: docs.ozfortress.com/guides/pov_demo_recording/"
+    }
+
+    "discord_democheck"
+    {
+        "#format" "{1:s},{2:s},{3:s},{4:s},{5:s}"
+        "en"    "[{1} ({2})]({3}) failed the demo check at {4} - `{5}`"
+    }
+
+    "discord_democheck_warn"
+    {
+        "#format" "{1:s},{2:s},{3:s},{4:s},{5:s}"
+        "en"    "[{1} ({2})]({3}) failed the demo check (in warn only mode) at {4} - `{5}`"
+    }
+
+    "logs_democheck"
+    {
+        "#format" "{1:s},{2:s},{3:s},{4:s}"
+        "en"    "{1} ({2}) [{3}] failed the demo check: {4}"
+    }
+
+    "logs_democheck_warn"
+    {
+        "#format" "{1:s},{2:s},{3:s},{4:s}"
+        "en"    "{1} ({2}) [{3}] failed the demo check for: {4} (in warn only mode)"
+    }
+
+    "plugin_start_check_all"
+    {
+        "en"    "Demo Check - Plugin Started and Demo Checking has been enabled. Testing all users in the server."
+    }
+
+    "plugin_authid_failed"
+    {
+        "#format" "{1:s},{2:s}"
+        "en"    "Couldn't validate SteamID for {1}, GetClientAuthId returned {2}. Thanks SourceMod!"
+    }
+
+    "join_cvar_check"
+    {
+        "#format" "{1:s},{2:s},{3:s}"
+        "en"    "sm_democheck_enabled: {1}, sm_democheck_onreadyup: {2}, sm_democheck_warn: {3}"
+    }
+}
