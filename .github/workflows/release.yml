@@ -58,13 +58,6 @@ jobs:
           wget -q -O addons/srctvplus.so https://github.com/dalegaard/srctvplus/releases/latest/download/srctvplus.so
           wget -q -O addons/srctvplus.vdf https://github.com/dalegaard/srctvplus//releases/latest/download/srctvplus.vdf
         working-directory: ${{ env.WORKSPACE }}/
-      
-      # TF2 Halftime: https://github.com/stephanieLGBT/tf2-halftime
-      - name: Get latest version of TF2 Halftime
-        run: |
-          wget -q -O scripting/include/morecolors.inc https://raw.githubusercontent.com/stephanieLGBT/tf2-halftime/master/scripting/include/morecolors.inc
-          wget -q -O scripting/tf2Halftime.sp https://raw.githubusercontent.com/stephanieLGBT/tf2-halftime/master/scripting/tf2Halftime.sp
-        working-directory: ${{ env.SOURCEMOD_PATH }}/
 
       # Color Literals: https://github.com/JoinedSenses/SourceMod-IncludeLibrary/blob/master/include/color_literals.inc
       - name: Get latest version of Color Literals
@@ -91,7 +84,7 @@ jobs:
 
       - name: Compile RGL Suite Plugins against SM ${{ steps.setup-sp.outputs.version }}
         run: |
-          for plugin in "rglqol" "rglupdater" "updater" "config_checker" "tf2Halftime" "improved_match_timer" "disabled/roundtimer_override"
+          for plugin in "rglqol" "rglupdater" "updater" "config_checker" "improved_match_timer" "disabled/roundtimer_override"  "demo_check_no_discord"
           do
             echo -e "\nCompiling $plugin.sp..."
             spcomp -E -w234 -O2 -v2 -i $SCRIPTS_PATH/include $plugin.sp
@@ -133,7 +126,6 @@ jobs:
 
       - name: Disable optional plugins
         run: |
-          mv tf2Halftime.smx disabled
           mv roundtimer_override.smx disabled/
           mv p4sstime.smx disabled/
         working-directory: ${{ env.PLUGINS_PATH }}/

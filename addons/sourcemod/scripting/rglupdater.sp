@@ -144,8 +144,10 @@ public void Updater_OnPluginUpdated()
 
 public Action reloadPlug(Handle timer)
 {
-    ServerCommand("sm plugins reload disabled/tf2Halftime");
+    ServerCommand("sm plugins unload disabled/tf2Halftime");
     ServerCommand("sm plugins reload pause");
+    ServerCommand("sm plugins reload demo_check_no_discord");
+    ServerCommand("sm plugins reload config_checker");
     ServerCommand("sm plugins reload rglqol");
     ServerCommand("sm plugins reload rglupdater");
 

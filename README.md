@@ -39,9 +39,6 @@ Parts of this README are still in the process of being updated.
 - [SrcTV+](https://github.com/dalegaard/srctvplus)
   - SrcTV+ makes the server send all events to SrcTV.
   - By GipsArm - [TFTV Thread](https://www.teamfortress.tv/46380/srctv)
-- [TF2 Halftime](https://github.com/sapphonie/tf2-halftime)
-  - Emulates ESEA style halftimes for 5CP (halftime at 3 points or timelimit) and King of the Hill (halftime at 2 points) modes.
-  - By sapphonie
 - [RGL.gg QoL Tweaks](https://github.com/RGLgg/server-resources-updater/blob/master/addons/sourcemod/scripting/rglqol.sp)
   - Adds QoL tweaks for easier competitive server management and competitive integrity
   - By sapphonie and Aad
@@ -106,7 +103,7 @@ You will have to add new maps to your server manually as RGL introduces them to 
 
 # !!Please read this section if you're not going to read anything else!!
 
-There are different configs and plugins for scrims and matches if you're playing 5cp and koth in 6s. Halftimes in 5cp and koth are handled by the tf2Halftime plugin, mirrored from [here](https://github.com/stephanieLGBT/tf2-halftime).
+There are different configs and plugins for scrims and matches if you're playing 5cp and koth in 6s.
 
 Every other gamemode and type has the same config for scrims and matches.
 
@@ -133,16 +130,6 @@ Here are the configs you need to exec for specific modes and map types:
 <td align="left">5cp Match</td>
 <td align="left">rgl_6s_5cp_match</td>
 <td align="left">First half: winlimit 3, timelimit 30, 2nd half: first to 5 or timelimit</td>
-</tr>
-<tr>
-<td align="left">5cp Match 1st Half</td>
-<td align="left">rgl_6s_5cp_match_half1</td>
-<td align="left">winlimit 3, timelimit 30 (this and half2 can be used if plugin isn't available)</td>
-</tr>
-<tr>
-<td align="left">5cp Match 2nd Half</td>
-<td align="left">rgl_6s_5cp_match_half2</td>
-<td align="left">winlimit 5, timelimit 30, reexec after one team has won 5 total rounds</td>
 </tr>
 <tr>
 <td align="left">5cp Match Golden Cap</td>
