@@ -18,7 +18,7 @@ public Plugin myinfo =
     name = "Demo Check (No Discord)",
     author = "Shigbeard, Aad",
     description = "Checks if a player is recording a demo",
-    version = "2.0.0",
+    version = "2.0.1",
     url = "https://ozfortress.com/"
 };
 
