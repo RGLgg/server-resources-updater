@@ -1,4 +1,4 @@
-// Whitelist generated at Tue, 08 Jul 2025 02:12:26 +0200
+// Whitelist generated at Tue, 26 Aug 2025 03:43:51 +0200
 // Whitelist: RGL.gg Ultiduo (ID: 18034)
 
 // Share or view this whitelist:
@@ -27,7 +27,7 @@
 //  * Crusader's Crossbow
 //  * Overdose
 // - Melee
-//  * Ubersaw
+//  * Übersaw
 
 "item_whitelist"
 {
@@ -259,7 +259,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 82) ----------------------\\
+	//--------------------- Taunts (Total: 86) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -267,8 +267,10 @@
 	"RPS Taunt"							"0"
 	"Skullcracker Taunt"						"0"
 	"Square Dance Taunt"						"0"
+	"Taunt: Flying Colors"						"0"
 	"Taunt: Kazotsky Kick"						"0"
 	"Taunt: Mannrobics"						"0"
+	"Taunt: The Final Score"					"0"
 	"Taunt: The Fist Bump"						"0"
 	"Taunt: The Scaredy-cat!"					"0"
 	"Taunt: The Victory Lap"					"0"
@@ -315,6 +317,7 @@
 	"Taunt: True Scotsman's Call"					"0"
 	//____________________________ Heavy ____________________________\\
 	"Taunt: Bare Knuckle Beatdown"					"0"
+	"Taunt: Bear Hug"						"0"
 	"Taunt: Crushing Defeat"					"0"
 	"Taunt: Russian Rubdown"					"0"
 	"Taunt: The Boiling Point"					"0"
@@ -326,6 +329,7 @@
 	//__________________________ Engineer ___________________________\\
 	"Rancho Relaxo Taunt"						"0"
 	"Taunt: Bucking Bronco"						"0"
+	"Taunt: Texan Trickshot"					"0"
 	"Taunt: Texas Truckin"						"0"
 	"Taunt: Texas Twirl 'Em"					"0"
 	"Taunt: The Dueling Banjo"					"0"
