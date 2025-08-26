@@ -1,4 +1,4 @@
-// Whitelist generated at Tue, 08 Jul 2025 02:12:47 +0200
+// Whitelist generated at Tue, 26 Aug 2025 03:50:19 +0200
 // Whitelist: RGL.gg Passtime (ID: 18035)
 
 // Share or view this whitelist:
@@ -48,8 +48,8 @@
 // - Melee
 //  * Amputator
 //  * Solemn Vow
-//  * Ubersaw
 //  * Vita-Saw
+//  * Übersaw
 
 "item_whitelist"
 {
@@ -266,4 +266,13 @@
 	"Elf Ignition"							"0"
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
+
+	//---------------------- Taunts (Total: 4) ----------------------\\
+	//_________________________ All classes _________________________\\
+	"Taunt: Flying Colors"						"0"
+	"Taunt: The Final Score"					"0"
+	//____________________________ Heavy ____________________________\\
+	"Taunt: Bear Hug"						"0"
+	//__________________________ Engineer ___________________________\\
+	"Taunt: Texan Trickshot"					"0"
 }

@@ -1,5 +1,5 @@
-// Whitelist generated at Tue, 08 Jul 2025 02:12:34 +0200
-// Whitelist: RGL.gg Highlander (Season 21) (ID: 18150)
+// Whitelist generated at Tue, 26 Aug 2025 03:50:12 +0200
+// Whitelist: RGL.gg Highlander (Season 22) (ID: 18390)
 
 // Share or view this whitelist:
 //	https://whitelist.tf/rgl_9v9
@@ -121,7 +121,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 56) ----------------------\\
+	//--------------------- Taunts (Total: 58) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -129,6 +129,7 @@
 	"RPS Taunt"							"0"
 	"Skullcracker Taunt"						"0"
 	"Square Dance Taunt"						"0"
+	"Taunt: Flying Colors"						"0"
 	"Taunt: Kazotsky Kick"						"0"
 	"Taunt: Mannrobics"						"0"
 	"Taunt: The Fist Bump"						"0"
@@ -162,6 +163,7 @@
 	"Taunt: The Pooped Deck"					"0"
 	//____________________________ Heavy ____________________________\\
 	"Taunt: Bare Knuckle Beatdown"					"0"
+	"Taunt: Bear Hug"						"0"
 	"Taunt: Russian Rubdown"					"0"
 	"Taunt: The Boiling Point"					"0"
 	"Taunt: The Road Rager"						"0"
