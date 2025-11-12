@@ -1,4 +1,4 @@
-// Whitelist generated at Tue, 26 Aug 2025 03:50:17 +0200
+// Whitelist generated at Wed, 12 Nov 2025 23:21:36 +0100
 // Whitelist: RGL.gg No Restriction 6s (Season 3) (ID: 9914)
 
 // Share or view this whitelist:
@@ -75,7 +75,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 83) ----------------------\\
+	//--------------------- Taunts (Total: 86) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -99,6 +99,7 @@
 	"Taunt: Zoomin' Broom"						"0"
 	//____________________________ Scout ____________________________\\
 	"Taunt: Foul Play"						"0"
+	"Taunt: Healthcare Hog"						"0"
 	"Taunt: Peace Out"						"0"
 	"Taunt: Runner's Rhythm"					"0"
 	"Taunt: Spin-to-Win"						"0"
@@ -135,6 +136,7 @@
 	"Taunt: Bare Knuckle Beatdown"					"0"
 	"Taunt: Bear Hug"						"0"
 	"Taunt: Crushing Defeat"					"0"
+	"Taunt: Ring King"						"0"
 	"Taunt: Russian Rubdown"					"0"
 	"Taunt: The Boiling Point"					"0"
 	"Taunt: The Road Rager"						"0"
@@ -152,6 +154,7 @@
 	//____________________________ Medic ____________________________\\
 	"Taunt: Borrowed Bones"						"0"
 	"Taunt: Doctor's Defibrillators"				"0"
+	"Taunt: Heartbreaker"						"0"
 	"Taunt: Surgeon's Squeezebox"					"0"
 	"Taunt: The Head Doctor"					"0"
 	"Taunt: The Mannbulance!"					"0"
