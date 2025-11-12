@@ -140,12 +140,11 @@ jobs:
       #     wget -q -O tmp.zip https://git.empiresmod.com/sourcemod/Updater/-/jobs/artifacts/master/download?job=build && unzip -o tmp.zip 'addons/*' -d ../../  && rm tmp.zip
       #   working-directory: ${{ env.SOURCEMOD_PATH }}/
 
-      # https://github.com/p4sstime/p4sstime-server-resources new repo
       # PASS Time plugins
+      # https://github.com/p4sstime/p4sstime-server-resources new repo
       - name: Get latest version of PASS Time Plugin
         run: |
-          mkdir -p addons/sourcemod/plugins
-          wget -q -O ../../addons/sourcemod/plugins/p4sstime.smx https://github.com/p4sstime/p4sstime-server-resources/releases/latest/download/p4sstime.smx
+          wget -q -O tmp.zip https://github.com/p4sstime/p4sstime-server-resources/releases/download/latest/p4sstime.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
         working-directory: ${{ env.SOURCEMOD_PATH }}/
 
       # - name: Get latest version of Demo Check plugin
