@@ -1,4 +1,4 @@
-// Whitelist generated at Tue, 26 Aug 2025 03:44:10 +0200
+// Whitelist generated at Wed, 12 Nov 2025 23:12:14 +0100
 // Whitelist: RGL.gg Passtime (ID: 18035)
 
 // Share or view this whitelist:
@@ -267,12 +267,17 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//---------------------- Taunts (Total: 4) ----------------------\\
+	//---------------------- Taunts (Total: 7) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Taunt: Flying Colors"						"0"
 	"Taunt: The Final Score"					"0"
+	//____________________________ Scout ____________________________\\
+	"Taunt: Healthcare Hog"						"0"
 	//____________________________ Heavy ____________________________\\
 	"Taunt: Bear Hug"						"0"
+	"Taunt: Ring King"						"0"
 	//__________________________ Engineer ___________________________\\
 	"Taunt: Texan Trickshot"					"0"
+	//____________________________ Medic ____________________________\\
+	"Taunt: Heartbreaker"						"0"
 }

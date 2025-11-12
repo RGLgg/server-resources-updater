@@ -1,0 +1,30 @@
+"Games"
+{
+    "tf"
+    {
+        "Signatures"
+        {
+            "CTFPlayer::ForceRegenerateAndRespawn"
+            {
+                "library"   "server"
+                "linux"     "@_ZN9CTFPlayer25ForceRegenerateAndRespawnEv"
+                "windows"   "\x55\x8B\xEC\x51\x56\x57\x8B\xF9\xC6\x45\xFF\x01"
+            }
+
+            "PointInRespawnRoom"
+            {
+                "library"   "server"
+                "linux"     "@_Z18PointInRespawnRoomPK11CBaseEntityRK6Vectorb"
+                "windows"   "\x55\x8B\xEC\x53\x33\xDB\x56\x57\x39\x1D"
+            }
+        }
+        "Offsets"
+		{
+			"CTFPlayer::m_bPasstimeBallSlippery"
+            {
+                "linux"      "0x2645"
+                "windows"    "0x2649"
+            }
+        }
+    }
+}
