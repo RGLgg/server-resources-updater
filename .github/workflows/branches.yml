@@ -139,7 +139,7 @@ jobs:
       # https://github.com/p4sstime/p4sstime-server-resources new repo
       - name: Get latest version of PASS Time Plugin
         run: |
-          wget -q -O tmp.zip https://github.com/p4sstime/p4sstime-server-resources/releases/download/latest/p4sstime.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
+          wget -q -O tmp.zip https://github.com/p4sstime/p4sstime-server-resources/releases/latest/download/p4sstime.zip && unzip -o tmp.zip -d ../../  && rm tmp.zip
         working-directory: ${{ env.SOURCEMOD_PATH }}/
 
       # - name: Get latest version of Demo Check plugin
