@@ -1,4 +1,4 @@
-// Whitelist generated at Wed, 12 Nov 2025 23:12:15 +0100
+// Whitelist generated at Mon, 16 Feb 2026 17:13:12 +0100
 // Whitelist: RGL.gg Ultiduo (ID: 18034)
 
 // Share or view this whitelist:
@@ -33,13 +33,14 @@
 {
 	"unlisted_items_default_to"		"1"
 
-	//------------ Blocked weapons/reskins (Total: 164) -------------\\
+	//------------ Blocked weapons/reskins (Total: 167) -------------\\
 	//______________________ Multiple classes _______________________\\
 	"Panic Attack Shotgun"						"0"
 	"The B.A.S.E. Jumper"						"0"
 	"The Half-Zatoichi"						"0"
 	"The Pain Train"						"0"
 	"The Reserve Shooter"						"0"
+	"TTG Max Pistol - Poker Night 2026"				"0"
 	//____________________________ Scout ____________________________\\
 	"Baby Face's Blaster"						"0"
 	"Bonk! Atomic Punch"						"0"
@@ -136,6 +137,7 @@
 	"Fists of Steel"						"0"
 	"Gloves of Running Urgently"					"0"
 	"Gloves of Running Urgently MvM"				"0"
+	"Iron Curtain 2026"						"0"
 	"Natascha"							"0"
 	"Promo Huo Long Heatmaker"					"0"
 	"The Brass Beast"						"0"
@@ -207,6 +209,7 @@
 	"The Red-Tape Recorder"						"0"
 	"The Spy-cicle"							"0"
 	"The Wanga Prick"						"0"
+	"TTG Watch 2026"						"0"
 	"Your Eternal Reward"						"0"
 
 	//------------- ConTrabanned ConTracker (Total: 1) --------------\\
@@ -259,7 +262,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 89) ----------------------\\
+	//--------------------- Taunts (Total: 92) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -270,6 +273,7 @@
 	"Taunt: Flying Colors"						"0"
 	"Taunt: Kazotsky Kick"						"0"
 	"Taunt: Mannrobics"						"0"
+	"Taunt: The Critical Fail"					"0"
 	"Taunt: The Final Score"					"0"
 	"Taunt: The Fist Bump"						"0"
 	"Taunt: The Scaredy-cat!"					"0"
@@ -278,6 +282,7 @@
 	//____________________________ Scout ____________________________\\
 	"Battin' a Thousand Taunt"					"0"
 	"Deep Fried Desire Taunt"					"0"
+	"Taunt: Chairholder"						"0"
 	"Taunt: Foul Play"						"0"
 	"Taunt: Healthcare Hog"						"0"
 	"Taunt: Peace Out"						"0"
@@ -308,6 +313,7 @@
 	//___________________________ Demoman ___________________________\\
 	"Oblooterated Taunt"						"0"
 	"Spent Well Spirits Taunt"					"0"
+	"Taunt: Dead Mann's Drink"					"0"
 	"Taunt: Drunk Mann's Cannon"					"0"
 	"Taunt: Fore-Head Slice"					"0"
 	"Taunt: Roar O'War"						"0"

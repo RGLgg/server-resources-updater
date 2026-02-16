@@ -1,4 +1,4 @@
-// Whitelist generated at Wed, 12 Nov 2025 23:12:20 +0100
+// Whitelist generated at Mon, 16 Feb 2026 17:13:14 +0100
 // Custom Whitelist ID: 14183
 
 // Share or view this whitelist:
@@ -18,6 +18,7 @@
 
 // Blocked weapons for Multiple classes
 // - Secondary
+//  * Reissued Lugermorph
 //  * Reserve Shooter
 
 // Blocked weapons for Scout
@@ -34,6 +35,7 @@
 // Blocked weapons for Heavy
 // - Primary
 //  * Natascha
+//  * Reissued Iron Curtain
 // - Melee
 //  * Fists of Steel
 
@@ -53,13 +55,18 @@
 // - Secondary
 //  * Jarate
 
+// Blocked weapons for Spy
+// - Watch
+//  * Reissued Enthusiast's Timepiece
+
 "item_whitelist"
 {
 	"unlisted_items_default_to"		"1"
 
-	//------------- Blocked weapons/reskins (Total: 22) -------------\\
+	//------------- Blocked weapons/reskins (Total: 25) -------------\\
 	//______________________ Multiple classes _______________________\\
 	"The Reserve Shooter"						"0"
+	"TTG Max Pistol - Poker Night 2026"				"0"
 	//____________________________ Scout ____________________________\\
 	"Crit-a-Cola"							"0"
 	"Mad Milk"							"0"
@@ -72,6 +79,7 @@
 	//____________________________ Heavy ____________________________\\
 	"Deflector"							"0"
 	"Fists of Steel"						"0"
+	"Iron Curtain 2026"						"0"
 	"Natascha"							"0"
 	//__________________________ Engineer ___________________________\\
 	"Festive Wrangler"						"0"
@@ -87,6 +95,8 @@
 	"Shooting Star"							"0"
 	"The Machina"							"0"
 	"The Self-Aware Beauty Mark"					"0"
+	//_____________________________ Spy _____________________________\\
+	"TTG Watch 2026"						"0"
 
 	//------------- ConTrabanned ConTracker (Total: 1) --------------\\
 	//_________________________ All classes _________________________\\
@@ -131,7 +141,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 83) ----------------------\\
+	//--------------------- Taunts (Total: 86) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -147,6 +157,7 @@
 	"Taunt: Mannrobics"						"0"
 	"Taunt: Mourning Mercs"						"0"
 	"Taunt: Peace!"							"0"
+	"Taunt: The Critical Fail"					"0"
 	"Taunt: The Final Score"					"0"
 	"Taunt: The Fist Bump"						"0"
 	"Taunt: The Scaredy-cat!"					"0"
@@ -154,6 +165,7 @@
 	"Taunt: Unleashed Rage"						"0"
 	"Taunt: Zoomin' Broom"						"0"
 	//____________________________ Scout ____________________________\\
+	"Taunt: Chairholder"						"0"
 	"Taunt: Foul Play"						"0"
 	"Taunt: Healthcare Hog"						"0"
 	"Taunt: Peace Out"						"0"
@@ -180,6 +192,7 @@
 	"Taunt: The Hot Wheeler"					"0"
 	"Taunt: The Skating Scorcher"					"0"
 	//___________________________ Demoman ___________________________\\
+	"Taunt: Dead Mann's Drink"					"0"
 	"Taunt: Drunk Mann's Cannon"					"0"
 	"Taunt: Fore-Head Slice"					"0"
 	"Taunt: Roar O'War"						"0"
