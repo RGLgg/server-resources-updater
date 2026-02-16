@@ -15,3 +15,4 @@ README.txt
 *.smx
 #!p4sstime.smx
 
+.vs/*
