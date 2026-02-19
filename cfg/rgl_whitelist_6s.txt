@@ -1,4 +1,4 @@
-// Whitelist generated at Mon, 24 Nov 2025 17:53:09 +0100
+// Whitelist generated at Fri, 20 Feb 2026 00:14:31 +0100
 // Whitelist: RGL.gg 6v6 (Season 19) (ID: 18392)
 
 // Share or view this whitelist:
@@ -18,6 +18,7 @@
 
 // Blocked weapons for Multiple classes
 // - Secondary
+//  * Reissued Lugermorph
 //  * Reserve Shooter
 
 // Blocked weapons for Scout
@@ -43,6 +44,7 @@
 // Blocked weapons for Heavy
 // - Primary
 //  * Natascha
+//  * Reissued Iron Curtain
 // - Melee
 //  * Fists of Steel
 
@@ -68,14 +70,17 @@
 // Blocked weapons for Spy
 // - Secondary
 //  * Diamondback
+// - Watch
+//  * Reissued Enthusiast's Timepiece
 
 "item_whitelist"
 {
 	"unlisted_items_default_to"		"1"
 
-	//------------- Blocked weapons/reskins (Total: 30) -------------\\
+	//------------- Blocked weapons/reskins (Total: 33) -------------\\
 	//______________________ Multiple classes _______________________\\
 	"The Reserve Shooter"						"0"
+	"TTG Max Pistol - Poker Night 2026"				"0"
 	//____________________________ Scout ____________________________\\
 	"Bonk! Atomic Punch"						"0"
 	"Crit-a-Cola"							"0"
@@ -94,6 +99,7 @@
 	//____________________________ Heavy ____________________________\\
 	"Deflector"							"0"
 	"Fists of Steel"						"0"
+	"Iron Curtain 2026"						"0"
 	"Natascha"							"0"
 	//__________________________ Engineer ___________________________\\
 	"Festive Wrangler"						"0"
@@ -113,6 +119,7 @@
 	"The Sydney Sleeper"						"0"
 	//_____________________________ Spy _____________________________\\
 	"The Diamondback"						"0"
+	"TTG Watch 2026"						"0"
 
 	//------------- ConTrabanned ConTracker (Total: 1) --------------\\
 	//_________________________ All classes _________________________\\
@@ -164,7 +171,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 61) ----------------------\\
+	//--------------------- Taunts (Total: 64) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -175,11 +182,13 @@
 	"Taunt: Flying Colors"						"0"
 	"Taunt: Kazotsky Kick"						"0"
 	"Taunt: Mannrobics"						"0"
+	"Taunt: The Critical Fail"					"0"
 	"Taunt: The Fist Bump"						"0"
 	"Taunt: The Scaredy-cat!"					"0"
 	"Taunt: The Victory Lap"					"0"
 	"Taunt: Zoomin' Broom"						"0"
 	//____________________________ Scout ____________________________\\
+	"Taunt: Chairholder"						"0"
 	"Taunt: Healthcare Hog"						"0"
 	"Taunt: Runner's Rhythm"					"0"
 	"Taunt: Spin-to-Win"						"0"
@@ -200,6 +209,7 @@
 	"Taunt: The Hot Wheeler"					"0"
 	"Taunt: The Skating Scorcher"					"0"
 	//___________________________ Demoman ___________________________\\
+	"Taunt: Dead Mann's Drink"					"0"
 	"Taunt: Drunk Mann's Cannon"					"0"
 	"Taunt: Scotsmann's Stagger"					"0"
 	"Taunt: Shanty Shipmate"					"0"

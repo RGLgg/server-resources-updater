@@ -1,4 +1,4 @@
-// Whitelist generated at Mon, 24 Nov 2025 17:53:18 +0100
+// Whitelist generated at Fri, 20 Feb 2026 00:14:45 +0100
 // Whitelist: RGL.gg Passtime (ID: 18035)
 
 // Share or view this whitelist:
@@ -55,12 +55,13 @@
 {
 	"unlisted_items_default_to"		"1"
 
-	//------------ Blocked weapons/reskins (Total: 150) -------------\\
+	//------------ Blocked weapons/reskins (Total: 153) -------------\\
 	//______________________ Multiple classes _______________________\\
 	"Panic Attack Shotgun"						"0"
 	"The B.A.S.E. Jumper"						"0"
 	"The Half-Zatoichi"						"0"
 	"The Reserve Shooter"						"0"
+	"TTG Max Pistol - Poker Night 2026"				"0"
 	//____________________________ Scout ____________________________\\
 	"Baby Face's Blaster"						"0"
 	"Bonk! Atomic Punch"						"0"
@@ -145,6 +146,7 @@
 	"Fists of Steel"						"0"
 	"Gloves of Running Urgently"					"0"
 	"Gloves of Running Urgently MvM"				"0"
+	"Iron Curtain 2026"						"0"
 	"Natascha"							"0"
 	"Promo Huo Long Heatmaker"					"0"
 	"The Brass Beast"						"0"
@@ -215,6 +217,7 @@
 	"The Red-Tape Recorder"						"0"
 	"The Spy-cicle"							"0"
 	"The Wanga Prick"						"0"
+	"TTG Watch 2026"						"0"
 	"Your Eternal Reward"						"0"
 
 	//------------- ConTrabanned ConTracker (Total: 1) --------------\\
@@ -267,12 +270,16 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//---------------------- Taunts (Total: 7) ----------------------\\
+	//--------------------- Taunts (Total: 10) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Taunt: Flying Colors"						"0"
+	"Taunt: The Critical Fail"					"0"
 	"Taunt: The Final Score"					"0"
 	//____________________________ Scout ____________________________\\
+	"Taunt: Chairholder"						"0"
 	"Taunt: Healthcare Hog"						"0"
+	//___________________________ Demoman ___________________________\\
+	"Taunt: Dead Mann's Drink"					"0"
 	//____________________________ Heavy ____________________________\\
 	"Taunt: Bear Hug"						"0"
 	"Taunt: Ring King"						"0"

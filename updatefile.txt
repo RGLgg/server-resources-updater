@@ -47,6 +47,7 @@
         "Plugin"         "/cfg/rgl_6s_koth_match.cfg"
         "Plugin"         "/cfg/rgl_whitelist_6s_cups.txt"
         "Plugin"         "/cfg/rgl_6s_5cp_scrim.cfg"
+        "Plugin"         "/cfg/rgl_6s_stopwatch.cfg"
         "Plugin"         "/cfg/rgl_6s_5cp_match_half1.cfg"
         "Plugin"         "/cfg/rgl_whitelist_mm.txt"
         "Plugin"         "/cfg/rgl_HL_base.cfg"

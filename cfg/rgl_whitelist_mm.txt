@@ -1,4 +1,4 @@
-// Whitelist generated at Mon, 24 Nov 2025 17:53:16 +0100
+// Whitelist generated at Fri, 20 Feb 2026 00:14:39 +0100
 // Whitelist: RGL.gg No Restriction 6s (Season 3) (ID: 9914)
 
 // Share or view this whitelist:
@@ -15,15 +15,31 @@
 // Explosion on death miscs are: NOT allowed
 // Festive weapon reskins are: allowed
 // Botkiller weapon reskins are: allowed
-// All weapons are: allowed
+
+// Blocked weapons for Multiple classes
+// - Secondary
+//  * Reissued Lugermorph
+
+// Blocked weapons for Heavy
+// - Primary
+//  * Reissued Iron Curtain
+
+// Blocked weapons for Spy
+// - Watch
+//  * Reissued Enthusiast's Timepiece
 
 "item_whitelist"
 {
 	"unlisted_items_default_to"		"1"
 
-	//------------- Blocked weapons/reskins (Total: 1) --------------\\
+	//------------- Blocked weapons/reskins (Total: 4) --------------\\
+	//______________________ Multiple classes _______________________\\
+	"TTG Max Pistol - Poker Night 2026"				"0"
 	//____________________________ Heavy ____________________________\\
 	"Deflector"							"0"
+	"Iron Curtain 2026"						"0"
+	//_____________________________ Spy _____________________________\\
+	"TTG Watch 2026"						"0"
 
 	//------------- ConTrabanned ConTracker (Total: 1) --------------\\
 	//_________________________ All classes _________________________\\
@@ -75,7 +91,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 86) ----------------------\\
+	//--------------------- Taunts (Total: 89) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -91,6 +107,7 @@
 	"Taunt: Mannrobics"						"0"
 	"Taunt: Mourning Mercs"						"0"
 	"Taunt: Peace!"							"0"
+	"Taunt: The Critical Fail"					"0"
 	"Taunt: The Final Score"					"0"
 	"Taunt: The Fist Bump"						"0"
 	"Taunt: The Scaredy-cat!"					"0"
@@ -98,6 +115,7 @@
 	"Taunt: Unleashed Rage"						"0"
 	"Taunt: Zoomin' Broom"						"0"
 	//____________________________ Scout ____________________________\\
+	"Taunt: Chairholder"						"0"
 	"Taunt: Foul Play"						"0"
 	"Taunt: Healthcare Hog"						"0"
 	"Taunt: Peace Out"						"0"
@@ -125,6 +143,7 @@
 	"Taunt: The Hot Wheeler"					"0"
 	"Taunt: The Skating Scorcher"					"0"
 	//___________________________ Demoman ___________________________\\
+	"Taunt: Dead Mann's Drink"					"0"
 	"Taunt: Drunk Mann's Cannon"					"0"
 	"Taunt: Fore-Head Slice"					"0"
 	"Taunt: Roar O'War"						"0"
