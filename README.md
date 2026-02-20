@@ -132,14 +132,14 @@ Here are the configs you need to exec for specific modes and map types:
 <td align="left">winlimit 5, timelimit 30. first to 5 wins the match, or if the  time limit is hit, the new win limit is changed to 1 + the current leading score. first team to hit the new win limit wins.</td>
 </tr>
 <tr>
-<td align="left">KoTH Match</td>
-<td align="left">rgl_6s_koth_pro</td>
-<td align="left">winlimit 4, no timelimit, 1 half</td>
-</tr>
-<tr>
 <td align="left">KoTH Scrim</td>
 <td align="left">rgl_6s_koth</td>
 <td align="left">winlimit 2, no timelimit, 2 halves. (can be used for matches and reexeced if plugin is not available, reexec after one team has won 4 total rounds)</td>
+</tr>
+<tr>
+<td align="left">KoTH Match</td>
+<td align="left">rgl_6s_koth_pro</td>
+<td align="left">winlimit 4, no timelimit, 1 half</td>
 </tr>
 <tr>
 <td align="left">Stopwatch</td>
