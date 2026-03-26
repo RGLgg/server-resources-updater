@@ -1,4 +1,4 @@
-// Whitelist generated at Fri, 20 Feb 2026 00:14:29 +0100
+// Whitelist generated at Thu, 26 Mar 2026 20:43:44 +0100
 // Whitelist: RGL.gg 7v7 (Season 9) (ID: 11163)
 
 // Share or view this whitelist:
@@ -16,10 +16,6 @@
 // Festive weapon reskins are: allowed
 // Botkiller weapon reskins are: allowed
 
-// Blocked weapons for Multiple classes
-// - Secondary
-//  * Reissued Lugermorph
-
 // Blocked weapons for Scout
 // - Primary
 //  * Soda Popper
@@ -28,8 +24,6 @@
 //  * Mad Milk
 
 // Blocked weapons for Heavy
-// - Primary
-//  * Reissued Iron Curtain
 // - Melee
 //  * Fists of Steel
 
@@ -49,16 +43,12 @@
 // Blocked weapons for Spy
 // - Secondary
 //  * Diamondback
-// - Watch
-//  * Reissued Enthusiast's Timepiece
 
 "item_whitelist"
 {
 	"unlisted_items_default_to"		"1"
 
-	//------------- Blocked weapons/reskins (Total: 19) -------------\\
-	//______________________ Multiple classes _______________________\\
-	"TTG Max Pistol - Poker Night 2026"				"0"
+	//------------- Blocked weapons/reskins (Total: 16) -------------\\
 	//____________________________ Scout ____________________________\\
 	"Crit-a-Cola"							"0"
 	"Mad Milk"							"0"
@@ -67,7 +57,6 @@
 	//____________________________ Heavy ____________________________\\
 	"Deflector"							"0"
 	"Fists of Steel"						"0"
-	"Iron Curtain 2026"						"0"
 	//__________________________ Engineer ___________________________\\
 	"The Short Circuit"						"0"
 	//___________________________ Sniper ____________________________\\
@@ -81,7 +70,6 @@
 	"The Self-Aware Beauty Mark"					"0"
 	//_____________________________ Spy _____________________________\\
 	"The Diamondback"						"0"
-	"TTG Watch 2026"						"0"
 
 	//------------- ConTrabanned ConTracker (Total: 1) --------------\\
 	//_________________________ All classes _________________________\\

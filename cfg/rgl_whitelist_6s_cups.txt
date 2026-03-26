@@ -1,4 +1,4 @@
-// Whitelist generated at Fri, 20 Feb 2026 00:14:35 +0100
+// Whitelist generated at Thu, 26 Mar 2026 20:43:52 +0100
 // Custom Whitelist ID: 14183
 
 // Share or view this whitelist:
@@ -18,7 +18,6 @@
 
 // Blocked weapons for Multiple classes
 // - Secondary
-//  * Reissued Lugermorph
 //  * Reserve Shooter
 
 // Blocked weapons for Scout
@@ -35,7 +34,6 @@
 // Blocked weapons for Heavy
 // - Primary
 //  * Natascha
-//  * Reissued Iron Curtain
 // - Melee
 //  * Fists of Steel
 
@@ -55,18 +53,13 @@
 // - Secondary
 //  * Jarate
 
-// Blocked weapons for Spy
-// - Watch
-//  * Reissued Enthusiast's Timepiece
-
 "item_whitelist"
 {
 	"unlisted_items_default_to"		"1"
 
-	//------------- Blocked weapons/reskins (Total: 25) -------------\\
+	//------------- Blocked weapons/reskins (Total: 22) -------------\\
 	//______________________ Multiple classes _______________________\\
 	"The Reserve Shooter"						"0"
-	"TTG Max Pistol - Poker Night 2026"				"0"
 	//____________________________ Scout ____________________________\\
 	"Crit-a-Cola"							"0"
 	"Mad Milk"							"0"
@@ -79,7 +72,6 @@
 	//____________________________ Heavy ____________________________\\
 	"Deflector"							"0"
 	"Fists of Steel"						"0"
-	"Iron Curtain 2026"						"0"
 	"Natascha"							"0"
 	//__________________________ Engineer ___________________________\\
 	"Festive Wrangler"						"0"
@@ -95,8 +87,6 @@
 	"Shooting Star"							"0"
 	"The Machina"							"0"
 	"The Self-Aware Beauty Mark"					"0"
-	//_____________________________ Spy _____________________________\\
-	"TTG Watch 2026"						"0"
 
 	//------------- ConTrabanned ConTracker (Total: 1) --------------\\
 	//_________________________ All classes _________________________\\

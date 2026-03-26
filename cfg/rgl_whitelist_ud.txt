@@ -1,4 +1,4 @@
-// Whitelist generated at Fri, 20 Feb 2026 00:14:31 +0100
+// Whitelist generated at Thu, 26 Mar 2026 20:43:51 +0100
 // Whitelist: RGL.gg Ultiduo (ID: 18034)
 
 // Share or view this whitelist:
@@ -33,14 +33,13 @@
 {
 	"unlisted_items_default_to"		"1"
 
-	//------------ Blocked weapons/reskins (Total: 167) -------------\\
+	//------------ Blocked weapons/reskins (Total: 164) -------------\\
 	//______________________ Multiple classes _______________________\\
 	"Panic Attack Shotgun"						"0"
 	"The B.A.S.E. Jumper"						"0"
 	"The Half-Zatoichi"						"0"
 	"The Pain Train"						"0"
 	"The Reserve Shooter"						"0"
-	"TTG Max Pistol - Poker Night 2026"				"0"
 	//____________________________ Scout ____________________________\\
 	"Baby Face's Blaster"						"0"
 	"Bonk! Atomic Punch"						"0"
@@ -137,7 +136,6 @@
 	"Fists of Steel"						"0"
 	"Gloves of Running Urgently"					"0"
 	"Gloves of Running Urgently MvM"				"0"
-	"Iron Curtain 2026"						"0"
 	"Natascha"							"0"
 	"Promo Huo Long Heatmaker"					"0"
 	"The Brass Beast"						"0"
@@ -209,7 +207,6 @@
 	"The Red-Tape Recorder"						"0"
 	"The Spy-cicle"							"0"
 	"The Wanga Prick"						"0"
-	"TTG Watch 2026"						"0"
 	"Your Eternal Reward"						"0"
 
 	//------------- ConTrabanned ConTracker (Total: 1) --------------\\
