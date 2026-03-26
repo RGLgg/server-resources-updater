@@ -1,4 +1,4 @@
-// Whitelist generated at Thu, 26 Mar 2026 20:43:41 +0100
+// Whitelist generated at Thu, 26 Mar 2026 20:44:42 +0100
 // Whitelist: RGL.gg 6v6 (Season 19) (ID: 18392)
 
 // Share or view this whitelist:
