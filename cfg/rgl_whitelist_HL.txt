@@ -1,4 +1,4 @@
-// Whitelist generated at Sat, 21 Feb 2026 02:40:34 +0100
+// Whitelist generated at Thu, 26 Mar 2026 20:46:13 +0100
 // Whitelist: RGL.gg Highlander (Season 22) (ID: 18390)
 
 // Share or view this whitelist:
@@ -16,10 +16,6 @@
 // Festive weapon reskins are: allowed
 // Botkiller weapon reskins are: allowed
 
-// Blocked weapons for Multiple classes
-// - Secondary
-//  * Reissued Lugermorph
-
 // Blocked weapons for Scout
 // - Secondary
 //  * Crit-a-Cola
@@ -32,10 +28,6 @@
 // Blocked weapons for Demoman
 // - Primary
 //  * Loch-n-Load
-
-// Blocked weapons for Heavy
-// - Primary
-//  * Reissued Iron Curtain
 
 // Blocked weapons for Engineer
 // - Secondary
@@ -51,16 +43,12 @@
 // Blocked weapons for Spy
 // - Secondary
 //  * Diamondback
-// - Watch
-//  * Reissued Enthusiast's Timepiece
 
 "item_whitelist"
 {
 	"unlisted_items_default_to"		"1"
 
-	//------------- Blocked weapons/reskins (Total: 17) -------------\\
-	//______________________ Multiple classes _______________________\\
-	"TTG Max Pistol - Poker Night 2026"				"0"
+	//------------- Blocked weapons/reskins (Total: 14) -------------\\
 	//____________________________ Scout ____________________________\\
 	"Crit-a-Cola"							"0"
 	"Mad Milk"							"0"
@@ -71,7 +59,6 @@
 	"The Loch-n-Load"						"0"
 	//____________________________ Heavy ____________________________\\
 	"Deflector"							"0"
-	"Iron Curtain 2026"						"0"
 	//__________________________ Engineer ___________________________\\
 	"The Short Circuit"						"0"
 	//___________________________ Sniper ____________________________\\
@@ -83,7 +70,6 @@
 	"The Self-Aware Beauty Mark"					"0"
 	//_____________________________ Spy _____________________________\\
 	"The Diamondback"						"0"
-	"TTG Watch 2026"						"0"
 
 	//------------- ConTrabanned ConTracker (Total: 1) --------------\\
 	//_________________________ All classes _________________________\\

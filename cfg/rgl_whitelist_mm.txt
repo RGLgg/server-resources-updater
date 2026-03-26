@@ -1,4 +1,4 @@
-// Whitelist generated at Sat, 21 Feb 2026 02:40:35 +0100
+// Whitelist generated at Thu, 26 Mar 2026 20:46:15 +0100
 // Whitelist: RGL.gg No Restriction 6s (Season 3) (ID: 9914)
 
 // Share or view this whitelist:
@@ -15,31 +15,15 @@
 // Explosion on death miscs are: NOT allowed
 // Festive weapon reskins are: allowed
 // Botkiller weapon reskins are: allowed
-
-// Blocked weapons for Multiple classes
-// - Secondary
-//  * Reissued Lugermorph
-
-// Blocked weapons for Heavy
-// - Primary
-//  * Reissued Iron Curtain
-
-// Blocked weapons for Spy
-// - Watch
-//  * Reissued Enthusiast's Timepiece
+// All weapons are: allowed
 
 "item_whitelist"
 {
 	"unlisted_items_default_to"		"1"
 
-	//------------- Blocked weapons/reskins (Total: 4) --------------\\
-	//______________________ Multiple classes _______________________\\
-	"TTG Max Pistol - Poker Night 2026"				"0"
+	//------------- Blocked weapons/reskins (Total: 1) --------------\\
 	//____________________________ Heavy ____________________________\\
 	"Deflector"							"0"
-	"Iron Curtain 2026"						"0"
-	//_____________________________ Spy _____________________________\\
-	"TTG Watch 2026"						"0"
 
 	//------------- ConTrabanned ConTracker (Total: 1) --------------\\
 	//_________________________ All classes _________________________\\
