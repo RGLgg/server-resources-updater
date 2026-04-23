@@ -1,4 +1,4 @@
-// Whitelist generated at Thu, 26 Mar 2026 20:44:44 +0100
+// Whitelist generated at Thu, 23 Apr 2026 04:34:53 +0200
 // Whitelist: RGL.gg Highlander (Season 22) (ID: 18390)
 
 // Share or view this whitelist:
