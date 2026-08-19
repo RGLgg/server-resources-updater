@@ -1,4 +1,4 @@
-// Whitelist generated at Thu, 23 Apr 2026 04:35:12 +0200
+// Whitelist generated at Thu, 20 Aug 2026 01:33:33 +0200
 // Custom Whitelist ID: 14183
 
 // Share or view this whitelist:
@@ -131,7 +131,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 86) ----------------------\\
+	//--------------------- Taunts (Total: 90) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -168,6 +168,7 @@
 	"Taunt: The Killer Signature"					"0"
 	"Taunt: The Scooty Scoot"					"0"
 	//___________________________ Soldier ___________________________\\
+	"Taunt: Buffoon's Bivouac"					"0"
 	"Taunt: Can It!"						"0"
 	"Taunt: Neck Snap"						"0"
 	"Taunt: Panzer Pants"						"0"
@@ -176,6 +177,7 @@
 	//____________________________ Pyro _____________________________\\
 	"Pool Party Taunt"						"0"
 	"Taunt: Cremator's Condolences"					"0"
+	"Taunt: Friendly Fire"						"0"
 	"Taunt: Roasty Toasty"						"0"
 	"Taunt: Scorcher's Solo"					"0"
 	"Taunt: The Balloonibouncer"					"0"
@@ -197,6 +199,7 @@
 	"Taunt: Ring King"						"0"
 	"Taunt: Russian Rubdown"					"0"
 	"Taunt: The Boiling Point"					"0"
+	"Taunt: The Circuit Breaker"					"0"
 	"Taunt: The Road Rager"						"0"
 	"Taunt: The Russian Arms Race"					"0"
 	"Taunt: The Soviet Strongarm"					"0"
@@ -221,6 +224,7 @@
 	"Taunt: Straight Shooter Tutor"					"0"
 	//_____________________________ Spy _____________________________\\
 	"Taunt: Curtain Call"						"0"
+	"Taunt: Faux-calization"					"0"
 	"Taunt: Luxury Lounge"						"0"
 	"Taunt: Tailored Terminal"					"0"
 	"Taunt: The Boxtrot"						"0"
