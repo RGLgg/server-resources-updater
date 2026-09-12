@@ -1,5 +1,5 @@
-// Whitelist generated at Mon, 24 Aug 2026 05:02:44 +0200
-// Whitelist: RGL.gg 6v6 (Season 19) (ID: 18392)
+// Whitelist generated at Sat, 12 Sep 2026 22:56:07 +0200
+// Whitelist: RGL.gg 6v6 (Season 21) (ID: 19414)
 
 // Share or view this whitelist:
 //	https://whitelist.tf/rgl_6v6
@@ -164,7 +164,7 @@
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 68) ----------------------\\
+	//--------------------- Taunts (Total: 60) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -175,14 +175,12 @@
 	"Taunt: Flying Colors"						"0"
 	"Taunt: Kazotsky Kick"						"0"
 	"Taunt: Mannrobics"						"0"
-	"Taunt: The Critical Fail"					"0"
 	"Taunt: The Fist Bump"						"0"
 	"Taunt: The Scaredy-cat!"					"0"
 	"Taunt: The Victory Lap"					"0"
 	"Taunt: Zoomin' Broom"						"0"
 	//____________________________ Scout ____________________________\\
 	"Taunt: Chairholder"						"0"
-	"Taunt: Healthcare Hog"						"0"
 	"Taunt: Runner's Rhythm"					"0"
 	"Taunt: Spin-to-Win"						"0"
 	"Taunt: The Boston Boarder"					"0"
@@ -197,14 +195,12 @@
 	"Taunt: Rocket Jockey"						"0"
 	//____________________________ Pyro _____________________________\\
 	"Pool Party Taunt"						"0"
-	"Taunt: Friendly Fire"						"0"
 	"Taunt: Roasty Toasty"						"0"
 	"Taunt: Scorcher's Solo"					"0"
 	"Taunt: The Balloonibouncer"					"0"
 	"Taunt: The Hot Wheeler"					"0"
 	"Taunt: The Skating Scorcher"					"0"
 	//___________________________ Demoman ___________________________\\
-	"Taunt: Dead Mann's Drink"					"0"
 	"Taunt: Drunk Mann's Cannon"					"0"
 	"Taunt: Scotsmann's Stagger"					"0"
 	"Taunt: Shanty Shipmate"					"0"
@@ -213,10 +209,8 @@
 	//____________________________ Heavy ____________________________\\
 	"Taunt: Bare Knuckle Beatdown"					"0"
 	"Taunt: Bear Hug"						"0"
-	"Taunt: Ring King"						"0"
 	"Taunt: Russian Rubdown"					"0"
 	"Taunt: The Boiling Point"					"0"
-	"Taunt: The Circuit Breaker"					"0"
 	"Taunt: The Road Rager"						"0"
 	"Taunt: The Russian Arms Race"					"0"
 	"Taunt: The Soviet Strongarm"					"0"
@@ -228,7 +222,6 @@
 	"Taunt: The Dueling Banjo"					"0"
 	"Taunt: The Jumping Jack"					"0"
 	//____________________________ Medic ____________________________\\
-	"Taunt: Heartbreaker"						"0"
 	"Taunt: Surgeon's Squeezebox"					"0"
 	"Taunt: The Mannbulance!"					"0"
 	"Taunt: Time Out Therapy"					"0"
@@ -236,7 +229,6 @@
 	"Taunt: Didgeridrongo"						"0"
 	"Taunt: Shooter's Stakeout"					"0"
 	//_____________________________ Spy _____________________________\\
-	"Taunt: Faux-calization"					"0"
 	"Taunt: Luxury Lounge"						"0"
 	"Taunt: Tailored Terminal"					"0"
 	"Taunt: The Boxtrot"						"0"
