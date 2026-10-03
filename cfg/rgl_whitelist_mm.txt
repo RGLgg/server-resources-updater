@@ -1,4 +1,4 @@
-// Whitelist generated at Sat, 12 Sep 2026 22:55:54 +0200
+// Whitelist generated at Sat, 03 Oct 2026 20:55:06 +0200
 // Whitelist: RGL.gg No Restriction 6s (Season 3) (ID: 9914)
 
 // Share or view this whitelist:
@@ -64,18 +64,19 @@
 	"The Lollichop"							"0"
 	"The Rainblower"						"0"
 
-	//------ Noise making/Explosion on death miscs (Total: 9) -------\\
+	//------ Noise making/Explosion on death miscs (Total: 10) ------\\
 	"Elf-Made Bandanna"						"0"
 	"Jolly Jingler"							"0"
 	"Reindoonibeanie"						"0"
 	"Seasonal Employee"						"0"
 	"The Bootie Time"						"0"
 	"Elf Defence"							"0"
+	"Clowning Cowl"							"0"
 	"Elf Ignition"							"0"
 	"The Jingle Belt"						"0"
 	"Elf Care Provider"						"0"
 
-	//--------------------- Taunts (Total: 93) ----------------------\\
+	//--------------------- Taunts (Total: 98) ----------------------\\
 	//_________________________ All classes _________________________\\
 	"Conga Taunt"							"0"
 	"Flippin' Awesome Taunt"					"0"
@@ -104,6 +105,7 @@
 	"Taunt: Healthcare Hog"						"0"
 	"Taunt: Peace Out"						"0"
 	"Taunt: Runner's Rhythm"					"0"
+	"Taunt: Showrunner's Spirit"					"0"
 	"Taunt: Spin-to-Win"						"0"
 	"Taunt: The Boston Boarder"					"0"
 	"Taunt: The Bunnyhopper"					"0"
@@ -115,6 +117,7 @@
 	"Taunt: Buffoon's Bivouac"					"0"
 	"Taunt: Can It!"						"0"
 	"Taunt: Neck Snap"						"0"
+	"Taunt: One-Eyed Punt"						"0"
 	"Taunt: Panzer Pants"						"0"
 	"Taunt: Rocket Jockey"						"0"
 	"Taunt: Star-Spangled Strategy"					"0"
@@ -125,10 +128,12 @@
 	"Taunt: Friendly Fire"						"0"
 	"Taunt: Roasty Toasty"						"0"
 	"Taunt: Scorcher's Solo"					"0"
+	"Taunt: Sear You Later"						"0"
 	"Taunt: The Balloonibouncer"					"0"
 	"Taunt: The Hot Wheeler"					"0"
 	"Taunt: The Skating Scorcher"					"0"
 	//___________________________ Demoman ___________________________\\
+	"Taunt: Barrel Roll"						"0"
 	"Taunt: Dead Mann's Drink"					"0"
 	"Taunt: Drunk Mann's Cannon"					"0"
 	"Taunt: Fore-Head Slice"					"0"
@@ -161,6 +166,7 @@
 	"Taunt: Borrowed Bones"						"0"
 	"Taunt: Doctor's Defibrillators"				"0"
 	"Taunt: Heartbreaker"						"0"
+	"Taunt: Hippocratic Hypocrite"					"0"
 	"Taunt: Surgeon's Squeezebox"					"0"
 	"Taunt: The Head Doctor"					"0"
 	"Taunt: The Mannbulance!"					"0"
