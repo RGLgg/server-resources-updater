@@ -1,4 +1,4 @@
-// Whitelist generated at Sat, 03 Oct 2026 20:55:04 +0200
+// Whitelist generated at Sat, 03 Oct 2026 21:50:26 +0200
 // Whitelist: RGL.gg 6v6 (Season 21) (ID: 19414)
 
 // Share or view this whitelist:
