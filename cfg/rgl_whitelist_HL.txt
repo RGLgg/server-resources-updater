@@ -1,4 +1,4 @@
-// Whitelist generated at Sun, 04 Oct 2026 19:14:47 +0200
+// Whitelist generated at Wed, 14 Oct 2026 21:32:42 +0200
 // Whitelist: RGL.gg Highlander (Season 25) (ID: 19530)
 
 // Share or view this whitelist:
